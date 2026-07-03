@@ -265,25 +265,89 @@ function renderCategoryList() {
   }
 }
 
-function renderNewOpeningBanner() {
-  const banner = $("#new-opening-banner");
-  const openings = state.data?.new_openings?.filter(passesFilters) ?? [];
+function passesNewOpeningFilters(place) {
+  const { maxWalk } = state.filters;
+  if (place.place_type !== "restaurant" && place.place_type !== "cafe") return false;
+  if (place.walk_minutes != null && place.walk_minutes > maxWalk) return false;
+  return true;
+}
+
+function getNewOpenings() {
+  let openings = state.data?.new_openings ?? [];
+  if (!openings.length) {
+    openings = state.data?.places?.filter((p) => p.is_new_opening) ?? [];
+  }
+  return openings
+    .filter(passesNewOpeningFilters)
+    .sort((a, b) => (a.walk_minutes ?? 99) - (b.walk_minutes ?? 99));
+}
+
+function renderNewOpeningPanel() {
+  const panel = $("#new-opening-panel");
+  const body = $("#new-opening-panel-body");
+  const tab = $("#new-opening-panel-tab");
+  const countEl = $("#new-opening-count");
+  const openings = getNewOpenings();
+  const days = state.data?.defaults?.new_opening_days ?? 30;
 
   if (!openings.length) {
-    banner.classList.add("hidden");
+    panel.classList.add("hidden");
+    tab.classList.add("hidden");
     return;
   }
 
-  const items = openings
-    .slice(0, 5)
-    .map((p) => `<li><strong>${escapeHtml(p.name)}</strong> — ${escapeHtml(p.category_label)} · ${formatWalk(p.walk_minutes)}</li>`)
+  const eyebrow = panel.querySelector(".new-opening-panel-eyebrow");
+  if (eyebrow) eyebrow.textContent = `최근 ${days}일`;
+
+  countEl.textContent = `(${openings.length}곳)`;
+  body.innerHTML = openings
+    .map(
+      (place) => `
+    <article class="new-opening-card" data-place-id="${escapeHtml(place.id)}">
+      <div class="new-opening-card-head">
+        <span class="new-opening-name">${escapeHtml(place.name)}</span>
+        <span class="new-opening-badge">NEW</span>
+      </div>
+      <span class="new-opening-type">${escapeHtml(place.category_label)} · ${place.place_type === "cafe" ? "카페" : "맛집"}</span>
+      <dl class="new-opening-details">
+        <div><dt>대표메뉴</dt><dd>${escapeHtml(place.representative_menu || "-")}</dd></div>
+        <div><dt>가격</dt><dd class="price">${formatPrice(place.price_per_person_krw)}</dd></div>
+        <div><dt>도보</dt><dd class="walk">${formatWalk(place.walk_minutes)}</dd></div>
+      </dl>
+    </article>
+  `
+    )
     .join("");
 
-  banner.innerHTML = `
-    <strong>🎉 잠실 신규 오픈 (${openings.length}곳)</strong>
-    <ul>${items}</ul>
-  `;
-  banner.classList.remove("hidden");
+  body.querySelectorAll(".new-opening-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const id = card.dataset.placeId;
+      const place =
+        openings.find((p) => p.id === id) ?? state.data.places.find((p) => p.id === id);
+      if (!place) return;
+      switchView("map");
+      showMapPopup(place);
+      state.map?.setView([place.lat, place.lng], 17, { animate: true });
+    });
+  });
+
+  panel.classList.remove("hidden", "collapsed");
+  tab.classList.add("hidden");
+}
+
+function bindNewOpeningPanel() {
+  const panel = $("#new-opening-panel");
+  const tab = $("#new-opening-panel-tab");
+
+  $("#new-opening-panel-toggle")?.addEventListener("click", () => {
+    panel.classList.add("collapsed");
+    tab.classList.remove("hidden");
+  });
+
+  tab?.addEventListener("click", () => {
+    panel.classList.remove("collapsed");
+    tab.classList.add("hidden");
+  });
 }
 
 function updateResultCount() {
@@ -293,7 +357,7 @@ function updateResultCount() {
 }
 
 function render() {
-  renderNewOpeningBanner();
+  renderNewOpeningPanel();
   updateMapMarkers();
   renderCategoryList();
   updateResultCount();
@@ -405,6 +469,7 @@ async function init() {
 
   bindFilters();
   bindTabs();
+  bindNewOpeningPanel();
 
   $(".popup-close").addEventListener("click", hideMapPopup);
 

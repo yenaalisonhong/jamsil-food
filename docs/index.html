@@ -27,8 +27,6 @@
         </div>
       </div>
 
-      <div id="new-opening-banner" class="new-opening-banner hidden" aria-live="polite"></div>
-
       <section class="filters" aria-label="필터">
         <div class="filter-group">
           <label for="filter-rating">최소 평점 <output id="rating-value">4.0</output> <span class="filter-hint">(미정 시 통과)</span></label>
@@ -83,6 +81,22 @@
       <span>데이터: Kakao Local API</span>
     </footer>
   </div>
+
+  <aside id="new-opening-panel" class="new-opening-panel hidden" aria-label="최근 한 달 신규 오픈 맛집·카페">
+    <header class="new-opening-panel-header">
+      <div>
+        <p class="new-opening-panel-eyebrow">최근 30일</p>
+        <h2 class="new-opening-panel-title">신규 오픈 <span id="new-opening-count"></span></h2>
+      </div>
+      <button type="button" id="new-opening-panel-toggle" class="panel-toggle" aria-label="패널 접기" title="접기">›</button>
+    </header>
+    <div id="new-opening-panel-body" class="new-opening-panel-body"></div>
+  </aside>
+
+  <button type="button" id="new-opening-panel-tab" class="new-opening-panel-tab hidden" aria-label="신규 오픈 패널 열기" title="신규 오픈">
+    <span class="tab-icon">✨</span>
+    <span class="tab-label">신규</span>
+  </button>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="js/app.js"></script>

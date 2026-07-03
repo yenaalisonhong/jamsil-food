@@ -76,6 +76,20 @@ class Place(BaseModel):
         default=None,
         description="대표 메뉴 (표시용)",
     )
+    representative_review: Optional[str] = Field(
+        default=None,
+        description="대표 리뷰 한 줄 (평점 대체 표시용)",
+    )
+    price_range_min_krw: Optional[int] = Field(
+        default=None,
+        ge=0,
+        description="인당 가격 범위 하한(원)",
+    )
+    price_range_max_krw: Optional[int] = Field(
+        default=None,
+        ge=0,
+        description="인당 가격 범위 상한(원)",
+    )
 
     # 신규 오픈 추적 (기능 C)
     opened_at: Optional[date] = Field(

@@ -1,7 +1,7 @@
 """
 Kakao Local API Provider.
 
-키워드 검색 API로 주변 식당/카페를 조회합니다.
+키워드·카테고리 검색 API로 주변 식당/카페를 조회합니다.
 문서: https://developers.kakao.com/docs/latest/ko/local/dev-guide
 """
 
@@ -25,15 +25,35 @@ _CATEGORY_MAP = {
 }
 
 _SEARCH_KEYWORDS = {
-    PlaceType.RESTAURANT: "음식점",
-    PlaceType.CAFE: "카페",
+    PlaceType.RESTAURANT: [
+        "음식점",
+        "잠실 맛집",
+        "잠실역 맛집",
+        "송파구 음식점",
+        "잠실 한식",
+        "잠실 중식",
+        "잠실 일식",
+        "잠실 양식",
+        "잠실 분식",
+    ],
+    PlaceType.CAFE: [
+        "카페",
+        "잠실 카페",
+        "잠실역 카페",
+        "송파구 카페",
+        "잠실 디저트",
+    ],
 }
+
+_MAX_PAGE = 45
+_PAGE_SIZE = 15
 
 
 class KakaoLocalProvider(PlaceProvider):
     """Kakao Local API 기반 장소 조회."""
 
-    BASE_URL = "https://dapi.kakao.com/v2/local/search/keyword.json"
+    KEYWORD_URL = "https://dapi.kakao.com/v2/local/search/keyword.json"
+    CATEGORY_URL = "https://dapi.kakao.com/v2/local/search/category.json"
 
     def __init__(self, settings: Settings | None = None) -> None:
         self._settings = settings or get_settings()
@@ -47,22 +67,72 @@ class KakaoLocalProvider(PlaceProvider):
         return "kakao"
 
     def fetch_places(self, place_type: PlaceType) -> list[Place]:
-        """Kakao 키워드 검색으로 주변 장소를 조회합니다."""
-        headers = {
-            "Authorization": f"KakaoAK {self._settings.kakao_rest_api_key}",
-        }
-        params = {
-            "query": _SEARCH_KEYWORDS[place_type],
+        """키워드·카테고리 검색으로 반경 내 장소를 최대한 수집합니다."""
+        seen_ids: set[str] = set()
+        results: list[Place] = []
+
+        for query in _SEARCH_KEYWORDS[place_type]:
+            for doc in self._search_keyword(query, place_type):
+                place = self._parse_document(doc, place_type)
+                if place.id in seen_ids:
+                    continue
+                seen_ids.add(place.id)
+                results.append(place)
+
+        for doc in self._search_category(place_type):
+            place = self._parse_document(doc, place_type)
+            if place.id in seen_ids:
+                continue
+            seen_ids.add(place.id)
+            results.append(place)
+
+        logger.info("Kakao 수집 %d건 (중복 제거 후)", len(results))
+        return results
+
+    def _headers(self) -> dict[str, str]:
+        return {"Authorization": f"KakaoAK {self._settings.kakao_rest_api_key}"}
+
+    def _base_params(self) -> dict[str, Any]:
+        return {
             "x": self._settings.fraunhofer_office_lng,
             "y": self._settings.fraunhofer_office_lat,
             "radius": int(self._settings.max_walk_radius_meters),
-            "category_group_code": _CATEGORY_MAP[place_type],
-            "size": 15,
+            "size": _PAGE_SIZE,
         }
 
+    def _search_keyword(self, query: str, place_type: PlaceType) -> list[dict[str, Any]]:
+        documents: list[dict[str, Any]] = []
+        for page in range(1, _MAX_PAGE + 1):
+            params = {
+                **self._base_params(),
+                "query": query,
+                "category_group_code": _CATEGORY_MAP[place_type],
+                "page": page,
+            }
+            batch, is_end = self._request(self.KEYWORD_URL, params)
+            documents.extend(batch)
+            if is_end or not batch:
+                break
+        return documents
+
+    def _search_category(self, place_type: PlaceType) -> list[dict[str, Any]]:
+        documents: list[dict[str, Any]] = []
+        for page in range(1, _MAX_PAGE + 1):
+            params = {
+                **self._base_params(),
+                "category_group_code": _CATEGORY_MAP[place_type],
+                "page": page,
+            }
+            batch, is_end = self._request(self.CATEGORY_URL, params)
+            documents.extend(batch)
+            if is_end or not batch:
+                break
+        return documents
+
+    def _request(self, url: str, params: dict[str, Any]) -> tuple[list[dict[str, Any]], bool]:
         try:
-            with httpx.Client(timeout=10.0) as client:
-                response = client.get(self.BASE_URL, headers=headers, params=params)
+            with httpx.Client(timeout=15.0) as client:
+                response = client.get(url, headers=self._headers(), params=params)
                 response.raise_for_status()
                 data = response.json()
         except httpx.HTTPStatusError as exc:
@@ -71,13 +141,10 @@ class KakaoLocalProvider(PlaceProvider):
                 cause=exc,
             ) from exc
         except httpx.RequestError as exc:
-            raise PlaceProviderError(
-                "Kakao API 네트워크 오류",
-                cause=exc,
-            ) from exc
+            raise PlaceProviderError("Kakao API 네트워크 오류", cause=exc) from exc
 
-        documents = data.get("documents", [])
-        return [self._parse_document(doc, place_type) for doc in documents]
+        meta = data.get("meta", {})
+        return data.get("documents", []), bool(meta.get("is_end", True))
 
     def _parse_document(self, doc: dict[str, Any], place_type: PlaceType) -> Place:
         """Kakao API 응답 document → Place 모델 변환."""
@@ -91,7 +158,7 @@ class KakaoLocalProvider(PlaceProvider):
                 lat=float(doc["y"]),
                 lng=float(doc["x"]),
                 distance_meters=float(doc.get("distance", 0)),
-                rating=None,  # Kakao Local API는 평점 미제공 → Naver 등 보완 필요
+                rating=None,
                 rating_source=None,
                 price_per_person_krw=None,
                 phone=doc.get("phone") or None,
@@ -122,4 +189,6 @@ class KakaoLocalProvider(PlaceProvider):
             return PlaceCategory.WESTERN
         if "패스트" in name or "버거" in name:
             return PlaceCategory.FAST_FOOD
+        if "디저트" in name or "베이커리" in name:
+            return PlaceCategory.DESSERT
         return PlaceCategory.OTHER

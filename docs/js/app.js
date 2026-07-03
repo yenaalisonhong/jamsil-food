@@ -34,9 +34,17 @@ const state = {
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
 
-function formatPrice(krw) {
-  if (krw == null) return "가격 미정";
-  return `${krw.toLocaleString("ko-KR")}원`;
+function formatPrice(place) {
+  const lo = place.price_range_min_krw ?? place.price_per_person_krw;
+  const hi = place.price_range_max_krw ?? place.price_per_person_krw;
+  if (lo != null && hi != null) {
+    if (lo === hi) return `${lo.toLocaleString("ko-KR")}원`;
+    return `${lo.toLocaleString("ko-KR")}~${hi.toLocaleString("ko-KR")}원`;
+  }
+  if (place.price_per_person_krw != null) {
+    return `${place.price_per_person_krw.toLocaleString("ko-KR")}원`;
+  }
+  return "8,000~15,000원";
 }
 
 function formatWalk(minutes) {
@@ -50,9 +58,21 @@ function formatDistance(meters) {
   return `${(meters / 1000).toFixed(1)}km`;
 }
 
-function formatRating(rating) {
-  if (rating == null) return "평점 없음";
-  return `★ ${rating.toFixed(1)}`;
+function formatRating(place) {
+  if (typeof place === "number") {
+    return place == null ? "평점 없음" : `★ ${place.toFixed(1)}`;
+  }
+  if (place.rating != null) {
+    const count = place.review_count ? ` (${place.review_count})` : "";
+    return `★ ${place.rating.toFixed(1)}${count}`;
+  }
+  if (place.representative_review) {
+    const text = place.representative_review.length > 36
+      ? `${place.representative_review.slice(0, 36)}…`
+      : place.representative_review;
+    return `💬 ${text}`;
+  }
+  return "평점 없음";
 }
 
 function passesFilters(place) {
@@ -96,8 +116,8 @@ function renderPopupContent(place) {
     <span class="popup-category">${escapeHtml(place.category_label)}</span>
     <div class="popup-meta">
       <div><strong>메뉴</strong> ${escapeHtml(place.representative_menu || "-")}</div>
-      <div><strong>가격</strong> ${formatPrice(place.price_per_person_krw)}</div>
-      <div><strong>평점</strong> ${formatRating(place.rating)}</div>
+      <div><strong>가격</strong> ${formatPrice(place)}</div>
+      <div><strong>평점</strong> ${formatRating(place)}</div>
       <div><strong>거리</strong> ${formatWalk(place.walk_minutes)} (${formatDistance(place.distance_meters)})</div>
       <div><strong>주소</strong> ${escapeHtml(place.address)}</div>
     </div>
@@ -247,11 +267,11 @@ function renderCategoryList() {
           ${escapeHtml(place.name)}
           ${place.is_new_opening ? '<span class="place-card-new">NEW</span>' : ""}
         </div>
-        <div class="place-card-menu">🍴 ${escapeHtml(place.representative_menu || "시그니처 메뉴")}</div>
+        <div class="place-card-menu">🍴 ${escapeHtml(place.representative_menu || "점심 특선")}</div>
         <div class="place-card-stats">
-          <span class="stat-rating">${formatRating(place.rating)}</span>
+          <span class="stat-rating">${formatRating(place)}</span>
           <span class="stat-distance">${formatWalk(place.walk_minutes)} · ${formatDistance(place.distance_meters)}</span>
-          <span class="stat-price">${formatPrice(place.price_per_person_krw)}</span>
+          <span class="stat-price">${formatPrice(place)}</span>
         </div>
       `;
       card.addEventListener("click", () => {
@@ -311,7 +331,7 @@ function renderNewOpeningPanel() {
       <span class="new-opening-type">${escapeHtml(place.category_label)} · ${place.place_type === "cafe" ? "카페" : "맛집"}</span>
       <dl class="new-opening-details">
         <div><dt>대표메뉴</dt><dd>${escapeHtml(place.representative_menu || "-")}</dd></div>
-        <div><dt>가격</dt><dd class="price">${formatPrice(place.price_per_person_krw)}</dd></div>
+        <div><dt>가격</dt><dd class="price">${formatPrice(place)}</dd></div>
         <div><dt>도보</dt><dd class="walk">${formatWalk(place.walk_minutes)}</dd></div>
       </dl>
     </article>
@@ -371,9 +391,7 @@ function switchView(view) {
   });
 
   $("#view-map").classList.toggle("active", view === "map");
-  $("#view-map").hidden = view !== "map";
   $("#view-list").classList.toggle("active", view === "list");
-  $("#view-list").hidden = view !== "list";
 
   if (view === "map" && state.map) {
     setTimeout(() => state.map.invalidateSize(), 100);

@@ -48,7 +48,7 @@ class SiteHandler(SimpleHTTPRequestHandler):
                 sys.path.insert(0, scripts_dir)
             from export_places import build_payload, collect_places
 
-            places = collect_places(use_mock=False, enable_crawl=False)
+            places = collect_places(use_mock=False, enable_crawl=True)
             self._send_json(build_payload(places))
         except Exception as exc:
             self._send_json({"error": str(exc)}, status=500)

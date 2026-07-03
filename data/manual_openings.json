@@ -1,0 +1,11 @@
+{
+  "_comment": "개업일 수동 보강 DB. 키: naver_place_id 또는 place id",
+  "mock-r1": {
+    "opened_at": "2026-06-28",
+    "name": "잠실맛집 한식당"
+  },
+  "mock-c1": {
+    "opened_at": "2026-06-23",
+    "name": "스타파크 카페"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "_comment": "인당 가격 수동 보강 DB. 키: naver_place_id 또는 정규화된 상호명",
+  "mock-r1": {
+    "price_per_person_krw": 12000,
+    "notes": "Mock 샘플 - 한식 정식 기준"
+  },
+  "mock-r2": {
+    "price_per_person_krw": 9000,
+    "notes": "Mock 샘플 - 점심 특선"
+  },
+  "12032522": {
+    "price_per_person_krw": 11000,
+    "notes": "예시: 잠실 인근 식당 (실제 place_id로 교체)"
+  }
+}

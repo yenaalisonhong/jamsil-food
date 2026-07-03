@@ -110,6 +110,8 @@ class KakaoLocalProvider(PlaceProvider):
         name = category_name.lower()
         if "카페" in name or "coffee" in name:
             return PlaceCategory.CAFE
+        if "분식" in name:
+            return PlaceCategory.BUNSIK
         if "한식" in name:
             return PlaceCategory.KOREAN
         if "중식" in name or "중국" in name:

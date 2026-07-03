@@ -3,130 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>잠실맛집 | Fraunhofer 한국사무소 근처 맛집·카페</title>
-  <meta
-    name="description"
-    content="프라운호퍼 한국사무소(잠실) 근처 맛집·카페 추천 및 신규 오픈 알림 도구"
-  />
-  <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #0f1419;
-      --card: #1a2332;
-      --text: #e8edf4;
-      --muted: #9aa8b8;
-      --accent: #00a884;
-      --accent-soft: rgba(0, 168, 132, 0.15);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-      background: radial-gradient(circle at top, #1b2a3d 0%, var(--bg) 55%);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.6;
-    }
-
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem 3rem;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 5vw, 2.75rem);
-      line-height: 1.2;
-      margin-bottom: 0.75rem;
-    }
-
-    .lead {
-      color: var(--muted);
-      font-size: 1.05rem;
-      margin-bottom: 2rem;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .card h2 {
-      font-size: 1rem;
-      margin-bottom: 0.75rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-      color: var(--muted);
-    }
-
-    li + li {
-      margin-top: 0.35rem;
-    }
-
-    code {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 0.15rem 0.4rem;
-      border-radius: 6px;
-      font-size: 0.92em;
-    }
-
-    footer {
-      margin-top: 2rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-  </style>
+  <title>잠실맛집 | Fraunhofer 근처 맛집·카페</title>
+  <meta name="description" content="프라운호퍼 한국사무소(잠실) 근처 도보 15분 맛집·카페 추천" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <main>
-    <span class="badge">Fraunhofer Korea · Jamsil</span>
-    <h1>잠실맛집</h1>
-    <p class="lead">
-      프라운호퍼 한국사무소(잠실더샵스타파크) 근처 맛집·카페를 추천하고,
-      신규 오픈 소식을 알려 주는 내부 도구입니다.
-    </p>
+  <div class="app">
+    <header class="header">
+      <div class="header-top">
+        <div class="brand">
+          <span class="brand-badge">Fraunhofer Korea · Jamsil</span>
+          <h1>잠실맛집</h1>
+          <p class="subtitle">프라운호퍼 한국사무소 근처 · 도보 15분 이내 맛집·카페</p>
+        </div>
+        <div class="header-actions">
+          <button type="button" id="btn-refresh" class="btn btn-outline" title="데이터 새로고침">
+            <span class="icon">↻</span> 새로고침
+          </button>
+        </div>
+      </div>
 
-    <section class="card">
-      <h2>주요 기능</h2>
-      <ul>
-        <li>도보 15분 이내 맛집·카페 추천</li>
-        <li>평점·가격·거리 기준 필터</li>
-        <li>잠실 신규 오픈 알림</li>
-      </ul>
-    </section>
+      <div id="new-opening-banner" class="new-opening-banner hidden" aria-live="polite"></div>
 
-    <section class="card">
-      <h2>사용 API</h2>
-      <ul>
-        <li>Kakao Local API — 위치·거리 검색</li>
-        <li>Naver Search API — 지역·블로그·뉴스 검색</li>
-      </ul>
-    </section>
+      <section class="filters" aria-label="필터">
+        <div class="filter-group">
+          <label for="filter-rating">최소 평점 <output id="rating-value">4.0</output> <span class="filter-hint">(미정 시 통과)</span></label>
+          <input type="range" id="filter-rating" min="0" max="5" step="0.5" value="4" />
+        </div>
+        <div class="filter-group">
+          <label for="filter-price">최대 가격 <output id="price-value">15,000</output>원</label>
+          <input type="range" id="filter-price" min="5000" max="50000" step="1000" value="15000" />
+        </div>
+        <div class="filter-group">
+          <label for="filter-walk">최대 도보 <output id="walk-value">15</output>분</label>
+          <input type="range" id="filter-walk" min="5" max="20" step="1" value="15" />
+        </div>
+        <div class="filter-group filter-type">
+          <span class="filter-label">유형</span>
+          <div class="chip-group" role="group" aria-label="장소 유형">
+            <button type="button" class="chip active" data-type="all">전체</button>
+            <button type="button" class="chip" data-type="restaurant">맛집</button>
+            <button type="button" class="chip" data-type="cafe">카페</button>
+          </div>
+        </div>
+      </section>
 
-    <footer>
-      서비스 URL: <code>https://yenaalisonhong.github.io/jamsil-food/</code>
+      <nav class="tabs" role="tablist">
+        <button type="button" class="tab active" role="tab" aria-selected="true" data-view="map">
+          <span class="tab-icon">♥</span> 지도
+        </button>
+        <button type="button" class="tab" role="tab" aria-selected="false" data-view="list">
+          <span class="tab-icon">☰</span> 분류별 목록
+        </button>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section id="view-map" class="view view-map active" role="tabpanel">
+        <div id="map" class="map-container" aria-label="맛집 지도"></div>
+        <div id="map-popup" class="map-popup hidden" role="dialog" aria-modal="true">
+          <button type="button" class="popup-close" aria-label="닫기">×</button>
+          <div id="map-popup-body"></div>
+        </div>
+      </section>
+
+      <section id="view-list" class="view view-list" role="tabpanel" hidden>
+        <div id="category-list" class="category-list"></div>
+        <p id="list-empty" class="empty-state hidden">조건에 맞는 장소가 없습니다. 필터를 조정해 보세요.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span id="result-count">불러오는 중…</span>
+      <span class="footer-sep">·</span>
+      <span>데이터: Kakao Local API</span>
     </footer>
-  </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

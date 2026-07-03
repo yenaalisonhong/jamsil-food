@@ -26,6 +26,7 @@ class PlaceCategory(str, Enum):
     JAPANESE = "japanese"
     WESTERN = "western"
     FAST_FOOD = "fast_food"
+    BUNSIK = "bunsik"
     CAFE = "cafe"
     DESSERT = "dessert"
     OTHER = "other"
@@ -70,6 +71,10 @@ class Place(BaseModel):
         default=None,
         ge=0,
         description="인당 예상 가격(원)",
+    )
+    representative_menu: Optional[str] = Field(
+        default=None,
+        description="대표 메뉴 (표시용)",
     )
 
     # 신규 오픈 추적 (기능 C)

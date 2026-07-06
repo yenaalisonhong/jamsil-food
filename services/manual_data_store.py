@@ -6,6 +6,7 @@ API·크롤링으로 얻기 어려운 인당 가격, 개업일을 JSON 파일로
 
 import json
 import re
+import time
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
@@ -35,14 +36,40 @@ class ManualDataStore:
     def _load_json(self, path: Path) -> dict[str, Any]:
         if not path.exists():
             return {}
-        with path.open(encoding="utf-8") as f:
-            data = json.load(f)
-        return {k: v for k, v in data.items() if not k.startswith("_")}
+        for attempt in range(4):
+            try:
+                raw = path.read_text(encoding="utf-8").strip()
+                if not raw:
+                    return {}
+                data = json.loads(raw)
+                return {k: v for k, v in data.items() if not k.startswith("_")}
+            except json.JSONDecodeError:
+                logger.warning("JSON 손상/비어 있음 — 초기화: %s", path)
+                return {}
+            except OSError as exc:
+                if attempt < 3:
+                    time.sleep(0.5 * (attempt + 1))
+                    continue
+                logger.warning("JSON 읽기 실패 — 건너뜀: %s (%s)", path, exc)
+                return {}
+        return {}
 
     def _save_json(self, path: Path, data: dict[str, Any]) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
-        with path.open("w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
+        content = json.dumps(data, ensure_ascii=False, indent=2)
+        tmp = path.with_suffix(path.suffix + ".tmp")
+        tmp.write_text(content, encoding="utf-8")
+        for attempt in range(3):
+            try:
+                tmp.replace(path)
+                return
+            except OSError as exc:
+                if attempt < 2:
+                    time.sleep(0.5 * (attempt + 1))
+                    continue
+                logger.warning("캐시 replace 실패, 직접 저장 시도: %s", exc)
+        path.write_text(content, encoding="utf-8")
+        tmp.unlink(missing_ok=True)
 
     def get_price(
         self,
@@ -114,9 +141,12 @@ class ManualDataStore:
         return entry.get("data")
 
     def set_cached_detail(self, naver_place_id: str, data: dict[str, Any]) -> None:
-        cache = self._load_json(self._cache_path)
-        cache[naver_place_id] = {
-            "fetched_at": datetime.now().isoformat(),
-            "data": data,
-        }
-        self._save_json(self._cache_path, cache)
+        try:
+            cache = self._load_json(self._cache_path)
+            cache[naver_place_id] = {
+                "fetched_at": datetime.now().isoformat(),
+                "data": data,
+            }
+            self._save_json(self._cache_path, cache)
+        except OSError as exc:
+            logger.warning("캐시 저장 실패 (id=%s): %s", naver_place_id, exc)

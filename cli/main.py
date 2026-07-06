@@ -19,6 +19,7 @@ from models.place import Cafe, Place, Restaurant
 from providers.kakao_local import KakaoLocalProvider
 from providers.mock_provider import MockPlaceProvider
 from providers.naver_local import NaverLocalProvider
+from providers.naver_map_list import NaverMapListProvider
 from services.alert_service import AlertService
 from services.manual_data_store import ManualDataStore
 from services.naver_place_crawler import NaverPlaceCrawler
@@ -62,6 +63,12 @@ def _build_providers(use_mock: bool) -> list:
             providers.append(NaverLocalProvider(settings))
         except ConfigurationError as exc:
             logger.warning("Naver Provider 초기화 실패: %s", exc)
+
+    # Naver Place 목록 크롤링 — API보다 많은 주변 장소 수집
+    try:
+        providers.append(NaverMapListProvider(settings))
+    except Exception as exc:
+        logger.warning("Naver Map List Provider 초기화 실패: %s", exc)
 
     if not providers:
         console.print(

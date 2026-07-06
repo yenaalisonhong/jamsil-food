@@ -80,6 +80,10 @@ class Place(BaseModel):
         default=None,
         description="대표 리뷰 한 줄 (평점 대체 표시용)",
     )
+    representative_reviews: Optional[list[str]] = Field(
+        default=None,
+        description="대표 리뷰 1~2개 (평점 호버/클릭 표시용)",
+    )
     price_range_min_krw: Optional[int] = Field(
         default=None,
         ge=0,

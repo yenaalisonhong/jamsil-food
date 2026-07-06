@@ -12,7 +12,9 @@ import httpx
 
 from config.settings import Settings, get_settings
 from models.place import Place, PlaceCategory, PlaceType
+from services.category_classifier import guess_category
 from providers.base import PlaceProvider
+from providers.jamsil_commercial import kakao_anchors, kakao_keywords
 from utils.errors import ConfigurationError, PlaceProviderError
 from utils.logger import get_logger
 
@@ -27,22 +29,68 @@ _CATEGORY_MAP = {
 _SEARCH_KEYWORDS = {
     PlaceType.RESTAURANT: [
         "음식점",
+        "맛집",
         "잠실 맛집",
         "잠실역 맛집",
         "송파구 음식점",
+        "신천동 맛집",
+        "올림픽로35가길 맛집",
         "잠실 한식",
         "잠실 중식",
         "잠실 일식",
         "잠실 양식",
         "잠실 분식",
+        "잠실 치킨",
+        "잠실 피자",
+        "장미상가 맛집",
+        "장미상가 음식점",
+        "송리단길 맛집",
+        "백제고분로 맛집",
+        "신천동 맛집",
+        "올림픽로35가길 맛집",
+        "석촌호수 맛집",
+        "롯데월드몰 맛집",
+        "잠실새내 맛집",
+        "방이동 맛집",
     ],
     PlaceType.CAFE: [
         "카페",
+        "커피",
         "잠실 카페",
         "잠실역 카페",
         "송파구 카페",
+        "신천동 카페",
+        "올림픽로35가길 카페",
         "잠실 디저트",
+        "잠실 베이커리",
+        "장미상가 카페",
+        "송리단길 카페",
+        "백제고분로 카페",
+        "신천동 카페",
+        "올림픽로35가길 카페",
+        "석촌호수 카페",
+        "롯데월드몰 카페",
+        "잠실새내 카페",
+        "방이동 카페",
     ],
+}
+
+# 상권별 보조 검색 중심 — API 결과 상한·거리순 편향으로 밀집 상가가 누락되는 것을 보완
+_SEARCH_ANCHORS: list[tuple[str, float, float]] = [
+    ("사무실", 37.51692, 127.10282),
+    ("송리단길", 37.5102, 127.1088),
+    ("잠실역", 37.5135, 127.0998),
+    ("석촌호수", 37.5092, 127.1068),
+    ("롯데월드몰", 37.5113, 127.0986),
+    ("잠실새내", 37.5117, 127.0864),
+    ("신천동", 37.5165, 127.1035),
+    ("방이동", 37.5148, 127.1105),
+    *kakao_anchors(),
+]
+
+_ANCHOR_KEYWORDS = {
+    PlaceType.RESTAURANT: ("맛집", "음식점", "한식"),
+    PlaceType.CAFE: ("카페", "디저트", "베이커리"),
 }
 
 _MAX_PAGE = 45
@@ -71,7 +119,7 @@ class KakaoLocalProvider(PlaceProvider):
         seen_ids: set[str] = set()
         results: list[Place] = []
 
-        for query in _SEARCH_KEYWORDS[place_type]:
+        for query in _SEARCH_KEYWORDS[place_type] + kakao_keywords(place_type):
             for doc in self._search_keyword(query, place_type):
                 place = self._parse_document(doc, place_type)
                 if place.id in seen_ids:
@@ -86,25 +134,69 @@ class KakaoLocalProvider(PlaceProvider):
             seen_ids.add(place.id)
             results.append(place)
 
+        for anchor_name, lat, lng in _SEARCH_ANCHORS:
+            anchor_radius = self._settings.max_walk_radius_meters
+            for doc in self._search_category(
+                place_type,
+                lat=lat,
+                lng=lng,
+                radius_m=anchor_radius,
+            ):
+                place = self._parse_document(doc, place_type)
+                if place.id in seen_ids:
+                    continue
+                seen_ids.add(place.id)
+                results.append(place)
+
+            for keyword in _ANCHOR_KEYWORDS[place_type]:
+                for doc in self._search_keyword(
+                    keyword,
+                    place_type,
+                    lat=lat,
+                    lng=lng,
+                    radius_m=anchor_radius,
+                ):
+                    place = self._parse_document(doc, place_type)
+                    if place.id in seen_ids:
+                        continue
+                    seen_ids.add(place.id)
+                    results.append(place)
+
+            logger.debug("Kakao 앵커 '%s' 수집 후 누적 %d건", anchor_name, len(results))
+
         logger.info("Kakao 수집 %d건 (중복 제거 후)", len(results))
         return results
 
     def _headers(self) -> dict[str, str]:
         return {"Authorization": f"KakaoAK {self._settings.kakao_rest_api_key}"}
 
-    def _base_params(self) -> dict[str, Any]:
+    def _base_params(
+        self,
+        *,
+        lat: float | None = None,
+        lng: float | None = None,
+        radius_m: float | None = None,
+    ) -> dict[str, Any]:
         return {
-            "x": self._settings.fraunhofer_office_lng,
-            "y": self._settings.fraunhofer_office_lat,
-            "radius": int(self._settings.max_walk_radius_meters),
+            "x": lng if lng is not None else self._settings.fraunhofer_office_lng,
+            "y": lat if lat is not None else self._settings.fraunhofer_office_lat,
+            "radius": int(radius_m if radius_m is not None else self._settings.max_walk_radius_meters),
             "size": _PAGE_SIZE,
         }
 
-    def _search_keyword(self, query: str, place_type: PlaceType) -> list[dict[str, Any]]:
+    def _search_keyword(
+        self,
+        query: str,
+        place_type: PlaceType,
+        *,
+        lat: float | None = None,
+        lng: float | None = None,
+        radius_m: float | None = None,
+    ) -> list[dict[str, Any]]:
         documents: list[dict[str, Any]] = []
         for page in range(1, _MAX_PAGE + 1):
             params = {
-                **self._base_params(),
+                **self._base_params(lat=lat, lng=lng, radius_m=radius_m),
                 "query": query,
                 "category_group_code": _CATEGORY_MAP[place_type],
                 "page": page,
@@ -115,11 +207,18 @@ class KakaoLocalProvider(PlaceProvider):
                 break
         return documents
 
-    def _search_category(self, place_type: PlaceType) -> list[dict[str, Any]]:
+    def _search_category(
+        self,
+        place_type: PlaceType,
+        *,
+        lat: float | None = None,
+        lng: float | None = None,
+        radius_m: float | None = None,
+    ) -> list[dict[str, Any]]:
         documents: list[dict[str, Any]] = []
         for page in range(1, _MAX_PAGE + 1):
             params = {
-                **self._base_params(),
+                **self._base_params(lat=lat, lng=lng, radius_m=radius_m),
                 "category_group_code": _CATEGORY_MAP[place_type],
                 "page": page,
             }
@@ -153,7 +252,11 @@ class KakaoLocalProvider(PlaceProvider):
                 id=doc["id"],
                 name=doc["place_name"],
                 place_type=place_type,
-                category=self._guess_category(doc.get("category_name", "")),
+                category=guess_category(
+                    doc.get("category_name", ""),
+                    place_type,
+                    name=doc.get("place_name", ""),
+                ),
                 address=doc.get("road_address_name") or doc.get("address_name", ""),
                 lat=float(doc["y"]),
                 lng=float(doc["x"]),
@@ -171,24 +274,3 @@ class KakaoLocalProvider(PlaceProvider):
                 cause=exc,
             ) from exc
 
-    @staticmethod
-    def _guess_category(category_name: str) -> PlaceCategory:
-        """Kakao category_name 문자열에서 PlaceCategory 추정."""
-        name = category_name.lower()
-        if "카페" in name or "coffee" in name:
-            return PlaceCategory.CAFE
-        if "분식" in name:
-            return PlaceCategory.BUNSIK
-        if "한식" in name:
-            return PlaceCategory.KOREAN
-        if "중식" in name or "중국" in name:
-            return PlaceCategory.CHINESE
-        if "일식" in name or "일본" in name:
-            return PlaceCategory.JAPANESE
-        if "양식" in name or "이탈" in name:
-            return PlaceCategory.WESTERN
-        if "패스트" in name or "버거" in name:
-            return PlaceCategory.FAST_FOOD
-        if "디저트" in name or "베이커리" in name:
-            return PlaceCategory.DESSERT
-        return PlaceCategory.OTHER

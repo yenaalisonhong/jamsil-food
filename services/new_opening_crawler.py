@@ -63,12 +63,13 @@ class NewOpeningCrawler:
             return []
 
         places: list[Place] = []
-        for name in names:
+        for name in sorted(names)[:12]:
             matched = self._match_place_by_name(local_provider, name)
             if matched:
-                # 블로그 기반은 정확한 개업일이 없으므로 '최근 게시' 기준 추정
                 if matched.opened_at is None:
-                    matched = matched.model_copy(update={"opened_at": date.today()})
+                    matched = matched.model_copy(
+                        update={"opened_at": date.today(), "source": "naver_blog"},
+                    )
                 places.append(matched)
 
         return places
@@ -129,4 +130,11 @@ class NewOpeningCrawler:
         place_type = (
             PlaceType.CAFE if "카페" in name or "커피" in name else PlaceType.RESTAURANT
         )
-        return provider._parse_item(items[0], place_type)
+        place = provider._parse_item(items[0], place_type)
+        office_lat = self._settings.fraunhofer_office_lat
+        office_lng = self._settings.fraunhofer_office_lng
+        max_m = self._settings.max_walk_minutes * 80
+        dist = provider._haversine_m(office_lat, office_lng, place.lat, place.lng)
+        if dist > max_m:
+            return None
+        return place

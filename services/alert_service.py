@@ -10,7 +10,7 @@ from email.mime.text import MIMEText
 from models.alert import NewOpeningAlert
 from models.place import Place
 from services.filter_service import FilterService
-from services.new_opening_crawler import NewOpeningCrawler
+from services.new_opening_discovery import NewOpeningDiscovery
 from services.place_enricher import PlaceEnricher
 from services.recommendation_service import RecommendationService
 from config.settings import Settings, get_settings
@@ -48,10 +48,10 @@ class AlertService:
 
         if self._use_blog_crawler:
             try:
-                blog_places = NewOpeningCrawler(self._settings).fetch_candidates()
+                blog_places = NewOpeningDiscovery(self._settings).fetch_candidates()
                 places = self._enricher.merge_duplicates(places + blog_places)
-            except ConfigurationError as exc:
-                logger.warning("신규 오픈 블로그 검색 스킵: %s", exc)
+            except Exception as exc:
+                logger.warning("신규 오픈 후보 수집 스킵: %s", exc)
 
         new_places = self._filter.filter_new_openings(places)
 

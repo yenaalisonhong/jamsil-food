@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>식사 기록 | 잠실맛집</title>
+  <meta name="description" content="매일 간 식당과 별점을 캘린더에 기록하세요" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20260706d" />
+</head>
+<body class="diary-page">
+  <div class="app diary-app">
+    <header class="header diary-header">
+      <div class="header-top">
+        <div class="brand">
+          <span class="brand-badge">Fraunhofer Korea · Jamsil</span>
+          <h1>식사 기록</h1>
+          <p class="subtitle">달력에서 날짜를 선택해 식당과 별점을 남겨 보세요</p>
+        </div>
+        <div class="header-actions">
+          <a href="index.html" class="btn btn-outline diary-nav-link">
+            <span class="icon">♥</span> 맛집 지도
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="diary-main">
+      <div class="diary-toolbar">
+        <button type="button" id="diary-prev-month" class="btn btn-outline diary-nav-btn" aria-label="이전 달">‹</button>
+        <h2 id="diary-month-label" class="diary-month-label">불러오는 중…</h2>
+        <button type="button" id="diary-next-month" class="btn btn-outline diary-nav-btn" aria-label="다음 달">›</button>
+        <button type="button" id="diary-today" class="btn btn-outline diary-today-btn">오늘</button>
+      </div>
+
+      <div class="diary-calendar" role="grid" aria-labelledby="diary-month-label">
+        <div class="diary-weekdays" aria-hidden="true">
+          <span class="diary-weekday diary-weekday--sun">일</span>
+          <span class="diary-weekday">월</span>
+          <span class="diary-weekday">화</span>
+          <span class="diary-weekday">수</span>
+          <span class="diary-weekday">목</span>
+          <span class="diary-weekday">금</span>
+          <span class="diary-weekday diary-weekday--sat">토</span>
+        </div>
+        <div id="diary-grid" class="diary-grid" aria-live="polite"></div>
+      </div>
+
+      <p class="diary-hint">날짜를 누르면 기록 페이지로 이동합니다. 저장된 기록은 달력에 표시됩니다.</p>
+    </main>
+
+    <footer class="footer">
+      <span id="diary-stats">기록 0건</span>
+      <span class="footer-sep">·</span>
+      <span>로컬 저장 (브라우저)</span>
+    </footer>
+  </div>
+
+  <script src="js/diary-shared.js?v=20260706d"></script>
+  <script src="js/diary.js?v=20260706d"></script>
+</body>
+</html>

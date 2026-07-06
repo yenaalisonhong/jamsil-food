@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>식사 기록 | 잠실맛집</title>
+  <meta name="description" content="선택한 날짜의 식당과 별점을 기록하세요" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20260706d" />
+</head>
+<body class="diary-page diary-day-page">
+  <div class="app diary-app">
+    <header class="header diary-header">
+      <div class="header-top">
+        <div class="brand">
+          <span class="brand-badge">Fraunhofer Korea · Jamsil</span>
+          <p class="diary-modal-eyebrow">식사 기록</p>
+          <h1 id="diary-day-title" class="diary-day-title">날짜 불러오는 중…</h1>
+        </div>
+        <div class="header-actions">
+          <a id="diary-back-link" href="diary.html" class="btn btn-outline diary-nav-link">← 캘린더</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="diary-day-main">
+      <section class="diary-day-section">
+        <h2 class="diary-day-section-title">오늘의 기록</h2>
+        <div id="diary-entry-list" class="diary-entry-list diary-entry-list--page"></div>
+      </section>
+
+      <section class="diary-day-section">
+        <h2 class="diary-day-section-title">새 기록 추가</h2>
+        <form id="diary-entry-form" class="diary-entry-form diary-entry-form--page">
+          <label class="diary-field">
+            <span>식당명</span>
+            <input type="text" id="diary-name" name="name" list="diary-place-suggestions" placeholder="식당 이름" required autocomplete="off" />
+            <datalist id="diary-place-suggestions"></datalist>
+          </label>
+          <fieldset class="diary-field diary-rating-field">
+            <legend>별점</legend>
+            <div class="diary-star-picker" role="radiogroup" aria-label="별점 선택">
+              <input type="radio" name="diary-rating" id="diary-star-5" value="5" />
+              <label for="diary-star-5" title="5점"><span class="sr-only">5점</span>★</label>
+              <input type="radio" name="diary-rating" id="diary-star-4" value="4" checked />
+              <label for="diary-star-4" title="4점"><span class="sr-only">4점</span>★</label>
+              <input type="radio" name="diary-rating" id="diary-star-3" value="3" />
+              <label for="diary-star-3" title="3점"><span class="sr-only">3점</span>★</label>
+              <input type="radio" name="diary-rating" id="diary-star-2" value="2" />
+              <label for="diary-star-2" title="2점"><span class="sr-only">2점</span>★</label>
+              <input type="radio" name="diary-rating" id="diary-star-1" value="1" />
+              <label for="diary-star-1" title="1점"><span class="sr-only">1점</span>★</label>
+            </div>
+            <p id="diary-rating-label" class="diary-rating-label" aria-live="polite">4점 선택됨</p>
+          </fieldset>
+          <label class="diary-field">
+            <span>메모 <span class="diary-optional">(선택)</span></span>
+            <textarea id="diary-memo" name="memo" rows="3" placeholder="메뉴, 동행, 한 줄 후기…"></textarea>
+          </label>
+          <button type="submit" class="btn btn-new diary-submit-btn">기록 추가</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span id="diary-stats">기록 0건</span>
+      <span class="footer-sep">·</span>
+      <span>로컬 저장 (브라우저)</span>
+    </footer>
+  </div>
+
+  <script src="js/diary-shared.js?v=20260706d"></script>
+  <script src="js/diary-day.js?v=20260706d"></script>
+</body>
+</html>

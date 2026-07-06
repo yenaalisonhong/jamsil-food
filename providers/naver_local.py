@@ -16,7 +16,9 @@ import httpx
 
 from config.settings import Settings, get_settings
 from models.place import Place, PlaceCategory, PlaceType
+from services.category_classifier import guess_category
 from providers.base import PlaceProvider
+from providers.jamsil_commercial import api_queries
 from utils.coordinates import naver_map_to_wgs84
 from utils.errors import ConfigurationError, PlaceProviderError
 from utils.logger import get_logger
@@ -26,32 +28,83 @@ logger = get_logger(__name__)
 
 _BASE_URL = "https://openapi.naver.com/v1/search/local.json"
 _DISPLAY = 5
-_MAX_START = 50
+_MAX_START = 100
 _REQUEST_DELAY_SEC = 0.35
+_SORT_ORDERS = ("comment", "sim")
 
 _RESTAURANT_QUERIES = [
     "잠실역 맛집",
+    "잠실 맛집",
     "잠실 한식",
     "잠실 중식",
     "잠실 일식",
     "잠실 양식",
     "잠실 분식",
     "잠실 패스트푸드",
+    "잠실 치킨",
+    "잠실 피자",
+    "잠실 고기",
+    "잠실 국수",
     "송파구 잠실 음식점",
+    "송파구 신천동 맛집",
     "올림픽로 음식점",
+    "올림픽로35가길 음식점",
     "석촌호수 맛집",
     "롯데월드몰 맛집",
     "잠실새내 맛집",
+    "장미상가 맛집",
+    "장미상가 음식점",
+    "송리단길 맛집",
+    "백제고분로 맛집",
+    "신천동 맛집",
+    "신천동 음식점",
+    "올림픽로35가길 맛집",
+    "잠실더샵 맛집",
+    "방이동 맛집",
+    "풍납동 맛집",
+    "현대백화점 잠실점 맛집",
+    "엘롯데 맛집",
+    "잠실 태국음식",
+    "잠실 베트남음식",
+    "잠실 샤브샤브",
+    "잠실 회",
 ]
 _CAFE_QUERIES = [
     "잠실역 카페",
     "잠실 카페",
     "송파구 잠실 카페",
+    "송파구 신천동 카페",
     "잠실 디저트",
+    "잠실 베이커리",
+    "잠실 브런치",
     "석촌호수 카페",
     "롯데월드몰 카페",
     "잠실새내 카페",
+    "장미상가 카페",
+    "송리단길 카페",
+    "백제고분로 카페",
+    "신천동 카페",
+    "올림픽로35가길 카페",
+    "잠실더샵 카페",
+    "방이동 카페",
+    "잠실 커피",
+    "잠실 티하우스",
+    "스타벅스 잠실",
+    "이디야 잠실",
+    "투썸플레이스 잠실",
 ]
+
+
+def _all_queries(place_type: PlaceType) -> list[str]:
+    base = _RESTAURANT_QUERIES if place_type == PlaceType.RESTAURANT else _CAFE_QUERIES
+    seen = set(base)
+    merged = list(base)
+    for query in api_queries(place_type):
+        if query in seen:
+            continue
+        seen.add(query)
+        merged.append(query)
+    return merged
 
 
 class NaverLocalProvider(PlaceProvider):
@@ -71,7 +124,7 @@ class NaverLocalProvider(PlaceProvider):
 
     def fetch_places(self, place_type: PlaceType) -> list[Place]:
         """여러 키워드·페이지로 지역 검색 후 중복 제거."""
-        queries = _RESTAURANT_QUERIES if place_type == PlaceType.RESTAURANT else _CAFE_QUERIES
+        queries = _all_queries(place_type)
         seen_ids: set[str] = set()
         results: list[Place] = []
 
@@ -109,16 +162,23 @@ class NaverLocalProvider(PlaceProvider):
 
     def _search_all_pages(self, query: str) -> list[dict[str, Any]]:
         items: list[dict[str, Any]] = []
-        for start in range(1, _MAX_START + 1, _DISPLAY):
-            batch = self._search(query, start=start)
-            if not batch:
-                break
-            items.extend(batch)
-            if len(batch) < _DISPLAY:
-                break
+        seen_links: set[str] = set()
+        for sort in _SORT_ORDERS:
+            for start in range(1, _MAX_START + 1, _DISPLAY):
+                batch = self._search(query, start=start, sort=sort)
+                if not batch:
+                    break
+                for item in batch:
+                    link = item.get("link", "")
+                    if link in seen_links:
+                        continue
+                    seen_links.add(link)
+                    items.append(item)
+                if len(batch) < _DISPLAY:
+                    break
         return items
 
-    def _search(self, query: str, start: int = 1) -> list[dict[str, Any]]:
+    def _search(self, query: str, start: int = 1, sort: str = "comment") -> list[dict[str, Any]]:
         """단일 키워드 지역 검색."""
         elapsed = time.monotonic() - self._last_request_at
         if elapsed < _REQUEST_DELAY_SEC:
@@ -128,7 +188,7 @@ class NaverLocalProvider(PlaceProvider):
             "X-Naver-Client-Id": self._settings.naver_client_id,
             "X-Naver-Client-Secret": self._settings.naver_client_secret,
         }
-        params = {"query": query, "display": _DISPLAY, "start": start, "sort": "comment"}
+        params = {"query": query, "display": _DISPLAY, "start": start, "sort": sort}
 
         try:
             with httpx.Client(timeout=10.0) as client:
@@ -166,7 +226,7 @@ class NaverLocalProvider(PlaceProvider):
                 id=f"naver:{place_id}",
                 name=name,
                 place_type=place_type,
-                category=self._guess_category(category_raw, place_type),
+                category=guess_category(category_raw, place_type, name=name),
                 address=item.get("roadAddress") or item.get("address", ""),
                 lat=lat,
                 lng=lng,
@@ -181,27 +241,6 @@ class NaverLocalProvider(PlaceProvider):
             )
         except (KeyError, ValueError, TypeError) as exc:
             raise PlaceProviderError(f"Naver 응답 파싱 실패: {item}", cause=exc) from exc
-
-    @staticmethod
-    def _guess_category(category_name: str, place_type: PlaceType) -> PlaceCategory:
-        if place_type == PlaceType.CAFE:
-            return PlaceCategory.CAFE
-        name = category_name.lower()
-        if "한식" in name:
-            return PlaceCategory.KOREAN
-        if "중식" in name or "중국" in name:
-            return PlaceCategory.CHINESE
-        if "일식" in name or "일본" in name:
-            return PlaceCategory.JAPANESE
-        if "양식" in name:
-            return PlaceCategory.WESTERN
-        if "분식" in name:
-            return PlaceCategory.BUNSIK
-        if "패스트" in name:
-            return PlaceCategory.FAST_FOOD
-        if "디저트" in name or "베이커리" in name:
-            return PlaceCategory.DESSERT
-        return PlaceCategory.OTHER
 
     @staticmethod
     def _haversine_m(lat1: float, lng1: float, lat2: float, lng2: float) -> float:

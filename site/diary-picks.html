@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>직접 고른 맛집 모음 | 잠실맛집</title>
+  <meta name="description" content="식사 기록에서 별점 4점 이상을 준 맛집 목록" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20260706g" />
+</head>
+<body class="diary-page diary-picks-page">
+  <div class="app diary-app">
+    <header class="header diary-header">
+      <div class="header-top">
+        <div class="brand">
+          <span class="brand-badge">Fraunhofer Korea · Jamsil</span>
+          <h1>직접 고른 맛집 모음</h1>
+          <p class="subtitle">식사 기록에서 별점 4점 이상을 준 곳만 모았어요</p>
+        </div>
+        <div class="header-actions">
+          <a href="diary.html" class="btn btn-outline diary-nav-link">
+            <span class="icon">📅</span> 식사 기록
+          </a>
+          <a href="index.html" class="btn btn-outline diary-nav-link">
+            <span class="icon">♥</span> 맛집 지도
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="diary-picks-main">
+      <p id="diary-picks-summary" class="diary-picks-summary" aria-live="polite">불러오는 중…</p>
+      <div id="diary-picks-list" class="diary-picks-list" aria-live="polite"></div>
+    </main>
+
+    <footer class="footer">
+      <span id="diary-picks-stats">0곳</span>
+      <span class="footer-sep">·</span>
+      <span>식사 기록 기준 (로컬 저장)</span>
+    </footer>
+  </div>
+
+  <script src="js/diary-shared.js?v=20260706g"></script>
+  <script src="js/diary-picks.js?v=20260706g"></script>
+</body>
+</html>

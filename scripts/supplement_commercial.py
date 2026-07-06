@@ -116,6 +116,9 @@ def supplement_commercial(
         if geo.is_within_walk_range(geo.enrich_place(p))
     ]
     payload = build_payload(within)
+    from scripts.reclassify_places import finalize_places_data
+
+    finalize_places_data(payload)
 
     for target in TARGETS:
         if target.parent.exists() or target == TARGETS[0]:

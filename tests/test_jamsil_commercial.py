@@ -36,6 +36,15 @@ def test_deep_searches_include_named_seeds() -> None:
     assert "장미상가 음식점" in queries
 
 
+def test_deep_searches_include_cafe_named_seeds() -> None:
+    queries = [q for q, _, _ in deep_commercial_searches(PlaceType.CAFE)]
+    assert "비엔나커피센트럴" in queries
+    assert "리사르커피" in queries
+    assert "푸가커피" in queries
+    assert "하삼동커피" in queries
+    assert "장미상가 카페" in queries
+
+
 def test_deep_searches_include_cuisine_variants() -> None:
     queries = [q for q, _, _ in deep_commercial_searches(PlaceType.RESTAURANT)]
     assert any("장미상가" in q and "한식" in q for q in queries)

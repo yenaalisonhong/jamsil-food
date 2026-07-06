@@ -66,6 +66,17 @@ COMMERCIAL_ANCHORS: list[CommercialAnchor] = [
         ("더샵스타파크", "스타파크 상가", "잠실더샵 상가", "올림픽로35가길 스타파크"),
     ),
     CommercialAnchor(
+        "잠실역 상권",
+        37.51345,
+        127.10015,
+        (
+            "잠실역 카페",
+            "현대타워 카페",
+            "올림픽로 카페",
+            "잠실역 근처 카페",
+        ),
+    ),
+    CommercialAnchor(
         "파크리오 상가",
         37.5191,
         127.1070,
@@ -178,6 +189,12 @@ _PRIORITY_CAFE: dict[str, tuple[str, ...]] = {
         "르엘 잠실 카페",
         "잠실르엘 카페",
     ),
+    "잠실역 상권": (
+        "잠실역 카페",
+        "현대타워 카페",
+        "올림픽로 카페",
+        "잠실역 근처 카페",
+    ),
     "파크리오 상가": ("파크리오 상가 카페",),
     "잠실리센츠 상가": ("잠실리센츠 카페",),
     "잠실엘스": ("잠실엘스 카페",),
@@ -239,6 +256,30 @@ _DEEP_NAMED_SEEDS: dict[str, tuple[str, ...]] = {
         "신선미미사리우동",
         "푸에르코",
         "하삼동커피",
+    ),
+}
+
+# 심층 조사: 카페 상호명 시드 (일반 키워드 검색 누락 방지)
+_DEEP_CAFE_NAMED_SEEDS: dict[str, tuple[str, ...]] = {
+    "장미상가": (
+        "리사르커피",
+        "푸가커피",
+        "커피나인",
+        "나이스카페인클럽",
+        "매머드익스프레스",
+    ),
+    "잠실역 상권": (
+        "비엔나커피센트럴",
+        "비엔나커피하우스",
+        "파스쿠찌 잠실역",
+        "봄날의서재",
+    ),
+    "르엘 잠실": (
+        "하삼동커피",
+    ),
+    "홈플러스 잠실점": (
+        "스타벅스 홈플러스",
+        "이디야 홈플러스",
     ),
 }
 
@@ -331,6 +372,17 @@ def deep_commercial_searches(place_type: PlaceType) -> list[tuple[str, float, fl
             for suffix in _DEEP_CUISINE_SUFFIXES:
                 _add(f"{label} {suffix}", anchor.lat, anchor.lng)
             for name in _DEEP_NAMED_SEEDS.get(anchor.name, ()):
+                _add(name, anchor.lat, anchor.lng)
+        elif place_type == PlaceType.CAFE:
+            for name in _DEEP_CAFE_NAMED_SEEDS.get(anchor.name, ()):
+                _add(name, anchor.lat, anchor.lng)
+
+    if place_type == PlaceType.CAFE:
+        deep_names = nearest_commercial_names()
+        for anchor in COMMERCIAL_ANCHORS:
+            if anchor.name in deep_names:
+                continue
+            for name in _DEEP_CAFE_NAMED_SEEDS.get(anchor.name, ()):
                 _add(name, anchor.lat, anchor.lng)
 
     return searches

@@ -21,13 +21,16 @@ def extract_naver_place_id(url: str) -> Optional[str]:
     return None
 
 
+def _pcmap_category(_place_type: str = "restaurant") -> str:
+    """pcmap.place.naver.com은 cafe/ 경로가 404 — restaurant 경로를 사용합니다."""
+    return "restaurant"
+
+
 def build_place_home_url(place_id: str, place_type: str = "restaurant") -> str:
     """크롤링용 Naver Place 홈 URL."""
-    category = "cafe" if place_type == "cafe" else "restaurant"
-    return f"https://pcmap.place.naver.com/{category}/{place_id}/home"
+    return f"https://pcmap.place.naver.com/{_pcmap_category(place_type)}/{place_id}/home"
 
 
 def build_place_menu_url(place_id: str, place_type: str = "restaurant") -> str:
     """메뉴 가격 크롤링용 URL."""
-    category = "cafe" if place_type == "cafe" else "restaurant"
-    return f"https://pcmap.place.naver.com/{category}/{place_id}/menu"
+    return f"https://pcmap.place.naver.com/{_pcmap_category(place_type)}/{place_id}/menu"

@@ -139,6 +139,7 @@ class PlaceEnricher:
 
         merged = place.model_copy(update=updates) if updates else place
 
+        menu_names: list[str] | None = None
         if naver_id:
             cached = self._store.get_cached_detail(naver_id) or {}
             cached_menu = cached.get("representative_menu")
@@ -148,12 +149,21 @@ class PlaceEnricher:
                 and not is_generic_menu(cached_menu)
             ):
                 merged = merged.model_copy(update={"representative_menu": cached_menu})
+            items = cached.get("menu_items")
+            if isinstance(items, list):
+                names = [
+                    str(item.get("name") or item).strip()
+                    for item in items
+                    if str(item.get("name") if isinstance(item, dict) else item or "").strip()
+                ]
+                if names:
+                    menu_names = names
 
-        refined_type = refine_place_type(merged)
+        refined_type = refine_place_type(merged, menu_names=menu_names)
         if refined_type != merged.place_type:
             merged = merged.model_copy(update={"place_type": refined_type})
 
-        refined = refine_category(merged)
+        refined = refine_category(merged, menu_names=menu_names)
         if refined != merged.category:
             merged = merged.model_copy(update={"category": refined})
 

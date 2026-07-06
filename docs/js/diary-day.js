@@ -56,16 +56,20 @@ function renderEntryList() {
     return;
   }
 
-  list.innerHTML = entries.map((entry, idx) => `
+  list.innerHTML = entries.map((entry, idx) => {
+    const priceText = DiaryStorage.formatPriceRange(entry.price_min_krw, entry.price_max_krw);
+    return `
     <article class="diary-entry-card">
       <div class="diary-entry-main">
         <h3 class="diary-entry-name">${DiaryStorage.escapeHtml(entry.name)}</h3>
         <div class="diary-entry-stars">${DiaryStorage.starsHtml(entry.rating)}</div>
+        ${priceText ? `<p class="diary-entry-price">${DiaryStorage.escapeHtml(priceText)}</p>` : ""}
         ${entry.memo ? `<p class="diary-entry-memo">${DiaryStorage.escapeHtml(entry.memo)}</p>` : ""}
       </div>
       <button type="button" class="diary-entry-delete" data-idx="${idx}" aria-label="${DiaryStorage.escapeHtml(entry.name)} 삭제">삭제</button>
     </article>
-  `).join("");
+  `;
+  }).join("");
 
   list.querySelectorAll(".diary-entry-delete").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -91,6 +95,20 @@ function reloadFromStorage() {
   renderEntryList();
 }
 
+function readPriceInputs() {
+  return DiaryStorage.normalizePriceFields({
+    price_min_krw: $("#diary-price-min")?.value,
+    price_max_krw: $("#diary-price-max")?.value,
+  });
+}
+
+function clearPriceInputs() {
+  const minEl = $("#diary-price-min");
+  const maxEl = $("#diary-price-max");
+  if (minEl) minEl.value = "";
+  if (maxEl) maxEl.value = "";
+}
+
 function bindForm() {
   $$('input[name="diary-rating"]').forEach((input) => {
     input.addEventListener("change", updateRatingLabel);
@@ -107,6 +125,7 @@ function bindForm() {
       name,
       rating: getSelectedRating(),
       memo: $("#diary-memo").value.trim(),
+      ...readPriceInputs(),
       createdAt: new Date().toISOString(),
     };
 
@@ -118,6 +137,7 @@ function bindForm() {
 
     $("#diary-name").value = "";
     $("#diary-memo").value = "";
+    clearPriceInputs();
     setSelectedRating(4);
     updateStats();
     renderEntryList();

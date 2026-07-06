@@ -56,6 +56,34 @@
             <p id="diary-rating-label" class="diary-rating-label" aria-live="polite">4점 선택됨</p>
           </fieldset>
           <label class="diary-field">
+            <span>가격대 <span class="diary-optional">(선택)</span></span>
+            <div class="diary-price-inputs">
+              <input
+                type="number"
+                id="diary-price-min"
+                name="price_min"
+                placeholder="최소"
+                min="0"
+                step="500"
+                inputmode="numeric"
+                aria-label="최소 가격 (원)"
+              />
+              <span class="diary-price-sep" aria-hidden="true">~</span>
+              <input
+                type="number"
+                id="diary-price-max"
+                name="price_max"
+                placeholder="최대"
+                min="0"
+                step="500"
+                inputmode="numeric"
+                aria-label="최대 가격 (원)"
+              />
+              <span class="diary-price-unit" aria-hidden="true">원</span>
+            </div>
+            <p class="diary-field-hint">한 가격만 알면 최소·최대에 같은 금액을 입력하세요</p>
+          </label>
+          <label class="diary-field">
             <span>메모 <span class="diary-optional">(선택)</span></span>
             <textarea id="diary-memo" name="memo" rows="3" placeholder="메뉴, 동행, 한 줄 후기…"></textarea>
           </label>

@@ -106,7 +106,9 @@ _CATEGORY_KEYWORDS: list[tuple[tuple[str, ...], PlaceCategory]] = [
             "포차",
             "호시카이",
             "지리탕",
-            "알탕",
+            "우거지",
+            "스넥",
+            "명동",
         ),
         PlaceCategory.KOREAN,
     ),
@@ -179,7 +181,9 @@ _CATEGORY_KEYWORDS: list[tuple[tuple[str, ...], PlaceCategory]] = [
             "야키니쿠",
             "사바",
             "오뎅",
+            "사케",
             "사루",
+            "이로",
         ),
         PlaceCategory.JAPANESE,
     ),
@@ -882,12 +886,193 @@ _CAFE_MENU_MARKERS: tuple[str, ...] = (
     "디카페인",
     "콘파냐",
     "리에토",
+    "밀크티",
+    "버블티",
+    "에이드",
+    "ade",
+    "스무디",
+    "smoothie",
+    "프라푸",
+    "frappe",
+    "티라떼",
+    "tea",
+    "공차",
+    "버블",
+    "콤부차",
+    "녹차",
+    "홍차",
+    "우롱",
+    "히비스커스",
+    "초콜릿라떼",
+    "모카",
+    "mocha",
+    "바닐라라떼",
+    "카페모카",
+    "더치",
+)
+
+_DESSERT_MENU_MARKERS: tuple[str, ...] = (
+    "케이크",
+    "마카롱",
+    "쿠키",
+    "타르트",
+    "크로플",
+    "와플",
+    "빙수",
+    "아이스크림",
+    "젤라또",
+    "gelato",
+    "도넛",
+    "베이글",
+    "크로아상",
+    "슈크림",
+    "에클레어",
+    "휘낭시에",
+    "스콘",
+    "브라우니",
+    "요거트",
+    "빵",
+    "디저트",
+)
+
+_MEAL_MENU_MARKERS: tuple[str, ...] = (
+    "국밥",
+    "찌개",
+    "백반",
+    "삼겹",
+    "갈비",
+    "고기",
+    "정식",
+    "덮밥",
+    "파스타",
+    "스테이크",
+    "버거",
+    "짜장",
+    "짬뽕",
+    "초밥",
+    "돈까스",
+    "돈카츠",
+    "라멘",
+    "우동",
+    "떡볶이",
+    "김밥",
+    "피자",
+    "샌드위치",
+    "브런치",
+    "리조또",
+    "볶음밥",
+    "비빔밥",
+    "탕수육",
+    "마라",
+    "훠궈",
+    "냉면",
+    "칼국수",
+    "국수",
+    "만두",
+    "탕",
+    "찜",
+    "구이",
+    "볶음",
+    "튀김",
+    "스프",
+    "샐러드",
+    "가츠",
+    "카츠",
+    "회",
+    "사시미",
+    "육회",
+    "족발",
+    "보쌈",
+    "치킨",
+    "핫도그",
+    "부리토",
+    "타코",
+    "빠에야",
+    "리코타",
+    "오믈렛",
+    "오므라이스",
+    "함박",
+    "카레",
+    "나베",
+    "전골",
+    "곱창",
+    "막창",
+    "순대",
+    "쭈꾸미",
+    "해물",
+    "조개",
+    "생선",
+    "밥",
+    "면",
+    "피자",
+    "토스트",
 )
 
 
 def _is_cafe_menu(text: str) -> bool:
     lowered = text.lower()
     return any(marker in lowered for marker in _CAFE_MENU_MARKERS)
+
+
+def _is_coffee_menu_item(text: str) -> bool:
+    return _is_cafe_menu(text)
+
+
+def _is_dessert_menu_item(text: str) -> bool:
+    lowered = text.lower()
+    return any(marker in lowered for marker in _DESSERT_MENU_MARKERS)
+
+
+def _is_meal_menu_item(text: str) -> bool:
+    if _is_coffee_menu_item(text) or _is_dessert_menu_item(text):
+        return False
+    lowered = text.lower()
+    if any(marker in lowered for marker in _MEAL_MENU_MARKERS):
+        return True
+    from_menu = classify_from_menu(text, PlaceType.RESTAURANT)
+    return from_menu not in {
+        None,
+        PlaceCategory.CAFE,
+        PlaceCategory.DESSERT,
+        PlaceCategory.OTHER,
+    }
+
+
+def count_coffee_and_meal_menus(menu_names: list[str]) -> tuple[int, int]:
+    """메뉴명 목록에서 커피·음료 메뉴 수와 식사 메뉴 수를 셉니다."""
+    coffee = 0
+    meal = 0
+    for raw in menu_names:
+        name = str(raw or "").strip()
+        if not name:
+            continue
+        if _is_coffee_menu_item(name):
+            coffee += 1
+        elif _is_meal_menu_item(name):
+            meal += 1
+    return coffee, meal
+
+
+def should_classify_as_cafe_by_menus(menu_names: list[str]) -> bool:
+    """식사 메뉴가 없거나 커피 메뉴보다 적으면 카페로 봅니다."""
+    coffee, meal = count_coffee_and_meal_menus(menu_names)
+    if coffee == 0:
+        return False
+    return meal == 0 or meal < coffee
+
+
+def _menu_names_from_parts(*parts: str) -> list[str]:
+    names: list[str] = []
+    seen: set[str] = set()
+    for part in parts:
+        for chunk in re.split(r"\s*·\s*", part or ""):
+            for piece in chunk.split("/"):
+                for segment in piece.split(","):
+                    name = segment.strip()
+                    if name and name not in seen:
+                        seen.add(name)
+                        names.append(name)
+    return names
 
 
 def _is_mall_non_food(name: str) -> bool:
@@ -1151,18 +1336,33 @@ def guess_category(
     return PlaceCategory.OTHER
 
 
-def refine_category(place: Place, *, search_query: str = "") -> PlaceCategory:
+def refine_category(
+    place: Place,
+    *,
+    search_query: str = "",
+    menu_names: list[str] | None = None,
+) -> PlaceCategory:
     """대표 메뉴·상호명·리뷰로 카테고리를 재분류합니다 (기타 탈출 우선)."""
     review_hint = (place.representative_review or "")[:240]
     query = search_query or review_hint
     menu = (place.representative_menu or "").strip()
 
+    names = list(menu_names or [])
+    if not names and menu and not is_generic_menu(menu):
+        names = _menu_names_from_parts(menu)
+    if should_classify_as_cafe_by_menus(names):
+        return PlaceCategory.CAFE
+
+    coffee, meal = count_coffee_and_meal_menus(names)
+    meals_dominate_coffee = coffee > 0 and meal >= coffee
+
     if menu and not is_generic_menu(menu):
         from_menu = classify_from_menu(menu, place.place_type)
         if from_menu is not None and from_menu != PlaceCategory.OTHER:
             if from_menu in {PlaceCategory.CAFE, PlaceCategory.DESSERT}:
-                return from_menu
-            if _category_allowed(from_menu, place.place_type):
+                if not meals_dominate_coffee:
+                    return from_menu
+            elif _category_allowed(from_menu, place.place_type):
                 return from_menu
 
     if place.name:
@@ -1192,10 +1392,26 @@ def refine_category(place: Place, *, search_query: str = "") -> PlaceCategory:
     return PlaceCategory.OTHER
 
 
-def refine_place_type(place: Place, *, search_query: str = "") -> PlaceType:
+def refine_place_type(
+    place: Place,
+    *,
+    search_query: str = "",
+    menu_names: list[str] | None = None,
+) -> PlaceType:
     """맛집/카페 유형을 대표메뉴·리뷰로 재추정합니다."""
     review_hint = (place.representative_review or "")[:240]
     menu = (place.representative_menu or "").strip()
+    names = list(menu_names or [])
+    if not names and menu and not is_generic_menu(menu):
+        names = _menu_names_from_parts(menu)
+    if should_classify_as_cafe_by_menus(names):
+        return PlaceType.CAFE
+
+    coffee, meal = count_coffee_and_meal_menus(names)
+    meals_dominate_coffee = coffee > 0 and meal >= coffee
+    if meals_dominate_coffee:
+        return PlaceType.RESTAURANT
+
     if menu and not is_generic_menu(menu):
         from_menu = classify_from_menu(menu, PlaceType.CAFE)
         if from_menu in {PlaceCategory.CAFE, PlaceCategory.DESSERT}:

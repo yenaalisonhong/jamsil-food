@@ -3,15 +3,14 @@
  */
 const $ = (sel) => document.querySelector(sel);
 
-function formatPrice(place) {
-  if (!place) return "-";
-  const lo = place.price_range_min_krw ?? place.price_per_person_krw;
-  const hi = place.price_range_max_krw ?? place.price_per_person_krw;
+function formatPrice(pick, place) {
+  const lo = pick.price_min_krw ?? place?.price_range_min_krw ?? place?.price_per_person_krw;
+  const hi = pick.price_max_krw ?? place?.price_range_max_krw ?? place?.price_per_person_krw;
   if (lo != null && hi != null) {
     if (lo === hi) return `${lo.toLocaleString("ko-KR")}원`;
     return `${lo.toLocaleString("ko-KR")}~${hi.toLocaleString("ko-KR")}원`;
   }
-  if (place.price_per_person_krw != null) {
+  if (place?.price_per_person_krw != null) {
     return `${place.price_per_person_krw.toLocaleString("ko-KR")}원`;
   }
   return "-";
@@ -46,12 +45,11 @@ function renderList(picks, places) {
   const rows = picks.map((pick) => {
     const place = DiaryStorage.findPlaceByName(places, pick.name);
     const memo = displayMemo(pick);
-    const price = formatPrice(place);
+    const price = formatPrice(pick, place);
     const walk = formatWalk(place);
     const stars = DiaryStorage.starsHtml(pick.rating, true);
     const visitHint =
       pick.visitCount > 1 ? `<span class="diary-picks-visits">${pick.visitCount}회 방문</span>` : "";
-
     const memoClass = memo === "-" ? " diary-picks-cell--empty" : "";
 
     return `

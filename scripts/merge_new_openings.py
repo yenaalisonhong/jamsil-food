@@ -65,6 +65,9 @@ def merge(path: Path) -> None:
     within = [geo.enrich_place(p) for p in enriched if geo.is_within_walk_range(geo.enrich_place(p))]
 
     payload = build_payload(within)
+    from scripts.reclassify_places import finalize_places_data
+
+    finalize_places_data(payload)
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Saved {path} — places={len(within)}, new_openings={len(payload['new_openings'])}")
 

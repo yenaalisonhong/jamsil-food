@@ -28,6 +28,30 @@ const DiaryStorage = (() => {
     }
   }
 
+  function parseOptionalPrice(value) {
+    if (value == null || value === "") return null;
+    const n = Math.round(Number(value));
+    return Number.isFinite(n) && n >= 0 ? n : null;
+  }
+
+  function normalizePriceFields(entry) {
+    let min = parseOptionalPrice(entry.price_min_krw);
+    let max = parseOptionalPrice(entry.price_max_krw);
+    if (min == null && max == null) return {};
+    if (min != null && max != null && min > max) [min, max] = [max, min];
+    if (min == null) min = max;
+    if (max == null) max = min;
+    return { price_min_krw: min, price_max_krw: max };
+  }
+
+  function formatPriceRange(min, max) {
+    if (min == null && max == null) return null;
+    const lo = min ?? max;
+    const hi = max ?? min;
+    if (lo === hi) return `${lo.toLocaleString("ko-KR")}원`;
+    return `${lo.toLocaleString("ko-KR")}~${hi.toLocaleString("ko-KR")}원`;
+  }
+
   function normalizeEntries(data) {
     if (!data || typeof data !== "object" || Array.isArray(data)) return {};
     const out = {};
@@ -39,6 +63,7 @@ const DiaryStorage = (() => {
           name: entry.name.trim(),
           rating: Math.max(1, Math.min(5, Math.round(Number(entry.rating) || 4))),
           memo: typeof entry.memo === "string" ? entry.memo.trim() : "",
+          ...normalizePriceFields(entry),
           createdAt: typeof entry.createdAt === "string" ? entry.createdAt : new Date().toISOString(),
         }));
       if (rows.length) out[key] = rows;
@@ -217,6 +242,8 @@ const DiaryStorage = (() => {
             lastVisit: dateKey,
             visitCount: 1,
             memo: entry.memo || "",
+            price_min_krw: entry.price_min_krw ?? null,
+            price_max_krw: entry.price_max_krw ?? null,
           });
           return;
         }
@@ -226,8 +253,12 @@ const DiaryStorage = (() => {
         if (dateKey > existing.lastVisit) {
           existing.lastVisit = dateKey;
           if (entry.memo) existing.memo = entry.memo;
-        } else if (dateKey === existing.lastVisit && entry.memo) {
-          existing.memo = entry.memo;
+          if (entry.price_min_krw != null) existing.price_min_krw = entry.price_min_krw;
+          if (entry.price_max_krw != null) existing.price_max_krw = entry.price_max_krw;
+        } else if (dateKey === existing.lastVisit) {
+          if (entry.memo) existing.memo = entry.memo;
+          if (entry.price_min_krw != null) existing.price_min_krw = entry.price_min_krw;
+          if (entry.price_max_krw != null) existing.price_max_krw = entry.price_max_krw;
         }
       });
     });
@@ -303,6 +334,9 @@ const DiaryStorage = (() => {
     starsHtml,
     bindStarPicker,
     normalizeName,
+    parseOptionalPrice,
+    normalizePriceFields,
+    formatPriceRange,
     collectHighlyRated,
     loadPlaces,
     findPlaceByName,

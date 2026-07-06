@@ -746,6 +746,11 @@ input[type="range"] {
   grid-column: 1;
 }
 
+.menu-keyword-match {
+  font-weight: 700;
+  color: var(--text);
+}
+
 .place-card-stats {
   display: flex;
   flex-direction: column;
@@ -2113,6 +2118,50 @@ input[type="range"] {
   color: var(--text-muted);
   margin-top: 0.35rem;
   white-space: pre-wrap;
+}
+
+.diary-entry-price {
+  margin-top: 0.25rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--mint-dark, var(--mint));
+}
+
+.diary-price-inputs {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.diary-price-inputs input {
+  width: 6.5rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.75rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.diary-price-inputs input:focus {
+  outline: none;
+  border-color: var(--mint);
+  box-shadow: 0 0 0 3px var(--mint-soft);
+}
+
+.diary-price-sep,
+.diary-price-unit {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.diary-field-hint {
+  margin: 0.15rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-muted);
 }
 
 .diary-entry-delete {

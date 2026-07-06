@@ -235,7 +235,9 @@ def export_to(path: Path, *, use_mock: bool = False, enable_crawl: bool = True) 
     if restored:
         logger.info("재export 시 opened_at %d건 복원", restored)
     finalize_places_data(payload)
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    from scripts.reclassify_places import _atomic_write_json
+
+    _atomic_write_json(path, payload)
     print(f"Exported {len(payload['places'])} places → {path}")
     return len(payload["places"])
 

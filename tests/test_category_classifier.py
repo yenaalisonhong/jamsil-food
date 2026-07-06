@@ -3,11 +3,13 @@
 from models.place import Place, PlaceCategory, PlaceType
 from services.category_classifier import (
     classify_from_menu,
+    count_coffee_and_meal_menus,
     guess_category,
     infer_place_type,
     is_food_place,
     refine_category,
     refine_place_type,
+    should_classify_as_cafe_by_menus,
 )
 
 
@@ -338,6 +340,58 @@ def test_refine_category_remaining_other_escapes() -> None:
     ]
     for place, expected in cases:
         assert refine_category(place) == expected
+
+
+def test_should_classify_as_cafe_by_menus() -> None:
+    assert should_classify_as_cafe_by_menus(
+        ["아메리카노", "카페라떼", "에스프레소", "크로플"]
+    )
+    assert should_classify_as_cafe_by_menus(
+        ["아메리카노", "카페라떼", "파스타"]
+    )
+    assert not should_classify_as_cafe_by_menus(
+        ["아메리카노", "파스타", "스테이크", "리조또"]
+    )
+    assert not should_classify_as_cafe_by_menus(["케이크", "마카롱", "쿠키"])
+    coffee, meal = count_coffee_and_meal_menus(
+        ["아메리카노", "카페라떼", "파스타", "크로플"]
+    )
+    assert coffee == 2
+    assert meal == 1
+
+
+def test_refine_category_cafe_when_meals_fewer_than_coffee() -> None:
+    place = Place(
+        id="naver:cafe-mix",
+        name="모르는 카페",
+        place_type=PlaceType.RESTAURANT,
+        category=PlaceCategory.WESTERN,
+        address="",
+        lat=37.5,
+        lng=127.1,
+        source="naver_map",
+        representative_menu="아메리카노 · 카페라떼 · 에스프레소",
+    )
+    menu_names = ["아메리카노", "카페라떼", "에스프레소", "크로플"]
+    assert refine_category(place, menu_names=menu_names) == PlaceCategory.CAFE
+    assert refine_place_type(place, menu_names=menu_names) == PlaceType.CAFE
+
+
+def test_refine_category_stays_restaurant_when_meals_dominate() -> None:
+    place = Place(
+        id="naver:rest",
+        name="브런치 레스토랑",
+        place_type=PlaceType.RESTAURANT,
+        category=PlaceCategory.WESTERN,
+        address="",
+        lat=37.5,
+        lng=127.1,
+        source="naver_map",
+        representative_menu="아메리카노 · 파스타 · 스테이크 · 리조또",
+    )
+    menu_names = ["아메리카노", "파스타", "스테이크", "리조또"]
+    assert refine_place_type(place, menu_names=menu_names) == PlaceType.RESTAURANT
+    assert refine_category(place, menu_names=menu_names) == PlaceCategory.WESTERN
 
 
 def test_is_food_place_keeps_classified_restaurants() -> None:

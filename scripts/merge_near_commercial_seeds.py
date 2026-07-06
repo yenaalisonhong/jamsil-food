@@ -43,6 +43,11 @@ def _seed_to_place(raw: dict) -> Place | None:
     naver_id = str(raw.get("naver_place_id") or "").strip()
     place_id = f"naver:{naver_id}" if naver_id else f"seed:{name.replace(' ', '_')}"
     category = PlaceCategory(raw.get("category", "korean"))
+    place_type = (
+        PlaceType.CAFE
+        if category in {PlaceCategory.CAFE, PlaceCategory.DESSERT}
+        else PlaceType.RESTAURANT
+    )
     enc_name = urllib.parse.quote(name)
     url = (
         f"https://map.naver.com/p/search/{enc_name}/place/{naver_id}"
@@ -52,7 +57,7 @@ def _seed_to_place(raw: dict) -> Place | None:
     return Place(
         id=place_id,
         name=name,
-        place_type=PlaceType.RESTAURANT,
+        place_type=place_type,
         category=category,
         address=raw.get("address", ""),
         lat=float(lat),
@@ -113,6 +118,9 @@ def merge_seeds(*, enable_crawl: bool = True) -> int:
         if geo.is_within_walk_range(geo.enrich_place(p))
     ]
     out = build_payload(within)
+    from scripts.reclassify_places import finalize_places_data
+
+    finalize_places_data(out)
 
     for target in TARGETS:
         target.parent.mkdir(parents=True, exist_ok=True)

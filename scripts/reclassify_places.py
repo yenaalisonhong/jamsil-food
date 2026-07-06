@@ -2,8 +2,11 @@
 
 from __future__ import annotations
 
+import contextlib
 import json
+import os
 import sys
+import tempfile
 from collections import Counter
 from datetime import date, datetime
 from pathlib import Path
@@ -17,8 +20,17 @@ from scripts.export_places import (  # noqa: E402
     sync_new_openings_from_places,
     sync_opening_flags_in_places,
 )
-from scripts.refresh_menus_in_places_json import _naver_id, _should_use_cached_menu  # noqa: E402
-from services.category_classifier import is_food_place, refine_category, refine_place_type  # noqa: E402
+from scripts.refresh_menus_in_places_json import (  # noqa: E402
+    _naver_id,
+    _should_use_cached_menu,
+    _sync_menu_names,
+)
+from services.category_classifier import (  # noqa: E402
+    _menu_names_from_parts,
+    is_food_place,
+    refine_category,
+    refine_place_type,
+)
 from services.manual_data_store import ManualDataStore  # noqa: E402
 from services.place_defaults import category_label  # noqa: E402
 
@@ -45,6 +57,9 @@ def _apply_cache_fields(places: list[dict], cache: dict) -> int:
         cached_menu = cached.get("representative_menu")
         if _should_use_cached_menu(raw.get("representative_menu"), cached_menu):
             raw["representative_menu"] = cached_menu
+            updated += 1
+
+        if _sync_menu_names(raw, cached):
             updated += 1
 
         cached_opened_at = cached.get("opened_at")
@@ -98,13 +113,42 @@ def _place_from_raw(raw: dict) -> Place:
     )
 
 
+def _menu_text_from_raw(raw: dict) -> str:
+    """대표메뉴·menu_names·캐시 메뉴를 분류용 문자열로 합칩니다."""
+    from services.place_defaults import is_generic_menu
+
+    parts: list[str] = []
+    menu = (raw.get("representative_menu") or "").strip()
+    if menu and not is_generic_menu(menu):
+        parts.append(menu)
+    names = raw.get("menu_names")
+    if isinstance(names, list):
+        for name in names[:6]:
+            text = str(name or "").strip()
+            if text and text not in parts:
+                parts.append(text)
+    return " · ".join(parts)
+
+
+def _menu_names_from_raw(raw: dict) -> list[str]:
+    names = raw.get("menu_names")
+    if isinstance(names, list):
+        return [str(name).strip() for name in names if str(name or "").strip()]
+    return _menu_names_from_parts(_menu_text_from_raw(raw))
+
+
 def reclassify_raw_place(raw: dict) -> bool:
     """단일 places.json 항목의 place_type·category를 갱신합니다."""
     place = _place_from_raw(raw)
-    place_type = refine_place_type(place)
+    menu_text = _menu_text_from_raw(raw)
+    menu_names = _menu_names_from_raw(raw)
+    if menu_text and menu_text != (place.representative_menu or ""):
+        place = place.model_copy(update={"representative_menu": menu_text})
+
+    place_type = refine_place_type(place, menu_names=menu_names)
     if place_type != place.place_type:
         place = place.model_copy(update={"place_type": place_type})
-    category = refine_category(place)
+    category = refine_category(place, menu_names=menu_names)
     changed = place_type != PlaceType(raw["place_type"]) or category != PlaceCategory(
         raw.get("category", "other")
     )
@@ -149,10 +193,33 @@ def finalize_places_data(data: dict, *, cache: dict | None = None) -> tuple[int,
     return cache_updates + manual_updates, changed, removed
 
 
+def _atomic_write_json(path: Path, data: dict) -> None:
+    content = json.dumps(data, ensure_ascii=False, indent=2)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(suffix=".json", dir=path.parent)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as handle:
+            handle.write(content)
+        os.replace(tmp, path)
+    except Exception:
+        with contextlib.suppress(OSError):
+            os.unlink(tmp)
+        raise
+
+
+def save_places_file(path: Path, data: dict | None = None) -> tuple[int, int, int]:
+    """places.json을 캐시 복원·재분류·비음식 제거 후 저장합니다."""
+    if data is None:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    stats = finalize_places_data(data)
+    _atomic_write_json(path, data)
+    return stats
+
+
 def reclassify(path: Path) -> None:
     data = json.loads(path.read_text(encoding="utf-8"))
     cache_updates, changed, removed = finalize_places_data(data)
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    _atomic_write_json(path, data)
 
     counts = Counter(p["category"] for p in data["places"])
     print(

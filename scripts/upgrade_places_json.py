@@ -56,7 +56,7 @@ def upgrade(path: Path) -> None:
             or (menu and menu not in GENERIC_MENU_HINTS)
         )
         if already_enriched:
-            upgraded.append(place)
+            upgraded.append(enricher.enrich_one(place))
             continue
 
         upgraded.append(enricher.enrich_one(place))
@@ -92,6 +92,9 @@ def upgrade(path: Path) -> None:
             )
 
     payload = build_payload(upgraded)
+    from scripts.reclassify_places import finalize_places_data
+
+    finalize_places_data(payload)
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     ratings = sum(1 for p in payload["places"] if p.get("rating"))
     reviews = sum(1 for p in payload["places"] if p.get("representative_review"))

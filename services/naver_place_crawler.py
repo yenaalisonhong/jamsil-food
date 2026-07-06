@@ -146,10 +146,10 @@ class NaverPlaceCrawler:
         """
         Naver Place 목록 페이지에서 주변 장소를 추출합니다.
         """
-        category = "cafe" if place_type == PlaceType.CAFE else "restaurant"
+        # pcmap의 cafe/list는 404 — 카페도 restaurant/list(또는 place/list)를 사용합니다.
         enc_query = urllib.parse.quote(query)
         url = (
-            f"https://pcmap.place.naver.com/{category}/list"
+            "https://pcmap.place.naver.com/restaurant/list"
             f"?query={enc_query}&x={lng}&y={lat}"
         )
         try:
@@ -313,7 +313,7 @@ class NaverPlaceCrawler:
         opened_at = cls._pick_opening_date(opened_candidates) if opened_candidates else date.today()
 
         route_url = item.get("routeUrl")
-        home_category = "cafe" if place_type == PlaceType.CAFE else "restaurant"
+        home_category = "restaurant"
         place_url = route_url or build_place_home_url(str(place_id), home_category)
 
         return Place(
@@ -393,7 +393,7 @@ class NaverPlaceCrawler:
         if not naver_place_id.isdigit():
             return None
 
-        category = "cafe" if place_type == PlaceType.CAFE else "restaurant"
+        category = "restaurant"
         try:
             menu_html = self._get_page(build_place_menu_url(naver_place_id, category))
             menus = self._extract_menu_items(menu_html)
@@ -440,7 +440,7 @@ class NaverPlaceCrawler:
         if not naver_place_id.isdigit():
             return NaverPlaceDetail()
 
-        category = "cafe" if place_type == PlaceType.CAFE else "restaurant"
+        category = "restaurant"
         detail = NaverPlaceDetail()
         cached = self._store.get_cached_detail(naver_place_id)
         if cached:

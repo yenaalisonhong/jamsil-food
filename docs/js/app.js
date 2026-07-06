@@ -189,6 +189,67 @@ function displayMenu(place, fallback = "-") {
   return CATEGORY_MENU_FALLBACK[category] || fallback;
 }
 
+function splitMenuText(text) {
+  return String(text ?? "")
+    .split(/\s*·\s*|\s*\/\s*/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+}
+
+function getMenuParts(place) {
+  if (Array.isArray(place?.menu_names) && place.menu_names.length) {
+    return place.menu_names.filter(Boolean);
+  }
+  const menu = (place?.representative_menu || "").trim();
+  if (menu && !GENERIC_MENUS.has(menu)) {
+    return splitMenuText(menu);
+  }
+  return [];
+}
+
+function menuPartMatchesKeyword(part, keyword) {
+  const normalizedKeyword = normalizeSearchText(keyword);
+  if (!normalizedKeyword) return false;
+  return normalizeSearchText(part).includes(normalizedKeyword);
+}
+
+function formatMenuHtml(place, keyword = "") {
+  const trimmedKeyword = (keyword || "").trim();
+  const displayText = displayMenu(place);
+  if (!trimmedKeyword) return escapeHtml(displayText);
+
+  const seen = new Set();
+  const formatted = [];
+
+  const addPart = (part, { forceBold = false } = {}) => {
+    const key = normalizeSearchText(part);
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    const matches = menuPartMatchesKeyword(part, trimmedKeyword);
+    if (matches || forceBold) {
+      formatted.push(`<strong class="menu-keyword-match">${escapeHtml(part)}</strong>`);
+    } else {
+      formatted.push(escapeHtml(part));
+    }
+  };
+
+  for (const part of splitMenuText(displayText)) {
+    addPart(part);
+  }
+
+  for (const part of getMenuParts(place)) {
+    if (menuPartMatchesKeyword(part, trimmedKeyword)) {
+      addPart(part, { forceBold: true });
+    }
+  }
+
+  if (!formatted.some((html) => html.includes("menu-keyword-match"))) {
+    return escapeHtml(displayText);
+  }
+
+  return formatted.join(" · ");
+}
+
 const REVIEW_PREVIEW_LEN = 36;
 
 function escapeAttr(str) {
@@ -519,7 +580,7 @@ function renderPopupContent(place) {
     <div class="popup-name">${escapeHtml(place.name)}${newBadge}</div>
     <span class="popup-category">${escapeHtml(place.category_label)}</span>
     <div class="popup-meta">
-      <div><strong>메뉴</strong> ${escapeHtml(displayMenu(place))}</div>
+      <div><strong>메뉴</strong> ${formatMenuHtml(place, state.filters.keyword)}</div>
       <div><strong>가격</strong> ${formatPrice(place)}</div>
       <div><strong>평점</strong> ${formatRating(place)}</div>
       <div><strong>거리</strong> ${formatWalk(place.walk_minutes)} (${formatDistance(place.distance_meters)})</div>
@@ -748,7 +809,7 @@ function appendPlaceCard(place, cards) {
       ${escapeHtml(place.name)}
       ${place.is_new_opening ? '<span class="place-card-new">NEW</span>' : ""}
     </div>
-    <div class="place-card-menu">🍴 ${escapeHtml(displayMenu(place))}</div>
+    <div class="place-card-menu">🍴 ${formatMenuHtml(place, state.filters.keyword)}</div>
     <div class="place-card-stats">
       <span class="stat-rating">${formatRating(place)}</span>
       <span class="stat-distance">${formatWalk(place.walk_minutes)} · ${formatDistance(place.distance_meters)}</span>
@@ -1257,7 +1318,7 @@ function renderSlotResult(place) {
     <div class="slot-result-name">${escapeHtml(place.name)}</div>
     <div class="slot-result-meta">
       <div><strong>종류</strong><span class="slot-result-category slot-result-category--${category}"><span class="slot-category-icon" aria-hidden="true">${icon}</span>${escapeHtml(label)}</span></div>
-      <div><strong>메뉴</strong>${escapeHtml(displayMenu(place))}</div>
+      <div><strong>메뉴</strong>${formatMenuHtml(place, state.filters.keyword)}</div>
       <div><strong>가격</strong>${formatPrice(place)}</div>
       <div><strong>평점</strong>${formatRating(place)}</div>
       <div><strong>거리</strong>${formatWalk(place.walk_minutes)} · ${formatDistance(place.distance_meters)}</div>

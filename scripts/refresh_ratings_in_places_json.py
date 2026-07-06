@@ -89,13 +89,10 @@ def _apply_cached(raw: dict, cached: dict) -> bool:
 
 
 def _save_data(path: Path, data: dict) -> None:
-    from scripts.export_places import sync_new_openings_from_places
-    from scripts.reclassify_places import reclassify_places_list
+    from scripts.reclassify_places import _atomic_write_json, finalize_places_data
 
-    reclassify_places_list(data.get("places", []))
-    data["generated_at"] = datetime.now().isoformat()
-    data["new_openings"] = sync_new_openings_from_places(data.get("places", []))
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    finalize_places_data(data)
+    _atomic_write_json(path, data)
 
 
 def refresh(

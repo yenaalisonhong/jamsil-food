@@ -1544,22 +1544,6 @@ async function init() {
 
   $(".popup-close")?.addEventListener("click", hideMapPopup);
 
-  $("#btn-refresh")?.addEventListener("click", async () => {
-    $("#btn-refresh").disabled = true;
-    state.dataLoading = true;
-    try {
-      state.data = await loadData({ preferLive: true });
-      applyDefaults(state.data);
-      initMap();
-      render();
-    } catch (err) {
-      alert(err.message);
-    } finally {
-      state.dataLoading = false;
-      $("#btn-refresh").disabled = false;
-    }
-  });
-
   const overlay = document.createElement("div");
   overlay.className = "loading-overlay";
   overlay.textContent = "맛집 데이터 불러오는 중…";

@@ -123,15 +123,10 @@ def refresh(
                 cache_updates += 1
                 menu = cached_menu
 
-        if not is_generic_menu(menu):
+        needs_menu_names = not raw.get("menu_names")
+        needs_rep_menu = is_generic_menu(menu)
+        if not needs_menu_names and not needs_rep_menu:
             continue
-
-        if naver_id:
-            cached_menu = cached.get("representative_menu")
-            if _should_use_cached_menu(menu, cached_menu):
-                raw["representative_menu"] = cached_menu
-                cache_updates += 1
-                continue
 
         if not crawl or not crawler or not naver_id:
             continue
@@ -145,11 +140,15 @@ def refresh(
         place_type = PlaceType(raw.get("place_type", "restaurant"))
         crawled = crawler.fetch_representative_menu(naver_id, place_type)
         crawl_attempts += 1
+        updated = crawler._store.get_cached_detail(naver_id) or {}
+        if _sync_menu_names(raw, updated):
+            menu_names_updates += 1
         if crawled and not is_generic_menu(crawled):
             raw["representative_menu"] = crawled
+        if (crawled and not is_generic_menu(crawled)) or updated.get("menu_items"):
             crawl_updates += 1
             crawl_failures = 0
-            if crawl and crawl_updates % save_every == 0:
+            if crawl_updates % save_every == 0:
                 _save_data(path, data, finalize=False)
                 print(f"  ... saved progress ({crawl_updates} crawled)")
         else:

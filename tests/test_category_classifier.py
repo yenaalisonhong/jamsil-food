@@ -394,6 +394,32 @@ def test_refine_category_stays_restaurant_when_meals_dominate() -> None:
     assert refine_category(place, menu_names=menu_names) == PlaceCategory.WESTERN
 
 
+def test_refine_place_type_taco_booth_meal_only_escapes_cafe() -> None:
+    place = Place(
+        id="naver:2085916295",
+        name="더타코부스 잠실스타점",
+        place_type=PlaceType.CAFE,
+        category=PlaceCategory.CAFE,
+        address="",
+        lat=37.5,
+        lng=127.1,
+        source="naver_map",
+        representative_menu="올미트 파히타 · NY타코플래터 · 비리아 타코 (2PCS)",
+        representative_review="비리아타코 풍미 너무 좋고 멕시코 풍미가 진짜 입안 가득",
+    )
+    menu_names = [
+        "올미트 파히타",
+        "NY타코플래터",
+        "비리아 타코 (2PCS)",
+        "까르네아사다 타코 (2PCS)",
+        "감바스 타코 (2PCS)",
+        "올미트 라이스 포케",
+    ]
+    assert refine_place_type(place, menu_names=menu_names) == PlaceType.RESTAURANT
+    restaurant = place.model_copy(update={"place_type": PlaceType.RESTAURANT})
+    assert refine_category(restaurant, menu_names=menu_names) == PlaceCategory.WESTERN
+
+
 def test_is_food_place_keeps_classified_restaurants() -> None:
     assert is_food_place(
         name="정순함박",

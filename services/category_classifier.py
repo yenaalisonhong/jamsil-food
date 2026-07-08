@@ -1408,6 +1408,8 @@ def refine_place_type(
         return PlaceType.CAFE
 
     coffee, meal = count_coffee_and_meal_menus(names)
+    if meal > 0 and coffee == 0:
+        return PlaceType.RESTAURANT
     meals_dominate_coffee = coffee > 0 and meal >= coffee
     if meals_dominate_coffee:
         return PlaceType.RESTAURANT

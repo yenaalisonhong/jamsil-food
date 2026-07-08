@@ -213,41 +213,47 @@ function menuPartMatchesKeyword(part, keyword) {
   return normalizeSearchText(part).includes(normalizedKeyword);
 }
 
+function getMatchingMenuParts(place, keyword = "") {
+  const trimmedKeyword = (keyword || "").trim();
+  if (!trimmedKeyword) return [];
+
+  const seen = new Set();
+  const matching = [];
+  const addMatch = (part) => {
+    const key = normalizeSearchText(part);
+    if (!key || seen.has(key)) return;
+    if (!menuPartMatchesKeyword(part, trimmedKeyword)) return;
+    seen.add(key);
+    matching.push(part);
+  };
+
+  for (const part of getMenuParts(place)) {
+    addMatch(part);
+  }
+
+  const menu = (place?.representative_menu || "").trim();
+  if (menu && !GENERIC_MENUS.has(menu)) {
+    for (const part of splitMenuText(menu)) {
+      addMatch(part);
+    }
+  }
+
+  return matching;
+}
+
 function formatMenuHtml(place, keyword = "") {
   const trimmedKeyword = (keyword || "").trim();
   const displayText = displayMenu(place);
   if (!trimmedKeyword) return escapeHtml(displayText);
 
-  const seen = new Set();
-  const formatted = [];
-
-  const addPart = (part, { forceBold = false } = {}) => {
-    const key = normalizeSearchText(part);
-    if (!key || seen.has(key)) return;
-    seen.add(key);
-    const matches = menuPartMatchesKeyword(part, trimmedKeyword);
-    if (matches || forceBold) {
-      formatted.push(`<strong class="menu-keyword-match">${escapeHtml(part)}</strong>`);
-    } else {
-      formatted.push(escapeHtml(part));
-    }
-  };
-
-  for (const part of splitMenuText(displayText)) {
-    addPart(part);
+  const matchingParts = getMatchingMenuParts(place, trimmedKeyword);
+  if (matchingParts.length) {
+    return matchingParts
+      .map((part) => `<strong class="menu-keyword-match">${escapeHtml(part)}</strong>`)
+      .join(" · ");
   }
 
-  for (const part of getMenuParts(place)) {
-    if (menuPartMatchesKeyword(part, trimmedKeyword)) {
-      addPart(part, { forceBold: true });
-    }
-  }
-
-  if (!formatted.some((html) => html.includes("menu-keyword-match"))) {
-    return escapeHtml(displayText);
-  }
-
-  return formatted.join(" · ");
+  return escapeHtml(displayText);
 }
 
 const REVIEW_PREVIEW_LEN = 36;
@@ -490,17 +496,39 @@ function normalizeSearchText(value) {
     .replace(/\s+/g, "");
 }
 
-function getPlaceKeywordHaystack(place) {
+function getPlaceKeywordSearchFields(place) {
+  const fields = [place?.name, place?.category_label].filter(Boolean);
+  const seen = new Set();
+  const addField = (value) => {
+    const text = String(value ?? "").trim();
+    const key = normalizeSearchText(text);
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    fields.push(text);
+  };
+
+  for (const part of getMenuParts(place)) {
+    addField(part);
+  }
+
   const menu = (place?.representative_menu || "").trim();
-  const menuText = menu && !GENERIC_MENUS.has(menu) ? menu : displayMenu(place, "");
-  const fullMenuText = Array.isArray(place?.menu_names) ? place.menu_names.join(" ") : "";
-  return [place?.name, menuText, fullMenuText, place?.category_label].filter(Boolean).join(" ");
+  if (menu && !GENERIC_MENUS.has(menu)) {
+    for (const part of splitMenuText(menu)) {
+      addField(part);
+    }
+  } else if (!getMenuParts(place).length) {
+    addField(displayMenu(place, ""));
+  }
+
+  return fields;
 }
 
 function placeMatchesKeyword(place, rawKeyword) {
   const keyword = normalizeSearchText(rawKeyword);
   if (!keyword) return true;
-  return normalizeSearchText(getPlaceKeywordHaystack(place)).includes(keyword);
+  return getPlaceKeywordSearchFields(place).some((field) =>
+    normalizeSearchText(field).includes(keyword)
+  );
 }
 
 function passesFilters(place) {

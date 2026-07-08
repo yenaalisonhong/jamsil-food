@@ -875,6 +875,32 @@ input[type="range"] {
   margin-top: 0.2rem;
 }
 
+.place-card-review-row {
+  grid-column: 1 / -1;
+  margin-top: -0.1rem;
+}
+
+.place-card-review-preview {
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration-color: transparent;
+  line-height: 1.45;
+}
+
+.place-card-review-preview .review-block-index {
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.64rem;
+}
+
+.place-card-review-preview:hover,
+.place-card-review-preview:focus-visible {
+  color: var(--coral);
+}
+
 .review-modal {
   position: fixed;
   inset: 0;

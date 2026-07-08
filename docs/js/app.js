@@ -348,6 +348,35 @@ function formatRating(place) {
   return "평점 없음";
 }
 
+function formatPlaceCardRating(place) {
+  if (place.rating != null) {
+    return formatRating(place);
+  }
+  if (place.review_count > 0) {
+    return `리뷰 ${place.review_count}건`;
+  }
+  return "평점 없음";
+}
+
+function renderPlaceCardReviewPreview(place) {
+  const reviews = getPlaceReviews(place).slice(0, 2);
+  if (!reviews.length) return "";
+
+  const lines = reviews
+    .map((text, index) => {
+      const truncated = text.length > REVIEW_PREVIEW_LEN
+        ? `${text.slice(0, REVIEW_PREVIEW_LEN)}…`
+        : text;
+      const indexBadge = reviews.length > 1
+        ? `<span class="review-block-index" aria-hidden="true">${index + 1}</span>`
+        : "";
+      return `<span class="review-snippet-line">${indexBadge}${escapeHtml(truncated)}</span>`;
+    })
+    .join("");
+
+  return `<button type="button" class="place-card-review-preview rating-review-link" data-place-id="${escapeAttr(place.id)}" aria-label="대표 리뷰 보기">${lines}</button>`;
+}
+
 function openReviewModal(place, reviewText) {
   const modal = $("#review-modal");
   const reviews = reviewText ? [reviewText] : getPlaceReviews(place);
@@ -833,6 +862,7 @@ function renderCategoryNav(groups, totalCount) {
 
 function appendPlaceCard(place, cards) {
   const card = document.createElement("article");
+  const reviewPreview = renderPlaceCardReviewPreview(place);
   card.className = "place-card";
   card.innerHTML = `
     <div class="place-card-name">
@@ -841,10 +871,11 @@ function appendPlaceCard(place, cards) {
     </div>
     <div class="place-card-menu">🍴 ${formatMenuHtml(place, state.filters.keyword)}</div>
     <div class="place-card-stats">
-      <span class="stat-rating">${formatRating(place)}</span>
+      <span class="stat-rating">${formatPlaceCardRating(place)}</span>
       <span class="stat-distance">${formatWalk(place.walk_minutes)} · ${formatDistance(place.distance_meters)}</span>
       <span class="stat-price">${formatPrice(place)}</span>
     </div>
+    ${reviewPreview ? `<div class="place-card-review-row">${reviewPreview}</div>` : ""}
   `;
   card.addEventListener("click", (event) => {
     if (event.target.closest(".review-snippet-link, .rating-review-link")) return;

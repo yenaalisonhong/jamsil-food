@@ -27,6 +27,8 @@ CHECK_PATHS = (
     "/js/diary.js",
     "/js/diary-day.js",
     "/js/diary-picks.js",
+    "/js/wrapped-shared.js",
+    "/js/wrapped.js",
 )
 
 

@@ -21,6 +21,7 @@ from providers.mock_provider import MockPlaceProvider
 from providers.naver_local import NaverLocalProvider
 from providers.naver_map_list import NaverMapListProvider
 from services.alert_service import AlertService
+from services.wrapped_delivery import WrappedDelivery
 from services.manual_data_store import ManualDataStore
 from services.naver_place_crawler import NaverPlaceCrawler
 from services.recommendation_service import RecommendationService
@@ -221,6 +222,45 @@ def cmd_add_price(
     """인당 가격을 수동 DB(data/manual_prices.json)에 등록합니다."""
     ManualDataStore().upsert_price(key, price, notes=notes)
     console.print(f"[green]{key} → {price:,}원 저장 완료[/green]")
+
+
+@app.command("wrapped")
+def cmd_wrapped(
+    year: int = typer.Option(None, "--year", "-y", help="연도 (기본: 올해)"),
+    month: int = typer.Option(None, "--month", "-m", help="월 1-12 (기본: 이번 달)"),
+    diary: str = typer.Option(
+        "data/diary/default.json",
+        "--diary",
+        help="식사 기록 JSON (브라우저 export)",
+    ),
+    places: str = typer.Option(
+        "site/data/places.json",
+        "--places",
+        help="맛집 카탈로그 JSON",
+    ),
+    email: bool = typer.Option(False, "--email", help="이메일로도 발송"),
+) -> None:
+    """
+    Monthly Wrapped: 이번 달 나의 맛집 탐방 리포트.
+
+    식사 기록 JSON이 필요합니다. 브라우저 개발자 도구에서
+    localStorage.getItem('jamsil_meal_diary') 내용을 data/diary/default.json으로 저장하세요.
+    """
+    from datetime import date
+
+    try:
+        today = date.today()
+        target_year = year or today.year
+        target_month = month or today.month
+
+        delivery = WrappedDelivery.from_paths(diary, places)
+        report = delivery.generate_for_month(target_year, target_month)
+        delivery.send_console(report)
+        if email:
+            delivery.send_email(report)
+    except FoodFinderError as exc:
+        console.print(f"[red]오류: {exc}[/red]")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

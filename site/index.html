@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
-  <link rel="stylesheet" href="css/style.css?v=20260708a" />
+  <link rel="stylesheet" href="css/style.css?v=20260708w" />
 </head>
 <body>
   <div class="app">
@@ -26,6 +26,9 @@
           </button>
           <button type="button" id="btn-lunch-pick" class="btn btn-slot" title="오늘 점심 랜덤 추천">
             <span class="icon">🎰</span> 점심 뽑기
+          </button>
+          <button type="button" id="btn-wrapped" class="btn btn-wrapped" title="이번 달 맛집 탐방 리포트">
+            <span class="icon">📊</span> 맛집 Wrapped
           </button>
           <a href="diary.html" class="btn btn-outline diary-nav-link" title="매일 식사 기록">
             <span class="icon">📅</span> 식사 기록
@@ -190,6 +193,29 @@
     </div>
   </div>
 
+  <div id="wrapped-overlay" class="wrapped-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="wrapped-title">
+    <div class="wrapped-panel">
+      <button type="button" class="wrapped-close" aria-label="닫기">×</button>
+      <header class="wrapped-header">
+        <p class="wrapped-eyebrow">Monthly Wrapped</p>
+        <h2 id="wrapped-title" class="wrapped-title">맛집 Wrapped</h2>
+        <p id="wrapped-status" class="wrapped-status">이번 달 기록을 모으는 중…</p>
+      </header>
+
+      <div id="wrapped-card" class="wrapped-card" role="group" aria-live="polite"></div>
+
+      <footer class="wrapped-footer">
+        <div id="wrapped-dots" class="wrapped-dots" aria-hidden="true"></div>
+        <div class="wrapped-nav">
+          <button type="button" id="wrapped-prev" class="wrapped-nav-btn" aria-label="이전 카드">‹</button>
+          <span id="wrapped-progress" class="wrapped-progress">1 / 1</span>
+          <button type="button" id="wrapped-next" class="wrapped-nav-btn wrapped-nav-btn--primary">다음 ›</button>
+        </div>
+        <p class="wrapped-hint">카드를 탭하거나 → 키로 넘길 수 있어요</p>
+      </footer>
+    </div>
+  </div>
+
   <div id="review-modal" class="review-modal hidden" role="dialog" aria-modal="true" aria-labelledby="review-modal-title">
     <div class="review-modal-panel">
       <button type="button" class="review-modal-close" aria-label="닫기">×</button>
@@ -200,6 +226,9 @@
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script src="js/app.js?v=20260708a"></script>
+  <script src="js/diary-shared.js?v=20260708w"></script>
+  <script src="js/wrapped-shared.js?v=20260708w"></script>
+  <script src="js/wrapped.js?v=20260708w"></script>
+  <script src="js/app.js?v=20260708b"></script>
 </body>
 </html>

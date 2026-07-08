@@ -1,0 +1,37 @@
+{
+  "places": [
+    {
+      "id": "mock:han",
+      "name": "잠실맛집 한식당",
+      "place_type": "restaurant",
+      "category": "korean",
+      "category_label": "한식",
+      "walk_minutes": 8.0,
+      "distance_meters": 640.0,
+      "price_per_person_krw": 12000,
+      "rating": 4.5
+    },
+    {
+      "id": "mock:cafe",
+      "name": "잠실 카페 라떼",
+      "place_type": "cafe",
+      "category": "cafe",
+      "category_label": "카페",
+      "walk_minutes": 5.0,
+      "distance_meters": 400.0,
+      "price_per_person_krw": 5500,
+      "rating": 4.2
+    },
+    {
+      "id": "mock:bunsik",
+      "name": "잠실 분식당",
+      "place_type": "restaurant",
+      "category": "bunsik",
+      "category_label": "분식",
+      "walk_minutes": 10.0,
+      "distance_meters": 800.0,
+      "price_per_person_krw": 8000,
+      "rating": 3.8
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "2026-06-20": [
+    {
+      "name": "잠실맛집 한식당",
+      "rating": 4,
+      "memo": "점심 괜찮았음",
+      "createdAt": "2026-06-20T12:00:00"
+    }
+  ],
+  "2026-07-01": [
+    {
+      "name": "잠실맛집 한식당",
+      "rating": 5,
+      "memo": "재방문",
+      "place_id": "mock:han",
+      "createdAt": "2026-07-01T12:00:00"
+    }
+  ],
+  "2026-07-03": [
+    {
+      "name": "잠실 카페 라떼",
+      "rating": 4,
+      "price_min_krw": 4500,
+      "place_id": "mock:cafe",
+      "createdAt": "2026-07-03T09:00:00"
+    }
+  ],
+  "2026-07-04": [
+    {
+      "name": "잠실 분식당",
+      "rating": 3,
+      "price_min_krw": 7000,
+      "place_id": "mock:bunsik",
+      "createdAt": "2026-07-04T12:30:00"
+    }
+  ],
+  "2026-07-05": [
+    {
+      "name": "잠실 카페 라떼",
+      "rating": 5,
+      "place_id": "mock:cafe",
+      "createdAt": "2026-07-05T08:00:00"
+    },
+    {
+      "name": "잠실맛집 한식당",
+      "rating": 4,
+      "place_id": "mock:han",
+      "createdAt": "2026-07-05T12:00:00"
+    }
+  ]
+}

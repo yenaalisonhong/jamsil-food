@@ -92,9 +92,10 @@ function isRetailGroceryShop(name) {
 function isMallNonFood(name) {
   const foodInMall = ["식탁", "식당", "푸드", "맛집", "카페", "커피", "치킨", "피자", "버거", "국수"];
   if (name.includes("홈플러스") && !foodInMall.some((m) => name.includes(m))) {
-    return /홈플러스\s*[^\s]*점/.test(name) && !name.includes("식탁");
+    // 마트 본점만 제외 — "OOO 홈플러스 잠실점" 입점 식당은 유지
+    return /^홈플러스\s*[^\s]*점/.test(name.trim()) && !name.includes("식탁");
   }
-  const mallBrands = ["후지필름", "상상블럭", "어라운드홈", "아이피아", "월드크리닝", "하나투어", "KT", "코인워시", "정관장"];
+  const mallBrands = ["후지필름", "상상블럭", "아이피아", "월드크리닝", "하나투어", "KT", "코인워시", "정관장"];
   if (mallBrands.some((b) => name.includes(b))) return true;
   return false;
 }

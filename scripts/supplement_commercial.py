@@ -13,7 +13,7 @@ if str(ROOT) not in sys.path:
 
 from config.settings import get_settings
 from models.place import Place, PlaceCategory, PlaceType
-from providers.jamsil_commercial import map_searches
+from providers.jamsil_commercial import map_searches, search_radius_m
 from providers.naver_map_list import NaverMapListProvider
 from scripts.export_places import build_payload
 from services.category_classifier import is_food_place
@@ -25,7 +25,7 @@ TARGETS = (
     ROOT / "docs" / "data" / "places.json",
 )
 
-_ANCHOR_RADIUS_M = 600
+_ANCHOR_RADIUS_M = 600  # fallback; prefer search_radius_m(lat, lng)
 
 
 def load_existing(path: Path) -> list[Place]:
@@ -98,7 +98,7 @@ def supplement_commercial(
                 if dist > max_dist:
                     continue
                 anchor_dist = provider._haversine_m(lat, lng, hit.lat, hit.lng)
-                if anchor_dist > _ANCHOR_RADIUS_M:
+                if anchor_dist > search_radius_m(lat, lng):
                     continue
                 seen.add(pid)
                 place = NaverMapListProvider._to_place(hit, place_type, query)

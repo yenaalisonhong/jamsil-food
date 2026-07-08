@@ -76,10 +76,7 @@ def _save_data(path: Path, data: dict, *, finalize: bool = True) -> None:
 
         finalize_places_data(data)
     else:
-        from scripts.export_places import sync_new_openings_from_places
-
         data["generated_at"] = datetime.now().isoformat()
-        data["new_openings"] = sync_new_openings_from_places(data.get("places", []))
     from scripts.reclassify_places import _atomic_write_json
 
     _atomic_write_json(path, data)

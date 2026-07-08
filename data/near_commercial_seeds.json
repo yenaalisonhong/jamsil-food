@@ -18,6 +18,96 @@
       "lng": 127.10155,
       "address": "서울 송파구 올림픽로35길 112 장미상가",
       "category": "korean"
+    },
+    {
+      "anchor": "홈플러스 잠실점",
+      "name": "북촌손만두 홈플러스 잠실점",
+      "naver_place_id": "",
+      "lat": 37.5163,
+      "lng": 127.10305,
+      "address": "서울 송파구 올림픽로35가길 16 홈플러스 잠실점 1층",
+      "category": "korean"
+    },
+    {
+      "anchor": "홈플러스 잠실점",
+      "name": "두촌가마솥밥 홈플러스 잠실점",
+      "naver_place_id": "",
+      "lat": 37.5163,
+      "lng": 127.10305,
+      "address": "서울 송파구 올림픽로35가길 16 홈플러스 잠실점 1층",
+      "category": "korean"
+    },
+    {
+      "anchor": "홈플러스 잠실점",
+      "name": "테루카츠 홈플러스 잠실점",
+      "naver_place_id": "",
+      "lat": 37.5163,
+      "lng": 127.10305,
+      "address": "서울 송파구 올림픽로35가길 16 홈플러스 잠실점 1층",
+      "category": "japanese"
+    },
+    {
+      "anchor": "홈플러스 잠실점",
+      "name": "좋은날한우 홈플러스 잠실점",
+      "naver_place_id": "",
+      "lat": 37.5163,
+      "lng": 127.10305,
+      "address": "서울 송파구 올림픽로35가길 16 홈플러스 잠실점 1층",
+      "category": "korean"
+    },
+    {
+      "anchor": "홈플러스 잠실점",
+      "name": "두끼 홈플러스 잠실점",
+      "naver_place_id": "",
+      "lat": 37.51625,
+      "lng": 127.1030,
+      "address": "서울 송파구 올림픽로35가길 16 홈플러스 잠실점 3층",
+      "category": "korean"
+    },
+    {
+      "anchor": "홈플러스 잠실점",
+      "name": "락앤웍 홈플러스 잠실점",
+      "naver_place_id": "",
+      "lat": 37.5162,
+      "lng": 127.1031,
+      "address": "서울 송파구 올림픽로35가길 16 홈플러스 잠실점 4층",
+      "category": "chinese"
+    },
+    {
+      "anchor": "홈플러스 잠실점",
+      "name": "명동칼국수 홈플러스 잠실점",
+      "naver_place_id": "",
+      "lat": 37.5162,
+      "lng": 127.1031,
+      "address": "서울 송파구 올림픽로35가길 16 홈플러스 잠실점 4층",
+      "category": "korean"
+    },
+    {
+      "anchor": "홈플러스 잠실점",
+      "name": "우리콩순두부 홈플러스 잠실점",
+      "naver_place_id": "",
+      "lat": 37.5162,
+      "lng": 127.1031,
+      "address": "서울 송파구 올림픽로35가길 16 홈플러스 잠실점 4층",
+      "category": "korean"
+    },
+    {
+      "anchor": "홈플러스 잠실점",
+      "name": "어라운드홈 홈플러스 잠실점",
+      "naver_place_id": "",
+      "lat": 37.5163,
+      "lng": 127.10305,
+      "address": "서울 송파구 올림픽로35가길 16 홈플러스 잠실점 1층",
+      "category": "cafe"
+    },
+    {
+      "anchor": "홈플러스 잠실점",
+      "name": "마호가니 홈플러스 잠실점",
+      "naver_place_id": "",
+      "lat": 37.5163,
+      "lng": 127.10305,
+      "address": "서울 송파구 올림픽로35가길 16 홈플러스 잠실점 1층",
+      "category": "cafe"
     }
   ]
 }

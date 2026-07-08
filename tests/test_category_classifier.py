@@ -119,6 +119,9 @@ def test_is_food_place_excludes_retail_and_stationery() -> None:
     assert not is_food_place(name="후지필름 홈플러스 잠실점", representative_review="증명사진 잘 찍어주세요")
     assert not is_food_place(name="KT 오빠통신 홈플러스 잠실점")
     assert is_food_place(name="삼청동식탁 홈플러스 잠실점", representative_review="맛있게 잘 먹었습니다.")
+    assert is_food_place(name="북촌손만두 홈플러스 잠실점")
+    assert is_food_place(name="테루카츠 홈플러스 잠실점")
+    assert is_food_place(name="어라운드홈 홈플러스 잠실점")
 
 
 def test_is_food_place_excludes_produce_and_beauty_cafe() -> None:

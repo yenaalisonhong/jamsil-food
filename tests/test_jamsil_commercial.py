@@ -51,6 +51,20 @@ def test_deep_searches_include_cuisine_variants() -> None:
     assert any("홈플러스" in q and "일식" in q for q in queries)
 
 
+def test_deep_searches_include_homeplus_named_seeds() -> None:
+    queries = [q for q, _, _ in deep_commercial_searches(PlaceType.RESTAURANT)]
+    assert "북촌손만두" in queries
+    assert "락앤웍" in queries
+    assert "두촌가마솥밥" in queries
+
+
+def test_search_radius_homeplus_wider() -> None:
+    from providers.jamsil_commercial import search_radius_m
+
+    assert search_radius_m(37.51623, 127.10301) >= 850
+    assert search_radius_m(37.51655, 127.10175) >= 850
+
+
 def test_map_searches_puts_deep_first() -> None:
     all_queries = map_searches(PlaceType.RESTAURANT)
     deep_queries = deep_commercial_searches(PlaceType.RESTAURANT)

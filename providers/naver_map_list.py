@@ -11,7 +11,7 @@ import urllib.parse
 from config.settings import Settings, get_settings
 from models.place import Place, PlaceType
 from providers.base import PlaceProvider
-from providers.jamsil_commercial import map_searches
+from providers.jamsil_commercial import map_searches, search_radius_m
 from services.category_classifier import guess_category, is_food_place
 from services.naver_place_crawler import NaverListPlaceHit, NaverPlaceCrawler
 from utils.logger import get_logger
@@ -135,7 +135,7 @@ class NaverMapListProvider(PlaceProvider):
                 if dist > self._max_dist_m:
                     continue
                 anchor_dist = self._haversine_m(lat, lng, hit.lat, hit.lng)
-                if anchor_dist > 600:
+                if anchor_dist > search_radius_m(lat, lng):
                     continue
                 seen_ids.add(hit.place_id)
                 results.append(self._to_place(hit, place_type, query))

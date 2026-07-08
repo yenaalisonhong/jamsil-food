@@ -20,6 +20,8 @@ _OFFICE_LAT = 37.51692
 _OFFICE_LNG = 127.10282
 
 NEAREST_COMMERCIAL_COUNT = 5
+DEFAULT_ANCHOR_RADIUS_M = 600
+DEEP_ANCHOR_RADIUS_M = 750
 
 
 @dataclass(frozen=True)
@@ -30,6 +32,9 @@ class CommercialAnchor:
     lat: float
     lng: float
     aliases: tuple[str, ...] = ()
+    radius_m: float = DEFAULT_ANCHOR_RADIUS_M
+    # 넓은 상가·인접 건물 식당 검색용 보조 중심 (lat, lng)
+    extra_centers: tuple[tuple[float, float], ...] = ()
 
 
 # 도보 15분 이내 주요 상가·건물 (사무실: 37.51692, 127.10282)
@@ -38,7 +43,17 @@ COMMERCIAL_ANCHORS: list[CommercialAnchor] = [
         "홈플러스 잠실점",
         37.51623,
         127.10301,
-        ("홈플러스 상가", "홈플러스 잠실", "송파펀스타디움"),
+        (
+            "홈플러스 상가",
+            "홈플러스 잠실",
+            "송파펀스타디움",
+            "잠실홈플러스",
+            "푸르지오월드마크",
+            "잠실 푸르지오 월드마크",
+        ),
+        radius_m=850,
+        # 홈플러스 건너편·인접 상가 식당 (나루스시, BHC 등)
+        extra_centers=((37.51655, 127.10175),),
     ),
     CommercialAnchor(
         "장미상가",
@@ -52,18 +67,28 @@ COMMERCIAL_ANCHORS: list[CommercialAnchor] = [
             "장미상가 A동",
             "장미상가 B동",
         ),
+        radius_m=DEEP_ANCHOR_RADIUS_M,
     ),
     CommercialAnchor(
         "장미아파트 지하상가",
         37.51825,
         127.10095,
         ("장미아파트 맛집", "장미아파트 지하상가", "잠실나루 장미아파트"),
+        radius_m=DEEP_ANCHOR_RADIUS_M,
     ),
     CommercialAnchor(
         "잠실더샵스타파크",
         37.51692,
         127.10282,
-        ("더샵스타파크", "스타파크 상가", "잠실더샵 상가", "올림픽로35가길 스타파크"),
+        (
+            "더샵스타파크",
+            "스타파크 상가",
+            "잠실더샵 상가",
+            "올림픽로35가길 스타파크",
+            "스타파크 지하",
+            "스타파크 지하식당",
+        ),
+        radius_m=DEEP_ANCHOR_RADIUS_M,
     ),
     CommercialAnchor(
         "잠실역 상권",
@@ -93,6 +118,7 @@ COMMERCIAL_ANCHORS: list[CommercialAnchor] = [
         37.5155,
         127.1060,
         ("르엘 상가", "잠실르엘", "잠실 르엘"),
+        radius_m=DEEP_ANCHOR_RADIUS_M,
     ),
     CommercialAnchor(
         "잠실엘스",
@@ -125,6 +151,8 @@ _PRIORITY_RESTAURANT: dict[str, tuple[str, ...]] = {
         "더샵스타파크 음식점",
         "올림픽로35가길 스타파크 맛집",
         "스타파크 지하 맛집",
+        "스타파크 지하식당",
+        "올림픽로35가길 10 맛집",
     ),
     "홈플러스 잠실점": (
         "홈플러스 잠실점 음식점",
@@ -133,6 +161,11 @@ _PRIORITY_RESTAURANT: dict[str, tuple[str, ...]] = {
         "홈플러스 잠실 푸드코트",
         "홈플러스 잠실 식당가",
         "송파펀스타디움 맛집",
+        "홈플러스 잠실 1층 식당",
+        "홈플러스 잠실 3층 식당",
+        "홈플러스 잠실 4층 식당",
+        "푸르지오월드마크 맛집",
+        "잠실 푸르지오 월드마크 음식점",
     ),
     "장미상가": (
         "장미상가 음식점",
@@ -213,6 +246,20 @@ _DEEP_CUISINE_SUFFIXES: tuple[str, ...] = (
 
 # 심층 조사: 일반 키워드 검색에 누락되기 쉬운 상호명 (상가별)
 _DEEP_NAMED_SEEDS: dict[str, tuple[str, ...]] = {
+    "홈플러스 잠실점": (
+        "삼청동식탁",
+        "모스버거",
+        "북촌손만두",
+        "좋은날한우",
+        "테루카츠",
+        "두끼",
+        "두촌가마솥밥",
+        "메밀꽃필무렵",
+        "락앤웍",
+        "명동칼국수",
+        "우리콩순두부",
+        "오호이박스",
+    ),
     "잠실더샵스타파크": (
         "크래프트아일랜드",
         "더타코부스",
@@ -221,14 +268,8 @@ _DEEP_NAMED_SEEDS: dict[str, tuple[str, ...]] = {
         "샐러디",
         "진전복삼계탕",
         "서커스래빗",
-    ),
-    "홈플러스 잠실점": (
-        "삼청동식탁",
-        "모스버거",
-        "북촌손만두",
-        "좋은날한우",
-        "테루카츠",
-        "두끼",
+        "본죽",
+        "맥도날드 잠실",
     ),
     "장미상가": (
         "가보자식당",
@@ -280,6 +321,14 @@ _DEEP_CAFE_NAMED_SEEDS: dict[str, tuple[str, ...]] = {
     "홈플러스 잠실점": (
         "스타벅스 홈플러스",
         "이디야 홈플러스",
+        "어라운드홈",
+        "마호가니",
+        "차타임",
+        "차타임라운지",
+    ),
+    "잠실더샵스타파크": (
+        "스타벅스 스타파크",
+        "이디야 스타파크",
     ),
 }
 
@@ -300,6 +349,40 @@ def _haversine_m(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
     dlng = math.radians(lng2 - lng1)
     a = math.sin(dlat / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dlng / 2) ** 2
     return 2 * r * math.asin(math.sqrt(a))
+
+
+def _anchor_for_search_center(lat: float, lng: float) -> CommercialAnchor | None:
+    """검색 중심 좌표에 대응하는 상가 앵커 (보조 중심 포함)."""
+    best: CommercialAnchor | None = None
+    best_dist = 80.0
+    for anchor in COMMERCIAL_ANCHORS:
+        dist = _haversine_m(lat, lng, anchor.lat, anchor.lng)
+        if dist < best_dist:
+            best = anchor
+            best_dist = dist
+            continue
+        for elat, elng in anchor.extra_centers:
+            edist = _haversine_m(lat, lng, elat, elng)
+            if edist < best_dist:
+                best = anchor
+                best_dist = edist
+    return best
+
+
+def search_radius_m(lat: float, lng: float) -> float:
+    """검색 중심 좌표 기준 허용 반경(미터)."""
+    anchor = _anchor_for_search_center(lat, lng)
+    if anchor is None:
+        return DEFAULT_ANCHOR_RADIUS_M
+    if anchor.name in nearest_commercial_names():
+        return anchor.radius_m
+    return DEFAULT_ANCHOR_RADIUS_M
+
+
+def _search_centers_for_anchor(anchor: CommercialAnchor) -> list[tuple[float, float]]:
+    centers = [(anchor.lat, anchor.lng)]
+    centers.extend(anchor.extra_centers)
+    return centers
 
 
 def nearest_commercial_anchors(
@@ -359,23 +442,25 @@ def deep_commercial_searches(place_type: PlaceType) -> list[tuple[str, float, fl
         searches.append((query, anchor_lat, anchor_lng))
 
     for anchor in nearest_commercial_anchors():
-        if place_type == PlaceType.RESTAURANT:
-            primary = _DEEP_PRIMARY_QUERY.get(anchor.name)
-            if primary:
-                _add(primary, anchor.lat, anchor.lng)
+        centers = _search_centers_for_anchor(anchor)
+        for center_lat, center_lng in centers:
+            if place_type == PlaceType.RESTAURANT:
+                primary = _DEEP_PRIMARY_QUERY.get(anchor.name)
+                if primary:
+                    _add(primary, center_lat, center_lng)
 
-        for query in _anchor_queries(anchor, place_type):
-            _add(query, anchor.lat, anchor.lng)
+            for query in _anchor_queries(anchor, place_type):
+                _add(query, center_lat, center_lng)
 
-        if place_type == PlaceType.RESTAURANT:
-            label = anchor.aliases[0] if anchor.aliases else anchor.name
-            for suffix in _DEEP_CUISINE_SUFFIXES:
-                _add(f"{label} {suffix}", anchor.lat, anchor.lng)
-            for name in _DEEP_NAMED_SEEDS.get(anchor.name, ()):
-                _add(name, anchor.lat, anchor.lng)
-        elif place_type == PlaceType.CAFE:
-            for name in _DEEP_CAFE_NAMED_SEEDS.get(anchor.name, ()):
-                _add(name, anchor.lat, anchor.lng)
+            if place_type == PlaceType.RESTAURANT:
+                label = anchor.aliases[0] if anchor.aliases else anchor.name
+                for suffix in _DEEP_CUISINE_SUFFIXES:
+                    _add(f"{label} {suffix}", center_lat, center_lng)
+                for name in _DEEP_NAMED_SEEDS.get(anchor.name, ()):
+                    _add(name, center_lat, center_lng)
+            elif place_type == PlaceType.CAFE:
+                for name in _DEEP_CAFE_NAMED_SEEDS.get(anchor.name, ()):
+                    _add(name, center_lat, center_lng)
 
     if place_type == PlaceType.CAFE:
         deep_names = nearest_commercial_names()

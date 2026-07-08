@@ -17,6 +17,7 @@ from providers.jamsil_commercial import (
     NEAREST_COMMERCIAL_COUNT,
     deep_commercial_searches,
     nearest_commercial_anchors,
+    search_radius_m,
 )
 from providers.naver_map_list import NaverMapListProvider
 from scripts.export_places import build_payload
@@ -29,8 +30,7 @@ TARGETS = (
     ROOT / "docs" / "data" / "places.json",
 )
 
-# 상가 앵커 기준 허용 반경 (미터)
-_ANCHOR_RADIUS_M = 600
+# 상가 앵커 기준 허용 반경 — jamsil_commercial.search_radius_m() 사용
 
 
 def load_existing(path: Path) -> list[Place]:
@@ -109,7 +109,7 @@ def supplement_near_commercial(
                 if dist > max_dist:
                     continue
                 anchor_dist = provider._haversine_m(lat, lng, hit.lat, hit.lng)
-                if anchor_dist > _ANCHOR_RADIUS_M:
+                if anchor_dist > search_radius_m(lat, lng):
                     continue
                 seen.add(pid)
                 place = NaverMapListProvider._to_place(hit, place_type, query)

@@ -573,7 +573,6 @@ _NON_FOOD_NAME_MARKERS: tuple[str, ...] = (
     "LG유플러스",
     "후지필름",
     "상상블럭",
-    "어라운드홈",
     "아이피아",
     "월드크리닝",
     "하나투어",
@@ -706,7 +705,6 @@ _MALL_NON_FOOD_SUFFIXES: tuple[str, ...] = (
 _MALL_NON_FOOD_BRANDS: tuple[str, ...] = (
     "후지필름",
     "상상블럭",
-    "어라운드홈",
     "아이피아",
     "월드크리닝",
     "하나투어",
@@ -1077,8 +1075,10 @@ def _menu_names_from_parts(*parts: str) -> list[str]:
 
 def _is_mall_non_food(name: str) -> bool:
     """대형마트·백화점 내 비음식 매장 여부."""
+    stripped = name.strip()
     if "홈플러스" in name and not any(m in name for m in _MALL_FOOD_NAME_MARKERS):
-        if re.search(r"홈플러스\s*[^\s]*점", name) and "식탁" not in name:
+        # "홈플러스 잠실점" 마트 본점 목록만 제외 (입점 식당 "OOO 홈플러스 잠실점"은 유지)
+        if re.match(r"^홈플러스\s*[^\s]*점", stripped) and "식탁" not in name:
             return True
 
     if not any(anchor in name for anchor in _MALL_ANCHOR_MARKERS):
@@ -1090,7 +1090,7 @@ def _is_mall_non_food(name: str) -> bool:
         return True
     if any(m in name for m in _MALL_FOOD_NAME_MARKERS):
         return False
-    if re.search(r"(홈플러스|이마트|롯데마트|코스트코)\s*[^\s]*점", name):
+    if re.match(r"^(홈플러스|이마트|롯데마트|코스트코)\s*[^\s]*점", stripped):
         return True
     return False
 

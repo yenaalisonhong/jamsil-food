@@ -5,7 +5,7 @@ const WrappedGenerator = (() => {
   const CATEGORY_COPY = {
     한식: "당신의 혈액형은 한식입니다",
     중식: "짜장면이 부르는 밤이 있었습니다",
-    일식: "사시미에 진심인 당신",
+    일식: "정갈한 한 끼를 즐길 줄 아는 당신",
     양식: "파스타는 사랑입니다",
     분식: "떡볶이는 영원하다",
     카페: "카페인으로 구동되는 인간",
@@ -125,7 +125,11 @@ const WrappedGenerator = (() => {
         bestRated = { name: entry.name, rating: entry.rating };
       }
 
-      const place = DiaryStorage.findPlaceByName(places, entry.name);
+      const place = DiaryStorage.findPlace(
+        places,
+        entry.name,
+        entry.place_id || entry.placeId || null,
+      );
       if (place) {
         const label = place.category_label || "기타";
         categoryVisits[label] = (categoryVisits[label] || 0) + 1;
@@ -148,7 +152,9 @@ const WrappedGenerator = (() => {
 
     const activeDaySet = new Set(visits.map((v) => v.dateKey));
     const topCategoryEntry = mostCommon(categoryVisits)[0];
-    const topPlaces = mostCommon(placeVisits).slice(0, 3);
+    const topPlaces = mostCommon(placeVisits)
+      .filter(([, count]) => count >= 2)
+      .slice(0, 3);
     let cheapest = null;
     if (prices.length) {
       cheapest = prices.reduce((min, p) => (p.price < min.price ? p : min), prices[0]);

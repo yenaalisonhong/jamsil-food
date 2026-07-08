@@ -63,6 +63,9 @@ const DiaryStorage = (() => {
           name: entry.name.trim(),
           rating: Math.max(1, Math.min(5, Math.round(Number(entry.rating) || 4))),
           memo: typeof entry.memo === "string" ? entry.memo.trim() : "",
+          place_id: typeof entry.place_id === "string"
+            ? entry.place_id
+            : (typeof entry.placeId === "string" ? entry.placeId : ""),
           ...normalizePriceFields(entry),
           createdAt: typeof entry.createdAt === "string" ? entry.createdAt : new Date().toISOString(),
         }));
@@ -306,6 +309,14 @@ const DiaryStorage = (() => {
     return found || null;
   }
 
+  function findPlace(places, name, placeId = null) {
+    if (placeId) {
+      const byId = places.find((p) => p?.id === placeId);
+      if (byId) return byId;
+    }
+    return findPlaceByName(places, name);
+  }
+
   async function loadPlaceSuggestions(datalistEl) {
     const places = await loadPlaces();
     if (!places.length) return [];
@@ -339,6 +350,7 @@ const DiaryStorage = (() => {
     formatPriceRange,
     collectHighlyRated,
     loadPlaces,
+    findPlace,
     findPlaceByName,
     loadPlaceSuggestions,
   };

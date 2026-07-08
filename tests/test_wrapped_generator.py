@@ -72,3 +72,5 @@ def test_june_has_one_visit(generator: WrappedGenerator) -> None:
     assert report.stats.total_visits == 1
     assert report.stats.new_discoveries == 1
     assert report.stats.revisit_visits == 0
+    assert report.stats.top_places == []
+    assert all(card.title != "이 달의 단골 Top 3" for card in report.cards)

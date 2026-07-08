@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T14:19:59.987988",
+  "generated_at": "2026-07-08T15:14:15.171456",
   "office": {
     "name": "Fraunhofer 한국사무소",
     "address": "서울시 송파구 올림픽로 35가길 10, A동 202호",
@@ -24384,11 +24384,14 @@
       "lng": 127.1025508,
       "distance_meters": 484.9,
       "walk_minutes": 6.1,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "rating": 4.33,
+      "rating_source": "naver_crawl",
+      "review_count": 1516,
+      "representative_review": "흑임자라떼 아주 달콤해요. 밖은 멀리서 보이고 그냥 잠시 앉아서 쉬기에 좋은 장소인거같아요. 가격은 일반 카페와 비슷한거같아요.",
+      "representative_reviews": [
+        "흑임자라떼 아주 달콤해요. 밖은 멀리서 보이고 그냥 잠시 앉아서 쉬기에 좋은 장소인거같아요. 가격은 일반 카페와 비슷한거같아요.",
+        "서울 스카이 카페(122F)에서 가장 예쁘고 화려한 음료 3종 골고루 주문하기~☆ 사진2번 블루스카이~♡ 상큼하고 맛있었어요!! 사진3번 시그니처 오로라~♡ 살짝 히비스커스 맛이 약했어요~😅 사진4번 레인보우~♡ 제일 화려하고 예쁜 오렌지맛ㅋㅋㅋ 개당 7,800원의 행복🤭 기분좋은 시간 보냈어요~!!♡♡ 평일 저녁시간이라.. 한가해서 좋았어요~^^!!"
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -24412,9 +24415,12 @@
       "walk_minutes": 4.9,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "review_count": 130,
+      "representative_review": "요즘 제일 좋아하는 아이스크림 맛집이에요💕 초코를 좋아해서 매번 다크초콜릿 브라우니 먹다가 이번에는 직원분 추천받아서 저지밀크&말돈소금을 같이 먹어봤습니다 초콜릿이랑 조합이 괜찮았어요!! 요기는 다른 아이스크림 가게보다 다양한 맛이 있어서 하나씩 먹어보고 싶은 곳입니다 가격이 착하진 않지만 그래도 또갈집이에요 롯데월드몰 구경하다가 당 떨어질 때 벤슨에서 당",
+      "representative_reviews": [
+        "요즘 제일 좋아하는 아이스크림 맛집이에요💕 초코를 좋아해서 매번 다크초콜릿 브라우니 먹다가 이번에는 직원분 추천받아서 저지밀크&말돈소금을 같이 먹어봤습니다 초콜릿이랑 조합이 괜찮았어요!! 요기는 다른 아이스크림 가게보다 다양한 맛이 있어서 하나씩 먹어보고 싶은 곳입니다 가격이 착하진 않지만 그래도 또갈집이에요 롯데월드몰 구경하다가 당 떨어질 때 벤슨에서 당",
+        "매번 지나다니면서 보기만하다가 날씨도 덥고 시원한게 땡겨서 먹으러왔어요ㅎㅎ 고급지고 부드러운맛이네요! 먹어본 딸기아이스크림 중에 제일 맛있는 것 같아요ㅎㅎㅎ 롯데월드몰 데이트하다가 아이스크림 땡길땐 벤슨 추천합니당"
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -24442,54 +24448,6 @@
       ]
     },
     {
-      "id": "naver:1922372651",
-      "name": "포모르",
-      "place_type": "cafe",
-      "category": "cafe",
-      "category_label": "카페",
-      "address": "",
-      "lat": 37.5148931,
-      "lng": 127.1110266,
-      "distance_meters": 759.6,
-      "walk_minutes": 9.5,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
-      "price_per_person_krw": 6250,
-      "price_range_min_krw": 4500,
-      "price_range_max_krw": 8000,
-      "representative_menu": "소금빵 · 소금앙버터 · 크로플",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/%ED%8F%AC%EB%AA%A8%EB%A5%B4/place/1922372651",
-      "source": "naver_map",
-      "menu_names": [
-        "소금빵",
-        "소금앙버터",
-        "크로플",
-        "크로플+하겐다즈아이스크림",
-        "토마토바질 에이드",
-        "레몬석류 에이드",
-        "아인슈페너",
-        "에스프레소",
-        "꼰파냐",
-        "아포가토",
-        "아메리카노",
-        "카페라떼",
-        "바닐라라떼",
-        "피스타치오크림라떼",
-        "더블초콜릿라떼",
-        "딸기 라떼",
-        "밀크티",
-        "카모마일티",
-        "얼그레이티",
-        "페퍼민트티"
-      ]
-    },
-    {
       "id": "naver:1288601848",
       "name": "룰루베이글",
       "place_type": "restaurant",
@@ -24502,9 +24460,12 @@
       "walk_minutes": 12.5,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "review_count": 772,
+      "representative_review": "송리단길 근처에 맛있는 베이글 카페가 있어서 방문했습니다. 평일12쯤 도착했는데 1층의 자리는 거의 다 차고 2층은 여유로웠습니다. 크렌베리 호두 베이글과 따뜻한 카페라떼를 주문했어요. 카페라떼는 부드럽고 고소하고 맛있었어요. 베이글은 얇은 표면이 바삭했고, 속은 촉촉하니 쫄깃했어요. 크림치즈 없이도 맛있게 잘 먹었습니다. 샌드위치 종류도 다양해서 브런치를",
+      "representative_reviews": [
+        "송리단길 근처에 맛있는 베이글 카페가 있어서 방문했습니다. 평일12쯤 도착했는데 1층의 자리는 거의 다 차고 2층은 여유로웠습니다. 크렌베리 호두 베이글과 따뜻한 카페라떼를 주문했어요. 카페라떼는 부드럽고 고소하고 맛있었어요. 베이글은 얇은 표면이 바삭했고, 속은 촉촉하니 쫄깃했어요. 크림치즈 없이도 맛있게 잘 먹었습니다. 샌드위치 종류도 다양해서 브런치를",
+        "송파카페 터줏대감 룰루베이글 ㅎㅎ 송리단길이 뜨기 전부터, 베이글이 유행하기 전부터 영업해온 가게예요 여기 베이글 맛있는 건 진작에 알았는데, 크림치즈맛집이라 그런지 치즈케익도 정말 맛있네요... 송리단길 근방에서 주차도 두세대 정도 되고 북적이지 않아 조용하게 작업하거나 독서하기 좋은 몇 안되는 최애 카페예요"
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -24532,48 +24493,6 @@
       ]
     },
     {
-      "id": "naver:1886135045",
-      "name": "기투커피로스터스",
-      "place_type": "cafe",
-      "category": "cafe",
-      "category_label": "카페",
-      "address": "",
-      "lat": 37.512779,
-      "lng": 127.1143114,
-      "distance_meters": 1115.1,
-      "walk_minutes": 13.9,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
-      "price_per_person_krw": 6250,
-      "price_range_min_krw": 4500,
-      "price_range_max_krw": 8000,
-      "representative_menu": "위대한정오 · 지금 그리고 여기 · 퓌어알레",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/%EA%B8%B0%ED%88%AC%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4/place/1886135045",
-      "source": "naver_map",
-      "menu_names": [
-        "위대한정오",
-        "지금 그리고 여기",
-        "퓌어알레",
-        "카페라떼",
-        "바닐라라떼",
-        "아인슈페너",
-        "시즌에이드",
-        "레몬에이드",
-        "쑥라떼",
-        "Tea(로얄카모마일 외 3종)",
-        "플레인바스크치즈케이크(외 2종)",
-        "버터바",
-        "휘낭시에",
-        "스콘 & 라즈베리 잼"
-      ]
-    },
-    {
       "id": "naver:18876538",
       "name": "커피빈 방이점",
       "place_type": "restaurant",
@@ -24584,11 +24503,14 @@
       "lng": 127.107897,
       "distance_meters": 524.3,
       "walk_minutes": 6.6,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "rating": 4.42,
+      "rating_source": "naver_crawl",
+      "review_count": 2725,
+      "representative_review": "아메리카노는 깔끔한 향과 적당한 바디감이 느껴졌고, 쓴맛과 산미의 균형이 무난해 부담 없이 마시기 좋았어요. 매장 내부는 좌석 간 간격이 여유로운 편이라 혼자 시간을 보내거나 대화를 나누기에도 괜찮았어요. 음료가 빠르게 제공돼 잠시 쉬어가기에도 편했고, 전체적으로 편안한 분위기에서 커피 한잔 즐기기 좋은 곳이었어요. 간단한 업무나 독서를 하며 시간을 보내기",
+      "representative_reviews": [
+        "아메리카노는 깔끔한 향과 적당한 바디감이 느껴졌고, 쓴맛과 산미의 균형이 무난해 부담 없이 마시기 좋았어요. 매장 내부는 좌석 간 간격이 여유로운 편이라 혼자 시간을 보내거나 대화를 나누기에도 괜찮았어요. 음료가 빠르게 제공돼 잠시 쉬어가기에도 편했고, 전체적으로 편안한 분위기에서 커피 한잔 즐기기 좋은 곳이었어요. 간단한 업무나 독서를 하며 시간을 보내기",
+        "방이점에 위치한 커피빈에 방문했어요. 여기는 주차가 까다로워요. 그래도 방이동에 터줏대감으로 많은 사람들이 담소도 나누며 커피 ㅅ한잔하고 있어요. 좌석은 넓고 편하고 충분히 앉을 공간이 있어요. 직원들도 친절해서 샌드위치 디저트 주문했었는데 따뜻하게 조리해 주어서 맛있게 잘 먹었네요. 커피빈에서도 와인과 과자류를 판매하고 있어서 다양하게 확대하려고 하는지라"
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -24624,9 +24546,12 @@
       "walk_minutes": 13.7,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "review_count": 2378,
+      "representative_review": "이름은 '파르페'인데 일반적으로 파르페라 일컫는 켜켜이 쌓은 디져트느낌은 아니었고, 달디 단 말차 아이스크림을 갉갉해서 단 말차 아이스크림과 통조림팥,후레이크,떡 토핑을 얹어주는 정도의 느낌으로 혈당 스파이크 올려주는 맛이예요😅 '덜 달게' 가능한지 물으니 20대(?) 여직원분이 소스를 덜 넣으면 갈리지가 않고, 기존 재료대로 넣어서 베이스를 만들어 갈아야",
+      "representative_reviews": [
+        "이름은 '파르페'인데 일반적으로 파르페라 일컫는 켜켜이 쌓은 디져트느낌은 아니었고, 달디 단 말차 아이스크림을 갉갉해서 단 말차 아이스크림과 통조림팥,후레이크,떡 토핑을 얹어주는 정도의 느낌으로 혈당 스파이크 올려주는 맛이예요😅 '덜 달게' 가능한지 물으니 20대(?) 여직원분이 소스를 덜 넣으면 갈리지가 않고, 기존 재료대로 넣어서 베이스를 만들어 갈아야",
+        "맛은..별로😂 많이 기다려야했고 (빨간날) 물맛인데 탁해요 사진은 잘나옵니다 참고 마셔보려고 노력해봐도..너무 맛이 없어요ㅠ 석촌역와서 다 버림요🥲"
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -24651,11 +24576,14 @@
       "lng": 127.1071587,
       "distance_meters": 432.5,
       "walk_minutes": 5.4,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "rating": 4.34,
+      "rating_source": "naver_crawl",
+      "review_count": 3528,
+      "representative_review": "석촌호수 근처에서 산책을 즐긴 후 들르기 좋은 투썸플레이스 송파구청 사거리점. 매장 내부가 넓고 테이블 수가 많아 주말에도 과하게 붐비지 않아 여유로운 분위기라 시간보내기 좋았고 응대해주시는 직원분들도 친절. 혼자 조용히 개인 시간을 보내기에도 좋고, 간단한 미팅이나 대화가 필요한 자리에도 부담 없는 공간. 겨울이면 꼭 찾게 되는 뱅쇼는 다른 프랜차이즈에 ",
+      "representative_reviews": [
+        "석촌호수 근처에서 산책을 즐긴 후 들르기 좋은 투썸플레이스 송파구청 사거리점. 매장 내부가 넓고 테이블 수가 많아 주말에도 과하게 붐비지 않아 여유로운 분위기라 시간보내기 좋았고 응대해주시는 직원분들도 친절. 혼자 조용히 개인 시간을 보내기에도 좋고, 간단한 미팅이나 대화가 필요한 자리에도 부담 없는 공간. 겨울이면 꼭 찾게 되는 뱅쇼는 다른 프랜차이즈에 ",
+        "잠실 카페 찾다가 사람 많아서 투썸 갔는데 그래도 매장이 넓어서 좋네요! 바치케 고르곤졸라 맛이 나고 달달"
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -24680,11 +24608,14 @@
       "lng": 127.1132758,
       "distance_meters": 924.4,
       "walk_minutes": 11.6,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "rating": 4.57,
+      "rating_source": "naver_crawl",
+      "review_count": 3976,
+      "representative_review": "스타벅스 컵빙수 여름 시즌 메뉴나와서 포장해왔네요~~ 칼로리가 무려 700kcal 폭탄이지만 내 스타일!! 달달함은 진리!! #스벅 #스벅컵빙수 #스타벅스레드빈빙수블렌디드 #스타벅스몽촌토성역점",
+      "representative_reviews": [
+        "스타벅스 컵빙수 여름 시즌 메뉴나와서 포장해왔네요~~ 칼로리가 무려 700kcal 폭탄이지만 내 스타일!! 달달함은 진리!! #스벅 #스벅컵빙수 #스타벅스레드빈빙수블렌디드 #스타벅스몽촌토성역점",
+        "공간이 여유롭고 공원 바로 앞이라서 편리하고 좋아요."
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -24721,11 +24652,14 @@
       "lng": 127.1129165,
       "distance_meters": 1161.4,
       "walk_minutes": 14.5,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "rating": 4.47,
+      "rating_source": "naver_crawl",
+      "review_count": 1495,
+      "representative_review": "동네 오래된 식빵 맛집이예요. 특히 생식빵이 참 쫄깃하고 부드러운게 맛있어요! 1층은 계산대, 2층에 카페 이용가능합니다. 커피 맛도 무난하고요, 편안한 분위기의 카페라 브런치 먹기에도 좋네요^^",
+      "representative_reviews": [
+        "동네 오래된 식빵 맛집이예요. 특히 생식빵이 참 쫄깃하고 부드러운게 맛있어요! 1층은 계산대, 2층에 카페 이용가능합니다. 커피 맛도 무난하고요, 편안한 분위기의 카페라 브런치 먹기에도 좋네요^^",
+        "처음 방문한 베이커리인데 분위기가 정말 좋았어요. 😊 창가에서 보이는 거리 풍경도 마음에 들었고, 송파나루역 근처라 편하게 들르기 좋았습니다."
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -24758,11 +24692,14 @@
       "lng": 127.1092707,
       "distance_meters": 612.5,
       "walk_minutes": 7.7,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "rating": 4.61,
+      "rating_source": "naver_crawl",
+      "review_count": 522,
+      "representative_review": "블루베리 케이크 좋아하는 친구 생일이라 사봤는데 지짜진짜 맛있어용 😘 잠실 올때마다 애용합니당!!",
+      "representative_reviews": [
+        "블루베리 케이크 좋아하는 친구 생일이라 사봤는데 지짜진짜 맛있어용 😘 잠실 올때마다 애용합니당!!",
+        "사장님이렇게맛있게만드시면어떡합니까.."
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -24845,9 +24782,12 @@
       "walk_minutes": 13.5,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "review_count": 258,
+      "representative_review": "💜💚💙🤍❤️🧡🩷💛🩵메가커피 한성백제역점 너무 깔끔하고 좋아요 ㅎㅎ",
+      "representative_reviews": [
+        "💜💚💙🤍❤️🧡🩷💛🩵메가커피 한성백제역점 너무 깔끔하고 좋아요 ㅎㅎ",
+        "신제품 제로 말차 아이스티 너무 맛있어요. 😆 ㅋ 혈당만 안오르면 다이어트 할때, 자주 먹어도 될것 같아요. 💕"
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -24876,11 +24816,14 @@
       "lng": 127.1143163,
       "distance_meters": 1017.2,
       "walk_minutes": 12.7,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "rating": 4.39,
+      "rating_source": "naver_crawl",
+      "review_count": 1579,
+      "representative_review": "저녁에 갔더니 시원하고 사람 없네요~ 프라페 마시고 빵 사왔어요. 8시 반 넘어서 20% 할인 받았어요~",
+      "representative_reviews": [
+        "저녁에 갔더니 시원하고 사람 없네요~ 프라페 마시고 빵 사왔어요. 8시 반 넘어서 20% 할인 받았어요~",
+        "북해도 치즈케이크 녹진해여💕"
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -24904,51 +24847,6 @@
       ]
     },
     {
-      "id": "naver:1297074814",
-      "name": "보사노바 커피로스터스 잠실점",
-      "place_type": "cafe",
-      "category": "cafe",
-      "category_label": "카페",
-      "address": "",
-      "lat": 37.5160156,
-      "lng": 127.11463,
-      "distance_meters": 1048.9,
-      "walk_minutes": 13.1,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
-      "price_per_person_krw": 6250,
-      "price_range_min_krw": 4500,
-      "price_range_max_krw": 8000,
-      "representative_menu": "아메리카노 · 카페라떼 · 자몽피치아이스티",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/%EB%B3%B4%EC%82%AC%EB%85%B8%EB%B0%94%20%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4%20%EC%9E%A0%EC%8B%A4%EC%A0%90/place/1297074814",
-      "source": "naver_map",
-      "menu_names": [
-        "아메리카노",
-        "카페라떼",
-        "자몽피치아이스티",
-        "로티보이(오리지널)",
-        "[패스오더전용] 100원 아메리카노",
-        "에스프레소",
-        "카푸치노",
-        "바닐라라떼",
-        "스페니쉬 라떼",
-        "콜드브루",
-        "콜드브루 라떼",
-        "큐브 밀크티",
-        "얼그레이 밀크티",
-        "우롱피치",
-        "얼그레이",
-        "캐모마일",
-        "페퍼민트"
-      ]
-    },
-    {
       "id": "naver:13396647",
       "name": "탐앤탐스 방이점",
       "place_type": "cafe",
@@ -24959,11 +24857,14 @@
       "lng": 127.10888,
       "distance_meters": 585.1,
       "walk_minutes": 7.3,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "rating": 4.31,
+      "rating_source": "naver_crawl",
+      "review_count": 661,
+      "representative_review": "서울에서의 마지막 탐탐에서 남편 커피 겟",
+      "representative_reviews": [
+        "서울에서의 마지막 탐탐에서 남편 커피 겟",
+        "직원분들도 친절하시고 전체적으로 메뉴 하나하나에 대충 만든 느낌이 전혀 없고, 분위기 + 맛 둘 다 잡은 카페라 재방문 안 할 이유가 없는 곳 입니다!! “어디 카페 갈까?” 하면 여기부터 떠오를 것 같아요. 조용히 오래 있고 싶은 날, 지인들과 맛있는 디저트 먹고 싶은 날 다 추천합니다 🤍"
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -24994,11 +24895,14 @@
       "lng": 127.1128122,
       "distance_meters": 883.4,
       "walk_minutes": 11.0,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "rating": 4.42,
+      "rating_source": "naver_crawl",
+      "review_count": 1829,
+      "representative_review": "날이 더워서 일찍 산책 후 더위도 식히고 시원한 커피 한 잔의 여유.. 실내 애견동반이 가능해서 좋고 항상 반려동물 친화적인 매장이고 친절해서 편안하게 강아지와 함께 할 수 있는 공간.. #coffeebean #커피빈몽촌토성역점 #잠실애견동반카페 #올림픽공원애견동반카페 #몽촌토성역애견동반카페",
+      "representative_reviews": [
+        "날이 더워서 일찍 산책 후 더위도 식히고 시원한 커피 한 잔의 여유.. 실내 애견동반이 가능해서 좋고 항상 반려동물 친화적인 매장이고 친절해서 편안하게 강아지와 함께 할 수 있는 공간.. #coffeebean #커피빈몽촌토성역점 #잠실애견동반카페 #올림픽공원애견동반카페 #몽촌토성역애견동반카페",
+        "오늘도 휴일 모닝 루틴.. 아침 샐러드 챙겨먹고 커피 한 잔의 여유는 커피빈에서.. 잠실 실내애견동반카페 커비핀 몽촌토성역!! 매장도 넓고 반려동물 친화적인 매장이라 늘 Good❤️❤️ #coffeebean #커피빈 #잠실애견동반카페"
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -25025,18 +24929,21 @@
       "id": "naver:11782412",
       "name": "배스킨라빈스 방이시장점",
       "place_type": "cafe",
-      "category": "cafe",
-      "category_label": "카페",
+      "category": "dessert",
+      "category_label": "디저트",
       "address": "",
       "lat": 37.5122984,
       "lng": 127.1120221,
       "distance_meters": 961.7,
       "walk_minutes": 12.0,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "rating": 4.32,
+      "rating_source": "naver_crawl",
+      "review_count": 1821,
+      "representative_review": "감사합니다 ~🎂 엄청 따가운 날씨 모두모두 시원하게 잘 보내세요 똑 같은 아이스크림 이지만 매장에 사장님이 좋아서 여기만 찾는 저 십년이 흐름에도..!쭉! 랑이 아이스크림🎂 구입",
+      "representative_reviews": [
+        "감사합니다 ~🎂 엄청 따가운 날씨 모두모두 시원하게 잘 보내세요 똑 같은 아이스크림 이지만 매장에 사장님이 좋아서 여기만 찾는 저 십년이 흐름에도..!쭉! 랑이 아이스크림🎂 구입",
+        "슈팅스타 역시 베스트 👏 주문하고 빨리 나와서 좋아요. 상콤달콤 팝핑캔디 톡톡 터지는 종종 먹는데 넘 맛있네용. SK텔레콤 할인까지 받으면 1,900원에 먹을 수 있어요 😄 가성비 갑."
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -25058,69 +24965,6 @@
       ]
     },
     {
-      "id": "naver:1102347748",
-      "name": "커피인류 방이점",
-      "place_type": "cafe",
-      "category": "cafe",
-      "category_label": "카페",
-      "address": "",
-      "lat": 37.5161309,
-      "lng": 127.1116684,
-      "distance_meters": 787.1,
-      "walk_minutes": 9.8,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
-      "price_per_person_krw": 6250,
-      "price_range_min_krw": 4500,
-      "price_range_max_krw": 8000,
-      "representative_menu": "아메리카노 · 아샷추 · 오늘의 스페셜티",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/%EC%BB%A4%ED%94%BC%EC%9D%B8%EB%A5%98%20%EB%B0%A9%EC%9D%B4%EC%A0%90/place/1102347748",
-      "source": "naver_map",
-      "menu_names": [
-        "아메리카노",
-        "아샷추",
-        "오늘의 스페셜티",
-        "바닐라라떼",
-        "비른바닐라 White 250ml",
-        "바른바닐라 White 500ml",
-        "더치윈액 250ml",
-        "더치원액 500ml",
-        "바른바닐라 Green 250ml",
-        "바른바닐라 Green 500ml",
-        "바른바닐라 Red 250ml",
-        "바른바닐라 Red 500ml",
-        "허브티",
-        "홍차",
-        "더치커피",
-        "밀크슈페너",
-        "블루베리라떼",
-        "초코라떼",
-        "아이스티",
-        "딸기에이드",
-        "자몽에이드",
-        "레몬티",
-        "자몽티",
-        "밀크티",
-        "더치라떼",
-        "맷그린",
-        "아인슈페너",
-        "캐러멜라떼",
-        "모카라떼",
-        "카푸치노",
-        "플랫화이트",
-        "까페라떼",
-        "동경라떼",
-        "딸기라떼",
-        "레몬에이드"
-      ]
-    },
-    {
       "id": "naver:2024959620",
       "name": "또커피",
       "place_type": "cafe",
@@ -25133,9 +24977,12 @@
       "walk_minutes": 10.5,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "review_count": 102,
+      "representative_review": "노래랑 분위기 너무 좋네요~ 커피도 직접 볶으신 듯^^ 라떼 시켰는데 정말 간만에 커피 맛있게 마셨습니다. 피곤하고 가방도 무거웠는데 잘 쉬다 갑니다!",
+      "representative_reviews": [
+        "노래랑 분위기 너무 좋네요~ 커피도 직접 볶으신 듯^^ 라떼 시켰는데 정말 간만에 커피 맛있게 마셨습니다. 피곤하고 가방도 무거웠는데 잘 쉬다 갑니다!",
+        "핫한 카페 많이 다니는데 대부분 공간감은 좋지만 맛이 아쉬운곳이 많아요. 또커피는 커피맛 하나때문에 들르는 곳이에요! 직접 로스팅한 원두는 극강의 고소함이라 산미가 불호인 저에겐 극호 이구요! 나따오비까 에타 사랑하는데 여기 있어서 좋아요 !"
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -25150,8 +24997,8 @@
       "id": "naver:1336938852",
       "name": "SING SANG SONG",
       "place_type": "cafe",
-      "category": "cafe",
-      "category_label": "카페",
+      "category": "dessert",
+      "category_label": "디저트",
       "address": "",
       "lat": 37.5143823,
       "lng": 127.1121804,
@@ -25159,9 +25006,12 @@
       "walk_minutes": 10.9,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "review_count": 131,
+      "representative_review": "시그니처, 라떼, 치즈케잌, 초코쿠키 먹었는데 전체적으로 다 맛있었지만 특히 이 집 치즈케잌과 음료들은 미식여행 중 도쿄나 교토에서 먹은 유명한 디저트 집 음료나 케잌이랑 비슷한 수준의 맛입니다. 사장님께서 음악부터 음료잔까지 하나하나 신경 쓴 흔적이 많은 집입니다. 제일 잘 나가는 음료가 뭐냐는 질문에 다 잘나간다고 하셨는데 정말 다 맛있었습니다. 우연히",
+      "representative_reviews": [
+        "시그니처, 라떼, 치즈케잌, 초코쿠키 먹었는데 전체적으로 다 맛있었지만 특히 이 집 치즈케잌과 음료들은 미식여행 중 도쿄나 교토에서 먹은 유명한 디저트 집 음료나 케잌이랑 비슷한 수준의 맛입니다. 사장님께서 음악부터 음료잔까지 하나하나 신경 쓴 흔적이 많은 집입니다. 제일 잘 나가는 음료가 뭐냐는 질문에 다 잘나간다고 하셨는데 정말 다 맛있었습니다. 우연히",
+        "방이동 카페 찾다가 들른 singsangsong, 기대 이상이었어요 😊 시그니처커피는 부드럽고 달콤한 풍미가 인상적이었고, 아이스아메리카노는 깔끔하고 산뜻해서 균형이 딱 좋았어요. 공간도 아늑해서 오래 머물기 좋더라고요. 방이동 카페 분위기 제대로 느끼고 싶다면 추천하고 싶어요 ☕️ 다음에도 방이동 카페 올 때 또 들를 것 같아요!"
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -25189,11 +25039,14 @@
       "lng": 127.0940012,
       "distance_meters": 976.7,
       "walk_minutes": 12.2,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "representative_reviews": null,
+      "rating": 4.51,
+      "rating_source": "naver_crawl",
+      "review_count": 4172,
+      "representative_review": "엄마랑 우선 아이스 디카페인 아메리카노 그랑데로 시켜먹고 30분후 60%되는거 아이스 디카페인 아메리카노 벤티로시켜먹고있어요~~~ 디카페인 아메리카노 맛있어요~!!! 엄마랑 스타벅스에서의 즐거운 시간이에요~~~^^*!!!",
+      "representative_reviews": [
+        "엄마랑 우선 아이스 디카페인 아메리카노 그랑데로 시켜먹고 30분후 60%되는거 아이스 디카페인 아메리카노 벤티로시켜먹고있어요~~~ 디카페인 아메리카노 맛있어요~!!! 엄마랑 스타벅스에서의 즐거운 시간이에요~~~^^*!!!",
+        "선물사러갔었는데 직원분이 친절하셨습니다^^"
+      ],
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -25319,8 +25172,8 @@
       "walk_minutes": 9.7,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 1036,
+      "representative_review": "남자친구랑 산책하고 간단하게 먹을 거 찾다가 방문했는데 진짜 흡입했습니다 마늘쫑 누룽지 무조건 추가하세요 ㅠㅠ 직원분도 너무 친절해서 재방문 의사1000000프로 입니다 남자친구가 쫄깃쫄깃 쫀득쫀득 맛나다고 좋아했어용 ㅠ🤍",
       "price_per_person_krw": 22900,
       "price_range_min_krw": 4900,
       "price_range_max_krw": 26900,
@@ -25380,6 +25233,10 @@
         "대왕쥐포",
         "두툼아귀포",
         "촉촉반건조오징어"
+      ],
+      "representative_reviews": [
+        "남자친구랑 산책하고 간단하게 먹을 거 찾다가 방문했는데 진짜 흡입했습니다 마늘쫑 누룽지 무조건 추가하세요 ㅠㅠ 직원분도 너무 친절해서 재방문 의사1000000프로 입니다 남자친구가 쫄깃쫄깃 쫀득쫀득 맛나다고 좋아했어용 ㅠ🤍",
+        "방이동 맛집 찾다가 구도로통닭 방이점 들렀어요 😊 살얼음맥주 한 잔이 정말 시원해서 첫 모금부터 기분이 확 풀리더라고요! 통마늘똥집튀김은 바삭하면서도 고소하고, 마늘 향이 은은하게 올라와서 맥주랑 찰떡궁합이었어요 👍 직원분들도 친절해서 편하게 즐기기 좋았고, 전체적으로 분위기도 부담 없어서 더 좋았네요. 방이동 맛집으로 가볍게 한잔하기 딱 좋은 곳이에요 🍻"
       ]
     },
     {
@@ -25440,7 +25297,7 @@
       "rating": 4.51,
       "rating_source": "naver_crawl",
       "review_count": 767,
-      "representative_review": null,
+      "representative_review": "차고버거 제입엔 역대급 수제버거 였어요 !! 안짜고 은은한 단맛에 ..감칠맛 나는게 넘넘 맛있어요 !! 먹으면서 건강한 느낌을 받았어요 ~ 야채가 억쎄서 맛없을줄 알았는데 ~ 야채 그린맛?!이 아주 좋았고 ~ 치즈도 안짜구 ~ 적양파가 신의한수였던거 같아유 ~~ !! 또 먹고싶네요 !! 너므 맛있게 먹었어요 !!",
       "price_per_person_krw": 8100,
       "price_range_min_krw": 5000,
       "price_range_max_krw": 12700,
@@ -25478,6 +25335,10 @@
         "Terra 테라",
         "코로나 (Bottle)",
         "코젤다크 (Bottle)"
+      ],
+      "representative_reviews": [
+        "차고버거 제입엔 역대급 수제버거 였어요 !! 안짜고 은은한 단맛에 ..감칠맛 나는게 넘넘 맛있어요 !! 먹으면서 건강한 느낌을 받았어요 ~ 야채가 억쎄서 맛없을줄 알았는데 ~ 야채 그린맛?!이 아주 좋았고 ~ 치즈도 안짜구 ~ 적양파가 신의한수였던거 같아유 ~~ !! 또 먹고싶네요 !! 너므 맛있게 먹었어요 !!",
+        "안녕하세요 차고입니다!! 맛있게 드셔주시고 이쁜 사진과 칭찬까지 ㅠㅠ 진짜 감동입니다 !! 주문해주신 차고클래식버거는 '매일 먹어도 질리지 않는 버거를 만들겠다! 하는 생각으로 만든 깔끔하고 느끼하지 않은 맛의 버거예요!! 메뉴를 만들면서 생각한 것 그대로 느껴주시고 맛있게 드셔주셔서 더욱 감사할 따름입니다 ㅠ 앞으로도 올림픽공원이나 잠실에 오시면! 1등으"
       ]
     },
     {
@@ -25769,7 +25630,7 @@
       "rating": 4.37,
       "rating_source": "naver_crawl",
       "review_count": 245,
-      "representative_review": null,
+      "representative_review": "늘 먹는 샹궈는 역시 맛있었고 마라바지락볶음도 시켜봤는데 이 메뉴는 좀 달아서 다시 맵게 볶아달라고 요청드렸더니 맛이 살아났어요 ㅎㅎ 언제나 추천",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 18000,
       "price_range_max_krw": 32000,
@@ -25796,6 +25657,10 @@
         "마라룽샤꼬리",
         "계란토마토볶음",
         "마라매운바지락"
+      ],
+      "representative_reviews": [
+        "늘 먹는 샹궈는 역시 맛있었고 마라바지락볶음도 시켜봤는데 이 메뉴는 좀 달아서 다시 맵게 볶아달라고 요청드렸더니 맛이 살아났어요 ㅎㅎ 언제나 추천",
+        "안녕하세요. 일미양다리꼬치입니다 :) 요청사항은 편하게 말씀해주시면 최대한 반영해서 맛있게 요리해드리겠습니다~! 또 방문해주세요 감사합니다!"
       ]
     },
     {
@@ -25993,7 +25858,7 @@
       "rating": 4.41,
       "rating_source": "naver_crawl",
       "review_count": 1072,
-      "representative_review": null,
+      "representative_review": "작년에 브랜드평판 대상도 받았다고 인터넷에서 보고 여기 제가 자주 가던곳이라 반갑더라구요. 기대를 많이하고 다시 갔는데도 역시나 맛있네요.. 불고기는 정말 여기보다 맛있는 곳을 아직 못 찾았습니다. 너무 행복해요 캬",
       "price_per_person_krw": 16000,
       "price_range_min_krw": 16000,
       "price_range_max_krw": 32000,
@@ -26037,7 +25902,7 @@
       "rating": 4.32,
       "rating_source": "naver_crawl",
       "review_count": 1159,
-      "representative_review": null,
+      "representative_review": "봉피양은 처음이였는데, 육향과 메밀향이 은은하게 퍼져서 맛있습니다. 간이 정말 훌륭합니다. 남자분은 양이 적을수도 있을것 같아요. 고명으로 올라간 김치가 너무 새큼하게 느껴지긴 했는데 전체적으로 맛있었습니다.",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 10000,
       "price_range_max_krw": 21000,
@@ -26059,6 +25924,10 @@
         "한우곰탕",
         "한우청미김치찌개",
         "한우육회비빔밥"
+      ],
+      "representative_reviews": [
+        "봉피양은 처음이였는데, 육향과 메밀향이 은은하게 퍼져서 맛있습니다. 간이 정말 훌륭합니다. 남자분은 양이 적을수도 있을것 같아요. 고명으로 올라간 김치가 너무 새큼하게 느껴지긴 했는데 전체적으로 맛있었습니다.",
+        "람미최고님, 봉피양 롯데백화점 잠실점에 방문해 주셔서 감사합니다 😊 처음 드셔보셨는데 맛있게 드셨다니 정말 다행입니다. 고명 부분에서 아쉬움을 느끼셨다니 죄송합니다. 앞으로도 더 나은 맛으로 보답하겠습니다 🙏 다음에도 또 뵙겠습니다 🌿 가정의 달 5월에 저희와 함께해 주셔서 감사드립니다. 가족 모두 함께하는 모든 날들을 진심으로 응원할게요 🌸"
       ]
     },
     {
@@ -26075,7 +25944,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": 575,
-      "representative_review": null,
+      "representative_review": "주말에 아이랑 롯데월드 왔다가 저녁식사하러 큰기와집 방문했어요!! 아이랑 식사하기 좋은 한식메뉴라 좋아요🙂 청국장이랑 제육, 고등어구이 주문해서 맛있게 먹고 왔어요!!! 아이랑 밥먹기 좋은 잠실 큰기와집 추천입니다!!!👍🏻",
       "price_per_person_krw": 14500,
       "price_range_min_krw": 9900,
       "price_range_max_krw": 32000,
@@ -26101,6 +25970,10 @@
         "고등어 구이",
         "곁들임-간장보쌈(중)",
         "떡갈비"
+      ],
+      "representative_reviews": [
+        "주말에 아이랑 롯데월드 왔다가 저녁식사하러 큰기와집 방문했어요!! 아이랑 식사하기 좋은 한식메뉴라 좋아요🙂 청국장이랑 제육, 고등어구이 주문해서 맛있게 먹고 왔어요!!! 아이랑 밥먹기 좋은 잠실 큰기와집 추천입니다!!!👍🏻",
+        "디저트와 빵 종류를 많이 먹었더니 한식이 먹고 싶어 여러 매장 둘러보다가 콩비지찌개에 끌려 들어갔습니다 저는 콩비지찌개 남편은 제육볶음 주문했어요 반찬 갯수나 차림이 많진 않았지만 깔끔하게 세팅되고 맛도 슴슴하니 좋았어요 콩비지찌개 고소하고 너무 맛있게 먹었고 제육볶음도 불향 가득해수 정말 맛있었습니다 아쉬운건 직원분들이 불친절했어요 뭘 요구하거나 찾아도 "
       ]
     },
     {
@@ -26114,10 +25987,10 @@
       "lng": 127.0990718,
       "distance_meters": 635.2,
       "walk_minutes": 7.9,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.34,
+      "rating_source": "naver_crawl",
+      "review_count": 1170,
+      "representative_review": "상황삼계탕, 한방삼계탕 주문했어요. 닭이 푹 익어 발골이 잘 되고, 국물이 진하지만 부담스럽지 않아요. 인삼주도 함께 나와서 몸보신 제대로 했어요. 백화점 11층이라 접근성도 좋고 재방문 의사 있어요.",
       "price_per_person_krw": 22000,
       "price_range_min_krw": 20000,
       "price_range_max_krw": 22000,
@@ -26220,7 +26093,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": 306,
-      "representative_review": null,
+      "representative_review": "고노와다 사시미라는 특별한 메뉴가 있습니다 한번쯤 먹어볼만 하지만 해삼내장의 씁슬한 맛이 있어서 호불호가 있을거 같습니다 친구는 엄청 고급진 맛이라고 합니다 가라아케 오뎅우동 꼬치등 메뉴가 다양하고 가볍게 한잔하기 좋습니다",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 13000,
       "price_range_max_krw": 35000,
@@ -26249,6 +26122,10 @@
         "토리가와아게",
         "고노와다비빔밥",
         "오사카짬뽕"
+      ],
+      "representative_reviews": [
+        "고노와다 사시미라는 특별한 메뉴가 있습니다 한번쯤 먹어볼만 하지만 해삼내장의 씁슬한 맛이 있어서 호불호가 있을거 같습니다 친구는 엄청 고급진 맛이라고 합니다 가라아케 오뎅우동 꼬치등 메뉴가 다양하고 가볍게 한잔하기 좋습니다",
+        "고노와다를 먹고싶었는데 근처에 고노와다먹을곳이 없었는데 마침 맛있는 고노와다 집이 생겼네요!! 너무너무 맛있어요~!! 직원분들도 친절하시고 음식도 정말정말 맛있어요!!! 앞으로 고노와다 생각나면 매일와야겠어요!!"
       ]
     },
     {
@@ -26531,10 +26408,10 @@
       "lng": 127.1082625,
       "distance_meters": 1141.9,
       "walk_minutes": 14.3,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.57,
+      "rating_source": "naver_crawl",
+      "review_count": 5755,
+      "representative_review": "해물누룽지, 꿔바로우, 새우완탕면 주문했습니다. 해물누룽지는 바삭한 누룽지에 해물이 푸짐하게 들어가고 소스도 맛있었습니다. 꿔바로우는 겉은 바삭하고 속은 촉촉해서 식감이 좋았고, 새우완탕면도 국물이 깔끔하고 완탕이 탱글탱글해서 만족스러웠습니다. 세 메뉴 모두 맛있게 먹었고 직원들도 친절해서 기분 좋은 식사였습니다. 다음에도 다시 방문하고 싶은 곳입니다.",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -26583,6 +26460,10 @@
         "팔보라조(팔보채)",
         "오룡해삼",
         "전가복"
+      ],
+      "representative_reviews": [
+        "해물누룽지, 꿔바로우, 새우완탕면 주문했습니다. 해물누룽지는 바삭한 누룽지에 해물이 푸짐하게 들어가고 소스도 맛있었습니다. 꿔바로우는 겉은 바삭하고 속은 촉촉해서 식감이 좋았고, 새우완탕면도 국물이 깔끔하고 완탕이 탱글탱글해서 만족스러웠습니다. 세 메뉴 모두 맛있게 먹었고 직원들도 친절해서 기분 좋은 식사였습니다. 다음에도 다시 방문하고 싶은 곳입니다.",
+        "우연히 들렸는데 생활의달인 식당이였어요. 시그니처 마라곱창국수 먹었는데 엄청 맛있어요👍 다음에 또 방문해서 먹고 싶은 특별한 메뉴에요! 6살 아이는 새우볶음밥 먹었는데, 엄지척하면서 최고래요😁"
       ]
     },
     {
@@ -26599,7 +26480,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": 958,
-      "representative_review": null,
+      "representative_review": "여기 메뉴는 진짜 특별해요 이근방에서 먹을 수 있는 것 중에서 젤 독특한거같아요 심지어 맛있어요 로제크림짬뽕은 먹으면 상투스 울려요. 가지튀짐 마라크림새우 오이무침 다 곁들여먹기에도 넘 좋구요 계절메뉴로 나온 중국식냉면도 맛깔나요",
       "price_per_person_krw": 12000,
       "price_range_min_krw": 5000,
       "price_range_max_krw": 32000,
@@ -26626,6 +26507,10 @@
         "마라크림새우(흑백요리사ver.)",
         "깨보샤",
         "오이무침"
+      ],
+      "representative_reviews": [
+        "여기 메뉴는 진짜 특별해요 이근방에서 먹을 수 있는 것 중에서 젤 독특한거같아요 심지어 맛있어요 로제크림짬뽕은 먹으면 상투스 울려요. 가지튀짐 마라크림새우 오이무침 다 곁들여먹기에도 넘 좋구요 계절메뉴로 나온 중국식냉면도 맛깔나요",
+        "아시안푸드 너무 좋아하는데 덕클 너무 맛있게 먹었어요 💓 사천크리스피에그누들 소스가 킥!! 많이 맵지 않고 에그면이 바삭하면서 소스가 잘 배어있어서 맛았어요! 지쓰랑멘은 초계국수 같은 맛인데 중국에 온 느낌이 드는맛 ~~ 살얼음 동동 시원해서 여름에 먹기 좋아요!! 가지튀김은 리뷰이벤트로 분위기도 좋고 맛도 최고 재방문 할거 같아요! 💓"
       ]
     },
     {
@@ -26801,8 +26686,8 @@
       "walk_minutes": 10.4,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 95,
+      "representative_review": "또 생각나서 온 가족 총출동! 😊 지난번에는 탕수육을 너무 맛있게 먹어서 이번에는 베스트 메뉴라는 팔보채와 깐풍기에 도전해 봤어요. 그런데 먹다 보니 너무 맛있어서 결국 고추잡채까지 추가 주문! 홀에 계신 사장님과 이야기를 나누다 보니, 알고 보니 수년 전 삼전동 형제짬뽕을 처음 오픈하셨던 형제 사장님들이시더라고요. 예전 단골이었다고 말씀드렸더니 원래 꽃빵",
       "price_per_person_krw": 11000,
       "price_range_min_krw": 4000,
       "price_range_max_krw": 32000,
@@ -26843,6 +26728,10 @@
         "군만두(10p)",
         "연태고량주",
         "연태하이볼"
+      ],
+      "representative_reviews": [
+        "또 생각나서 온 가족 총출동! 😊 지난번에는 탕수육을 너무 맛있게 먹어서 이번에는 베스트 메뉴라는 팔보채와 깐풍기에 도전해 봤어요. 그런데 먹다 보니 너무 맛있어서 결국 고추잡채까지 추가 주문! 홀에 계신 사장님과 이야기를 나누다 보니, 알고 보니 수년 전 삼전동 형제짬뽕을 처음 오픈하셨던 형제 사장님들이시더라고요. 예전 단골이었다고 말씀드렸더니 원래 꽃빵",
+        "송리단길에 있는 중식 맛집입니다. 하얀짬뽕은 해물도 푸짐하게 들어있으며 맵지리도 시원하게 먹을 수 있었고, 볶음밥 위의 계란과 새우는 조합이 좋네요, 칠리새우도 훌륭했고 무엇보다 베스트메뉴로 파탕수육이 인상적이었는데 소스에 겨자가 들어가있어서 그런지 일반탕수육과는 차별되면서 식욕을 돋구는 매력이 있었습니다. 사장님 친절하시고 매장이 깔끔해서 식사하기 좋았어"
       ]
     },
     {
@@ -26858,8 +26747,8 @@
       "walk_minutes": 9.2,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 1671,
+      "representative_review": "남자친구랑 데이트하러 방문했는데 분위기부터 마음에 들었던 곳이에요. 은은한 조명에 매장도 깔끔해서 대화하기 좋았고 직원분들도 친절하게 응대해 주셔서 편하게 식사할 수 있었습니다. 큐브스테이크는 고기가 정말 부드럽고 육즙이 살아 있어서 가장 만족했던 메뉴였고, 함께 주문한 안주들도 전체적으로 퀄리티가 좋았어요ㅎㅎ 음식 하나하나 정성이 느껴졌고 술이랑도 잘 어",
       "price_per_person_krw": 17000,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 29000,
@@ -26903,6 +26792,10 @@
         "모찌리도후",
         "파인애플 샤베트",
         "요거트 샤베트"
+      ],
+      "representative_reviews": [
+        "남자친구랑 데이트하러 방문했는데 분위기부터 마음에 들었던 곳이에요. 은은한 조명에 매장도 깔끔해서 대화하기 좋았고 직원분들도 친절하게 응대해 주셔서 편하게 식사할 수 있었습니다. 큐브스테이크는 고기가 정말 부드럽고 육즙이 살아 있어서 가장 만족했던 메뉴였고, 함께 주문한 안주들도 전체적으로 퀄리티가 좋았어요ㅎㅎ 음식 하나하나 정성이 느껴졌고 술이랑도 잘 어",
+        "안녕하세요! 😊 이자카야 우규 방이동점을 찾아주셔서 진심으로 감사드려요 💕 은은한 조명 속에서 편안한 데이트 시간을 보내셨다니 저희도 기쁘답니다~ 큐브 스테이크의 부드러운 식감과 육즙 가득한 맛을 칭찬해주셔서 영광이에요 🥩 다른 메뉴들까지 정성껏 즐겨주셔서 더욱 행복해요! 다음에도 더 특별한 맛과 서비스로 여러분의 소중한 순간을 함께할게요 🍻 재방문 약속까"
       ]
     },
     {
@@ -26918,8 +26811,8 @@
       "walk_minutes": 7.7,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 349,
+      "representative_review": "돈까스 크기보고 깜짝 놀랐네요 라멘과 돈까스 중 고르느라 힘들었네 둘이 와서 하나씩 주문하면 좋을거같아요 크기만 큰게아니고 바싹하니 맛있고 제가 좋아하는 퍽퍽살이라 담백해서 좋았습니다 오랜만에 경양식 좋네요",
       "price_per_person_krw": 12900,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 14900,
@@ -26946,103 +26839,10 @@
         "잠실 로스카츠🔥 겉바속촉로스",
         "튀김교자(4개)",
         "볼카츠(1개)"
-      ]
-    },
-    {
-      "id": "naver:2077272353",
-      "name": "부티크 호시카이 롯데백화점 잠실점",
-      "place_type": "restaurant",
-      "category": "korean",
-      "category_label": "한식",
-      "address": "",
-      "lat": 37.512298,
-      "lng": 127.0989703,
-      "distance_meters": 615.6,
-      "walk_minutes": 7.7,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "price_per_person_krw": 21000,
-      "price_range_min_krw": 8000,
-      "price_range_max_krw": 35000,
-      "representative_menu": "호시카이 특선알탕 · 생 대구 맑은지리탕 · 생 대구 매운탕",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/%EB%B6%80%ED%8B%B0%ED%81%AC%20%ED%98%B8%EC%8B%9C%EC%B9%B4%EC%9D%B4%20%EB%A1%AF%EB%8D%B0%EB%B0%B1%ED%99%94%EC%A0%90%20%EC%9E%A0%EC%8B%A4%EC%A0%90/place/2077272353",
-      "source": "naver_map",
-      "menu_names": [
-        "호시카이 특선알탕",
-        "생 대구 맑은지리탕",
-        "생 대구 매운탕",
-        "제주옥돔미역국",
-        "지라시스시",
-        "모둠 회덮밥",
-        "호시카이 특선 장어덮밥",
-        "우니이꾸라동",
-        "도로동",
-        "주방장 특선 텐동",
-        "제철 야채와 풍미버섯 텐동",
-        "한라산 고사리 고등어 조림",
-        "제주 옥돔 소금구이",
-        "제주 금태 소금구이",
-        "제철 특선 물회",
-        "전복내장죽",
-        "참돔머리 간장조림",
-        "[키즈]미역국과 생선구이",
-        "참다랑어 대뱃살 선홍살 참돔 초밥",
-        "호시카이 도로 스테이크",
-        "찐 전복과 신선한 전복내장 게우소스",
-        "통 활전복 버터구이",
-        "제주 옥돔 바삭 소금구이",
-        "돌문어 간장조림",
-        "호시카이 특선 고로케",
-        "전복 새우 제철야채 고로케 모둠튀김"
-      ]
-    },
-    {
-      "id": "naver:1340232662",
-      "name": "채선당 자연한가득 롯데월드 몽촌점",
-      "place_type": "restaurant",
-      "category": "korean",
-      "category_label": "한식",
-      "address": "",
-      "lat": 37.5110794,
-      "lng": 127.0981638,
-      "distance_meters": 767.9,
-      "walk_minutes": 9.6,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "price_per_person_krw": 18900,
-      "price_range_min_krw": 4000,
-      "price_range_max_krw": 29000,
-      "representative_menu": "소고기 샤브샤브(평일) · 마라 반반 소고기 샤브샤브 · 한우샤브샤브",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/%EC%B1%84%EC%84%A0%EB%8B%B9%20%EC%9E%90%EC%97%B0%ED%95%9C%EA%B0%80%EB%93%9D%20%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%20%EB%AA%BD%EC%B4%8C%EC%A0%90/place/1340232662",
-      "source": "naver_map",
-      "menu_names": [
-        "소고기 샤브샤브(평일)",
-        "마라 반반 소고기 샤브샤브",
-        "한우샤브샤브",
-        "월남쌈 세트",
-        "디너롤+딸기쨈",
-        "야채 볶음밥",
-        "국물떡볶이(저녁/주말메뉴)",
-        "잡채(주말)",
-        "소고기샤브샤브(저녁/ 주말)",
-        "어드벤쳐 샤브샤브(평일점심,무한리필x",
-        "편백찜&샤브더블세트",
-        "어린이 요금 (4~7세)",
-        "어린이 요금(8~12세)",
-        "(밀쿠폰) 불고기덮밥",
-        "(밀쿠폰)마라탕",
-        "명품 소고기모듬 세트",
-        "스페셜 해물 한우 샤브샤브"
+      ],
+      "representative_reviews": [
+        "돈까스 크기보고 깜짝 놀랐네요 라멘과 돈까스 중 고르느라 힘들었네 둘이 와서 하나씩 주문하면 좋을거같아요 크기만 큰게아니고 바싹하니 맛있고 제가 좋아하는 퍽퍽살이라 담백해서 좋았습니다 오랜만에 경양식 좋네요",
+        "잠실 롯데백화점 라멘 맛집 우츄진 다녀왔습니다. 국물도 진하고 토핑도 퀄리티가 좋았어요. 면발 두께 조절 가능한것도 너무 마음에 들었습니다! 돈까스 맛집이라고도 하던데 다음번에 오면 돈까스도 도전해보려고요 ㅎㅎ"
       ]
     },
     {
@@ -27059,7 +26859,7 @@
       "rating": 4.35,
       "rating_source": "naver_crawl",
       "review_count": 2638,
-      "representative_review": null,
+      "representative_review": "지나가는데 회덮밥이 맛있어 보여서 앉았습니다. 우동은 기대안했는데 밥이랑 우동모두 맛있었어요. 다만 양이 좀 적어서 군것질한 느낌이라 별 다섯개 대신 4개줍니다. 다음엔 조금만 더 주세요. 고맙습니다.",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 10000,
@@ -27089,6 +26889,10 @@
         "소고기초밥",
         "계란초밥",
         "캘리포니아롤"
+      ],
+      "representative_reviews": [
+        "지나가는데 회덮밥이 맛있어 보여서 앉았습니다. 우동은 기대안했는데 밥이랑 우동모두 맛있었어요. 다만 양이 좀 적어서 군것질한 느낌이라 별 다섯개 대신 4개줍니다. 다음엔 조금만 더 주세요. 고맙습니다.",
+        "신선해보여서 괜찮아요 무난합니다"
       ]
     },
     {
@@ -27105,7 +26909,7 @@
       "rating": 4.39,
       "rating_source": "naver_crawl",
       "review_count": 1715,
-      "representative_review": null,
+      "representative_review": "한우대창덮밥, 항정살덮밥, 가라아게 모두 맛있었어요 와사비와 같이 먹으니 전혀 느끼하지 않고 좋아요 가라아게도 땅콩소스와 먹으니 단짠고소하게 잘 어울려요 같이 나오는 참치김치찌개는 오랜만에 먹는데 맛있네요 감사합니다",
       "price_per_person_krw": 16900,
       "price_range_min_krw": 4200,
       "price_range_max_krw": 19900,
@@ -27132,6 +26936,10 @@
         "아사히 생 캔",
         "테라",
         "오키나와 캔"
+      ],
+      "representative_reviews": [
+        "한우대창덮밥, 항정살덮밥, 가라아게 모두 맛있었어요 와사비와 같이 먹으니 전혀 느끼하지 않고 좋아요 가라아게도 땅콩소스와 먹으니 단짠고소하게 잘 어울려요 같이 나오는 참치김치찌개는 오랜만에 먹는데 맛있네요 감사합니다",
+        "안녕하세요 고객님 진작 잠실점입니다. 오랜만에 방문해 주셨음에도 저희 한우대창덮밥, 항정살덮밥, 가라아게를 잊지 않고 다시 찾아주셔서 진심으로 감사드립니다. 고객님의 정갈한 사진 리뷰에 보답드리기 위하여 추후 재방문해주신다면 더욱 발전된 정갈한 한상으로 대접해 드리겠습니다. 감사합니다."
       ]
     },
     {
@@ -27148,7 +26956,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": 683,
-      "representative_review": null,
+      "representative_review": "두번째 방문인데 역시 국물 맛있어요 잠실가면 샤브 먹으러 재방문 의사 있어요",
       "price_per_person_krw": 26000,
       "price_range_min_krw": 19000,
       "price_range_max_krw": 32000,
@@ -27164,6 +26972,10 @@
         "와규등심샤브샤브",
         "한우등심샤브샤브",
         "한우살치샤브샤브"
+      ],
+      "representative_reviews": [
+        "두번째 방문인데 역시 국물 맛있어요 잠실가면 샤브 먹으러 재방문 의사 있어요",
+        "잠실에 왔다가 키자니아끝나고 방문해서 8시에 들어와서 8:50까지 먹어야한다고하셨어요.채끝샤브3인 담백/매운육수 시켰어요.버섯이 다양하게 나왔고 야채들도 신선하고 고기상태가 너무 좋았어요.모두 맛있게 먹었네요.시간이 촉박해서 야채죽 못먹고나왔어요.양도 제법 많았고요.샤브 비슷하다고 생각했는데 여기서 너무 맛있게 먹어서 또 생각날꺼같네요~매장도 넓었어요.붐비"
       ]
     },
     {
@@ -27177,10 +26989,10 @@
       "lng": 127.0987588,
       "distance_meters": 626.1,
       "walk_minutes": 7.8,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.39,
+      "rating_source": "naver_crawl",
+      "review_count": 1314,
+      "representative_review": "얼렸다가 녹인 상태처럼 고기가 나와서 신선도가 떨어지네요 자주 왔었지만 이번에 진짜 최악이네요 웨이팅 방식도 한참 지나간 사람들도 먼저 앞으로 껴주면서 더 기다리게 하고 주인이 바뀐것 같은데 정말 별로네요 계산을 했는데도 또 다시 다른분이 와서 계산을 하라고 중복적으로 이야기하네요 정말 최악입니다. 신선도가 좋아서 갔던 곳인데 서비스도 신선도도 최악이네요",
       "price_per_person_krw": 15900,
       "price_range_min_krw": 14900,
       "price_range_max_krw": 20900,
@@ -27196,6 +27008,10 @@
         "소고기커리샤브",
         "마라탕샤브",
         "한우샤브"
+      ],
+      "representative_reviews": [
+        "얼렸다가 녹인 상태처럼 고기가 나와서 신선도가 떨어지네요 자주 왔었지만 이번에 진짜 최악이네요 웨이팅 방식도 한참 지나간 사람들도 먼저 앞으로 껴주면서 더 기다리게 하고 주인이 바뀐것 같은데 정말 별로네요 계산을 했는데도 또 다시 다른분이 와서 계산을 하라고 중복적으로 이야기하네요 정말 최악입니다. 신선도가 좋아서 갔던 곳인데 서비스도 신선도도 최악이네요",
+        "저녁에 갔는데 혼자 가서 그런건지 몰라도 눈치를 너무 줍니다, 음식 담긴 그릇 작은거 하나까지 비워짐과 동시에 바로 뺏어가듯 가져가버리는데 앞접시로 쓰려다가 뺏긴 기분 들어서 별로였고요, 마감하는 티를 아주 팍팍 냅니다 ㅠ 좁은 바 특성상 어쩔수없겠지만 자꾸 청소를 해대고 그릇을 뺏어가니 식사가 너무 불편합니다 그렇다고 엄청 맛이 있거나 양이 많은것도 아니"
       ]
     },
     {
@@ -27212,7 +27028,7 @@
       "rating": 4.64,
       "rating_source": "naver_crawl",
       "review_count": 7842,
-      "representative_review": null,
+      "representative_review": "호르몬동 고소하고 쫄깃하고 맛있어요~~ 부타동은 불향도 나고 너무 맛있어요👍 메뉴마다 양 선택할 수 있어서 좋아요ㅎㅎㅎ 메뉴도 빨리 나오고 다 맛있어요!! 혼밥 혼술 하기에도 좋을거 같아용 잠실 맛집 추천합니당😆",
       "price_per_person_krw": 18000,
       "price_range_min_krw": 6000,
       "price_range_max_krw": 24000,
@@ -27261,8 +27077,8 @@
       "walk_minutes": 8.3,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 353,
+      "representative_review": "우연히 지나가다가 들어갔어요. 기대 없이 들어갔는데, 눈이 번쩍 뜨이던 이 맛!!! 👍🏻 일단 국물 끝내주고요, 면빨 쫄깃쫄깃~~ 짱짱. 채소향이 너무나 좋고, 건더기도 실하게 들어있었어요🍲❤️ 순한맛으로 주문 했고, 살짝 매콤한 정도? 단계별로 있어서 좋았어요~~ 매장도 넓고, 깨끗하고, 친절하셨어요 ^^ 다음에 또 올게요 하고 나왔는데, 진짜 또 갈게요",
       "price_per_person_krw": 9500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 13000,
@@ -27286,6 +27102,10 @@
         "자장밥",
         "어묵",
         "주먹밥"
+      ],
+      "representative_reviews": [
+        "우연히 지나가다가 들어갔어요. 기대 없이 들어갔는데, 눈이 번쩍 뜨이던 이 맛!!! 👍🏻 일단 국물 끝내주고요, 면빨 쫄깃쫄깃~~ 짱짱. 채소향이 너무나 좋고, 건더기도 실하게 들어있었어요🍲❤️ 순한맛으로 주문 했고, 살짝 매콤한 정도? 단계별로 있어서 좋았어요~~ 매장도 넓고, 깨끗하고, 친절하셨어요 ^^ 다음에 또 올게요 하고 나왔는데, 진짜 또 갈게요",
+        "방문해주시고 정성스러운 후기 남겨주셔서 감사합니다 😊 국물과 면, 재료의 조화까지 맛있게 즐겨주시고 자세히 남겨주셔서 기쁩니다. 앞으로도 만족스러운 한 끼가 되실 수 있도록 최선을 다하겠습니다 💖"
       ]
     },
     {
@@ -27301,8 +27121,8 @@
       "walk_minutes": 14.3,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 3655,
+      "representative_review": "즉흥적으로 찾아서 들어가봤는데 정말 맛있네요 강추합니다! 오늘 먹은건 SET특선과, 연어, 훈연삼치, 참치뱃살+서비스였네요",
       "price_per_person_krw": 20000,
       "price_range_min_krw": 14000,
       "price_range_max_krw": 30000,
@@ -27324,6 +27144,10 @@
         "방어초밥",
         "연어초밥",
         "고등어초밥"
+      ],
+      "representative_reviews": [
+        "즉흥적으로 찾아서 들어가봤는데 정말 맛있네요 강추합니다! 오늘 먹은건 SET특선과, 연어, 훈연삼치, 참치뱃살+서비스였네요",
+        "매장은 작은데 깔끔해요. 연어 초밥 맛있어요. 여긴 밥에 간장으로 간이 되어 있어요. 밥양이 좀 많아요. 포장 손님들이 많아요."
       ]
     },
     {
@@ -27337,10 +27161,10 @@
       "lng": 127.109198,
       "distance_meters": 799.2,
       "walk_minutes": 10.0,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.77,
+      "rating_source": "naver_crawl",
+      "review_count": 3464,
+      "representative_review": "입에 넣는 순간 사르르 녹는 참치의 신선함이 정말 인상적이었고, 부위별로 맛과 식감이 달라 먹는 내내 즐거웠습니다. 직원분들께서 부위 설명도 친절하게 해주셔서 더 맛있게 즐길 수 있었어요. 곁들여 나오는 스끼다시도 하나하나 정성이 느껴졌고, 전체적으로 깔끔한 분위기 덕분에 가족 모임이나 회식, 특별한 날 방문하기에도 좋은 곳이었습니다.",
       "price_per_person_krw": 35000,
       "price_range_min_krw": 35000,
       "price_range_max_krw": 35000,
@@ -27372,8 +27196,8 @@
       "walk_minutes": 8.9,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 753,
+      "representative_review": "야끼도리 & 생맥주 먹으려구 찾다가 6시 이전에 여는 방이동 이자까야 🙂 사실 큰기대 없이 갔는데 체인점 중에서는 탑5안에는 드는것 같아요 염통이 살작 붉은기가돌아서 더 구워달라 요청드렸는데 ( 오픈주방이 아니라서 고기 상태나 굽기까지 어떻게하시는지 훙쳐볼수가 없어서 100% 신뢰가 안가서 ㅎ) 되게 예쁘게 정성껏 붉은기 안보이게 구워주셨고 새 그릇에 양배",
       "price_per_person_krw": 18500,
       "price_range_min_krw": 4000,
       "price_range_max_krw": 35000,
@@ -27535,6 +27359,10 @@
         "사케돗쿠리(냉/온)",
         "콜라/제로콜라/사이다/환타파인",
         "레몬슬라이스"
+      ],
+      "representative_reviews": [
+        "야끼도리 & 생맥주 먹으려구 찾다가 6시 이전에 여는 방이동 이자까야 🙂 사실 큰기대 없이 갔는데 체인점 중에서는 탑5안에는 드는것 같아요 염통이 살작 붉은기가돌아서 더 구워달라 요청드렸는데 ( 오픈주방이 아니라서 고기 상태나 굽기까지 어떻게하시는지 훙쳐볼수가 없어서 100% 신뢰가 안가서 ㅎ) 되게 예쁘게 정성껏 붉은기 안보이게 구워주셨고 새 그릇에 양배",
+        "안녕하세요! 산카이 이자카야 방이점에 찾아주셔서 정말 감사드려요 🥰 야끼토리와 시원한 생맥주가 생각날 때 딱 좋은 시간 보내셨다니 기쁘네요 💕 저희 매장에서 맛있는 메뉴와 함께 여유로운 저녁 즐기실 수 있도록 앞으로도 열심히 준비할게요~ 다음에도 편하게 들러주세요! 소중한 발걸음 기다리고 있을게요 😊 감사합니다~!"
       ]
     },
     {
@@ -27642,7 +27470,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": 281,
-      "representative_review": null,
+      "representative_review": "가성비 맛집 맛- 여름이면 생각나는 곳 샐러드 양이 보고있으면 흐뭇 맛도 깔끔함 엄청 빨리 나옴 청결- 롯데백화점 입점 서비스- 롯데백화점 입점 재방문- pass by",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -27658,6 +27486,10 @@
         "크림 고구마 팬치즈",
         "오리지널 갈릭 고르곤졸라 팬치즈",
         "베이컨 포테이토 팬치즈"
+      ],
+      "representative_reviews": [
+        "가성비 맛집 맛- 여름이면 생각나는 곳 샐러드 양이 보고있으면 흐뭇 맛도 깔끔함 엄청 빨리 나옴 청결- 롯데백화점 입점 서비스- 롯데백화점 입점 재방문- pass by",
+        "샐러드파스타 새우리조또 🥗🥗🥗 파스타는 야채도 듬뿍 냉파스타라 맛있어요 새우리조또도 적당히 크리미 하고 치즈듬뿍이라 맛있어요 자리에 진동벨 올려두면 직원분들이 음식도 갔다주시고 빈그릇도 치워주셔서 편했어요"
       ]
     },
     {
@@ -27674,7 +27506,7 @@
       "rating": 5.0,
       "rating_source": "naver_crawl",
       "review_count": 1357,
-      "representative_review": null,
+      "representative_review": "정말 샐러드부터 본식사 후식까지 너무 맛있습니다. 여기만 먹을수 있는 맛이라 또 먹으러 갈거에요♡ 지인과 가기 너무 좋고 버섯리조또는 찹쌀이 들어간건지 너무 쫀득쫀득 맛있어요♡ 뭐 하나 정성이 안들어간게 없어서 최고의 맛입니다. 또 방문할게요♡ 언제가도 모든 음식이 맛있고 기분이 좋아집니다♡",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -27700,6 +27532,10 @@
         "보늬밤 바스크치즈케이크",
         "상주 곶감 마스카포네",
         "경주 쑥 젤라또"
+      ],
+      "representative_reviews": [
+        "정말 샐러드부터 본식사 후식까지 너무 맛있습니다. 여기만 먹을수 있는 맛이라 또 먹으러 갈거에요♡ 지인과 가기 너무 좋고 버섯리조또는 찹쌀이 들어간건지 너무 쫀득쫀득 맛있어요♡ 뭐 하나 정성이 안들어간게 없어서 최고의 맛입니다. 또 방문할게요♡ 언제가도 모든 음식이 맛있고 기분이 좋아집니다♡",
+        "메뉴들 다 다른곳에서 먹을 수 없는 특이한 메뉴들이에요 항정살 알리오알리오가 특히 맛있었는데 파스타면익힘도 좋고 항정살이 넘 맛있어요 감태 은태구 리조또도 첨 먹어보는 맛인데 감태가 넘 맛나네요 ㅎㅎ 양송이 타파스도 다들 먹는만큼 맛있어요 다만 빨리 식으니까 금방 드시길 추천합니다! 분위기 좋아서 데이트 맛집으로 추천합니다"
       ]
     },
     {
@@ -27750,7 +27586,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": 11,
-      "representative_review": null,
+      "representative_review": "너무 맛있습니디 리뷰 보고 맛있다는 후기 보고 찾아갔지만 정말 맛있었어요 ㅎㅎ 세프님 포스 촬촬 흐르고 정성이 느껴지는 메뉴구성에 맛도 좋았고 무엇보다 정성스런 메뉴들 때문인지 기분 좋은 식사시간이 되었어요 샐러드나 어니언 스프도 맛이 었지만 스테이크가 아주 예술입니다 마지막에 훈연까지 해서 풍미가 느껴지고 메쉬 포테이토 크리미함과 같이 주신 열무 피클까지",
       "price_per_person_krw": 15000,
       "price_range_min_krw": 10000,
       "price_range_max_krw": 35000,
@@ -27780,52 +27616,10 @@
         "트러플 감자튀김",
         "따듯한 애플파이와 아이스크림",
         "레몬 & 로즈마리 소르베"
-      ]
-    },
-    {
-      "id": "naver:1256370127",
-      "name": "온량",
-      "place_type": "restaurant",
-      "category": "western",
-      "category_label": "양식",
-      "address": "",
-      "lat": 37.5080433,
-      "lng": 127.1100602,
-      "distance_meters": 1174.9,
-      "walk_minutes": 14.7,
-      "rating": 4.51,
-      "rating_source": "naver_crawl",
-      "review_count": 4904,
-      "representative_review": null,
-      "price_per_person_krw": 19000,
-      "price_range_min_krw": 8000,
-      "price_range_max_krw": 25000,
-      "representative_menu": "토마호크 포크커틀렛 · 스파이시 로제 파스타 · 콰트로 크림 리소토",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/%EC%98%A8%EB%9F%89/place/1256370127",
-      "source": "naver_map",
-      "menu_names": [
-        "토마호크 포크커틀렛",
-        "스파이시 로제 파스타",
-        "콰트로 크림 리소토",
-        "나폴리탄 파스타(현 시즌메뉴)",
-        "아마트리치아나 파스타(현 시즌메뉴)",
-        "상하이 스파이시 파스타(현 시즌메뉴)",
-        "쉬림프 바질 크림파스타(현 시즌메뉴)",
-        "만조 바질 크림 리소토(현 시즌메뉴)",
-        "만조 크림 파스타",
-        "스파이시 쉬림프 크림 파스타",
-        "클래식 토마토 파스타",
-        "빼쉐 파스타",
-        "쉬림프 오일 파스타",
-        "봉골레 파스타",
-        "핫 쉬림프 토마토 리소토",
-        "치킨 로제 리소토",
-        "리코타 치즈 샐러드",
-        "미니 리코타 치즈 샐러드",
-        "추가 빵"
+      ],
+      "representative_reviews": [
+        "너무 맛있습니디 리뷰 보고 맛있다는 후기 보고 찾아갔지만 정말 맛있었어요 ㅎㅎ 세프님 포스 촬촬 흐르고 정성이 느껴지는 메뉴구성에 맛도 좋았고 무엇보다 정성스런 메뉴들 때문인지 기분 좋은 식사시간이 되었어요 샐러드나 어니언 스프도 맛이 었지만 스테이크가 아주 예술입니다 마지막에 훈연까지 해서 풍미가 느껴지고 메쉬 포테이토 크리미함과 같이 주신 열무 피클까지",
+        "두번째 방문 바에 앉다가 원형테이블에 앉아봤는데… 다섯명은 무리인듯. 네명까진 괜찮을것 같은데 같이앉고 싶어서 테이블 달라고 함. 고기는 역시나 맛있고 채끝도 시켜봤는데 채끝은 고르곤졸라 치즈맛 강함. 에이징 한달 하셨다고함. 드라이에이징 매니아는 채끝 잡숴보는것도 좋을듯"
       ]
     },
     {
@@ -27839,10 +27633,10 @@
       "lng": 127.0966851,
       "distance_meters": 799.0,
       "walk_minutes": 10.0,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.45,
+      "rating_source": "naver_crawl",
+      "review_count": 286,
+      "representative_review": "파파밸리피자 잠실 드디어 먹어봤네요! 매장에서 바로 구운 자연치즈피자라 그런지 치즈가 쭉쭉 늘어나고 풍미가 정말 깊어요. 토핑도 아낌없이 듬뿍 올라가 있고 도우도 쫄깃해서 마지막 한 입까지 맛있게 먹었습니다. 깔끔하고 직원분들도 친절하셔서 기분 좋게 다녀왔습니다. 잠실 피자 맛집으로 완전 추천합니다! 다음에 또 주문할게요!",
       "price_per_person_krw": 19900,
       "price_range_min_krw": 16900,
       "price_range_max_krw": 20900,
@@ -27861,6 +27655,10 @@
         "리치치즈파스타",
         "피자콤보세트(2~3인용)",
         "피자치킨2인세트"
+      ],
+      "representative_reviews": [
+        "파파밸리피자 잠실 드디어 먹어봤네요! 매장에서 바로 구운 자연치즈피자라 그런지 치즈가 쭉쭉 늘어나고 풍미가 정말 깊어요. 토핑도 아낌없이 듬뿍 올라가 있고 도우도 쫄깃해서 마지막 한 입까지 맛있게 먹었습니다. 깔끔하고 직원분들도 친절하셔서 기분 좋게 다녀왔습니다. 잠실 피자 맛집으로 완전 추천합니다! 다음에 또 주문할게요!",
+        "파파밸리 피자 우연치 않게 롯데월드 왔다가 와 봤는데 생각도 정말 맛있었어요 제가 주문한 건 하와이안 피자 그 즉 피자 세트에서 하와이안 피자랑 그다음에 리치 파스타 먹었는데요 짜지도 않고 적당한 간에 맛있게 잘 구워서 정말 맛있게 먹었어요 특히 저는 초등학교 5학년 아이와 먹었는데 평소에 잘 먹지도 않던 피자를 오늘은 혼자 많이 먹더라고요 매우 강추합니다"
       ]
     },
     {
@@ -27876,8 +27674,8 @@
       "walk_minutes": 10.9,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 3719,
+      "representative_review": "미역과 숙주나물이 들어간 어디서도 맛볼수없는 즉석떡볶이 👍 저의 원픽이예요. 파채튀김도 진짜 맛있어요. 볶음밥은 공짜 완전 최고. 시그니처 2인세트에 볶음밥까지 양도 많고 가성비 최고예요.",
       "price_per_person_krw": 15000,
       "price_range_min_krw": 4000,
       "price_range_max_krw": 29000,
@@ -27936,6 +27734,10 @@
         "콜라 355ml",
         "제로콜라 355ml",
         "사이다 355ml"
+      ],
+      "representative_reviews": [
+        "미역과 숙주나물이 들어간 어디서도 맛볼수없는 즉석떡볶이 👍 저의 원픽이예요. 파채튀김도 진짜 맛있어요. 볶음밥은 공짜 완전 최고. 시그니처 2인세트에 볶음밥까지 양도 많고 가성비 최고예요.",
+        "떡볶이 국물이 진하고 적당히 매콤해서 라면사리랑 정말 잘 어울렸어요. 순대도 잡내 없이 쫄깃했고 튀김도 바삭해서 떡볶이 국물에 찍어 먹기 좋았습니다. 양도 푸짐해서 둘이 배부르게 먹었고 전체적으로 만족스러운 식사였습니다. 다음에도 재방문할 것 같아요."
       ]
     },
     {
@@ -27949,10 +27751,10 @@
       "lng": 127.0981638,
       "distance_meters": 767.9,
       "walk_minutes": 9.6,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.4,
+      "rating_source": "naver_crawl",
+      "review_count": 988,
+      "representative_review": "정수기 물일텐데 물에서 수돗물 맛이 나네요.. 떡볶이 가격에 비해 양도 적고 일단 맛이 없어서 아쉽습니다.",
       "price_per_person_krw": 18500,
       "price_range_min_krw": 4000,
       "price_range_max_krw": 24500,
@@ -27994,6 +27796,10 @@
         "카라멜마끼아또",
         "아이스티",
         "청포도에이드"
+      ],
+      "representative_reviews": [
+        "정수기 물일텐데 물에서 수돗물 맛이 나네요.. 떡볶이 가격에 비해 양도 적고 일단 맛이 없어서 아쉽습니다.",
+        "롯데월드 3시간 무료주차. 즉떡이 땡기는 날은 여기로^^"
       ]
     },
     {
@@ -28010,7 +27816,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": 21,
-      "representative_review": null,
+      "representative_review": "만두들이 조금 더 따듯하면 더 맛있을것 같아요! 그래도 안이 꽉 차서 든든하고 맛있어요!",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 10000,
       "price_range_max_krw": 24000,
@@ -28026,6 +27832,10 @@
         "새우육즙생전포 4P",
         "새우육즙생전포 9P",
         "반반생전포 9P"
+      ],
+      "representative_reviews": [
+        "만두들이 조금 더 따듯하면 더 맛있을것 같아요! 그래도 안이 꽉 차서 든든하고 맛있어요!",
+        "눈여겨 보던 만두집 💕 투표 후 GET 🥟✨️"
       ]
     },
     {
@@ -28042,7 +27852,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": null,
-      "representative_review": null,
+      "representative_review": "입분식가정집 송파본점 주소: 서울 송파구 오금로18길 10 2층 (송파나루역 1번출구 도보 3분) 영업시간... 아주 만족스러운 한끼였어용 잠실 송리단길 맛집으로 입분식가정집 인정합니다 체고~.~ 여러분도...",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28061,6 +27871,9 @@
         "가정식 반반즉석떡볶이(2인)",
         "짜장 즉석떡볶이",
         "입분식수제어묵"
+      ],
+      "representative_reviews": [
+        "입분식가정집 송파본점 주소: 서울 송파구 오금로18길 10 2층 (송파나루역 1번출구 도보 3분) 영업시간... 아주 만족스러운 한끼였어용 잠실 송리단길 맛집으로 입분식가정집 인정합니다 체고~.~ 여러분도..."
       ]
     },
     {
@@ -28077,7 +27890,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": 103,
-      "representative_review": null,
+      "representative_review": "롯데월드에 이런 맛있는 식당이 있어서 좋습니다.",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28094,6 +27907,10 @@
         "쟁반국떡",
         "듬뿍야채 쫄쫄면",
         "얌념범벅 야끼만두"
+      ],
+      "representative_reviews": [
+        "롯데월드에 이런 맛있는 식당이 있어서 좋습니다.",
+        "롯데월드 가면 점심으로 스쿨푸드 이용해요~ 다른 간식거리를 많이 먹어서 간단하게 분식으로 먹는데, 맛있게 먹었어요 사람이 많아서 자리를 먼저 잡고 주문해야해요 ㅎㅎ"
       ]
     },
     {
@@ -28110,7 +27927,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": 313,
-      "representative_review": null,
+      "representative_review": "유부초밥이 여러종류가 있고, 라면이랑 우동 세트가 있어서 가성비도 훌륭해요~!! 유부초밥에 불향을 입혀주시는것도 넘 좋고, 세트 두개로 초등6학년 아이랑 저희부부 셋이서 먹었는데 배두드리고 나왔어요. 그런데 유부초밥이 너무 맛있어서 다음엔 세트 하나에 유부초밥을 종류별로 시켜보려구요. 남편은 다른 유부초밥과는 달리 덜 달면서 맛있다했고 아이는 크래미 초밥이",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28126,6 +27943,10 @@
         "어묵우동",
         "새우완탕",
         "유브라면"
+      ],
+      "representative_reviews": [
+        "유부초밥이 여러종류가 있고, 라면이랑 우동 세트가 있어서 가성비도 훌륭해요~!! 유부초밥에 불향을 입혀주시는것도 넘 좋고, 세트 두개로 초등6학년 아이랑 저희부부 셋이서 먹었는데 배두드리고 나왔어요. 그런데 유부초밥이 너무 맛있어서 다음엔 세트 하나에 유부초밥을 종류별로 시켜보려구요. 남편은 다른 유부초밥과는 달리 덜 달면서 맛있다했고 아이는 크래미 초밥이",
+        "🍣 간단하게 먹기좋은 유브유부!! 테이블은 4개정도있고, 협소해요~ 간단히 혼자와서 혼밥하기 좋아보여요ㅎㅎ 음식점 다 비싼데 여긴나름 가성비있게 먹기좋네여! 굿!!"
       ]
     },
     {
@@ -28141,8 +27962,8 @@
       "walk_minutes": 9.5,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 137,
+      "representative_review": "간단히 요기할 겸 들렸는데 소스 맛있네요. 앉아서 먹을 수 있어 좋았고 잠실 나오면 종종 들릴 듯.",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28160,6 +27981,10 @@
         "옹주세트",
         "떡볶이",
         "알떡순"
+      ],
+      "representative_reviews": [
+        "간단히 요기할 겸 들렸는데 소스 맛있네요. 앉아서 먹을 수 있어 좋았고 잠실 나오면 종종 들릴 듯.",
+        "잠실역오면 매운오뎅 하나씩 꼭 먹고가야댐요 떡볶이맛나요 이자극적인맛,,"
       ]
     },
     {
@@ -28176,7 +28001,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": 1339,
-      "representative_review": null,
+      "representative_review": "통마늘 닭똥집튀김이 진짜 맛있어요 꼭 시키세요 !! 술 종류가 엄청 다양해요 시원하고 쾌적해서 많은 사람들이 방문하기 좋을 것 같아요 #방이동술집 #방이동모임술집 #방이동야장술집 #단체모임하기 좋아요 #야외공간이 멋져요",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28220,35 +28045,10 @@
         "아귀꾸이포",
         "크림생맥주 켈리",
         "크림생맥주 테라"
-      ]
-    },
-    {
-      "id": "naver:1171417065",
-      "name": "금수복국 잠실소피텔점",
-      "place_type": "restaurant",
-      "category": "bunsik",
-      "category_label": "분식",
-      "address": "",
-      "lat": 37.5139944,
-      "lng": 127.1067614,
-      "distance_meters": 476.3,
-      "walk_minutes": 6.0,
-      "rating": 4.57,
-      "rating_source": "naver_crawl",
-      "review_count": 618,
-      "representative_review": null,
-      "price_per_person_krw": 11500,
-      "price_range_min_krw": 8000,
-      "price_range_max_krw": 15000,
-      "representative_menu": "활참복뼈구이 · 활참복한마리튀김",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/%EA%B8%88%EC%88%98%EB%B3%B5%EA%B5%AD%20%EC%9E%A0%EC%8B%A4%EC%86%8C%ED%94%BC%ED%85%94%EC%A0%90/place/1171417065",
-      "source": "naver_map",
-      "menu_names": [
-        "활참복뼈구이",
-        "활참복한마리튀김"
+      ],
+      "representative_reviews": [
+        "통마늘 닭똥집튀김이 진짜 맛있어요 꼭 시키세요 !! 술 종류가 엄청 다양해요 시원하고 쾌적해서 많은 사람들이 방문하기 좋을 것 같아요 #방이동술집 #방이동모임술집 #방이동야장술집 #단체모임하기 좋아요 #야외공간이 멋져요",
+        "안녕하세요 gkr****님~ 먼저 저희 가게를 찾아주시고 좋은 말씀 남겨주셔서 정말 감사드립니다ㅎㅎ 쾌적한 공간과 다양한 술 종류를 편안하게 즐기실 수 있도록 늘 청결과 준비에 신경 쓰고 있습니다. 많은 분들이 편하게 모임을 가지실 수 있도록 야외 공간도 꾸준히 관리하고 있어요. 앞으로도 방문하실 때마다 만족하실 수 있도록 최선을 다하겠습니다~ 다음에도 좋"
       ]
     },
     {
@@ -28265,7 +28065,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": null,
-      "representative_review": null,
+      "representative_review": "잠실데이트 맛집으로 추천해요 청년감자탕 송파 본점은 연애하던 시절의 추억도 담겨 있고, 지금 다시 가도 변함없이 맛있는 송파나루역맛집이에요. 친구, 가족, 연인 누구와 가도 만족할 만한 송파감자탕...",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28313,46 +28113,9 @@
         "감자사리",
         "수제비사리",
         "공기밥"
-      ]
-    },
-    {
-      "id": "naver:1165436888",
-      "name": "한남대교",
-      "place_type": "restaurant",
-      "category": "korean",
-      "category_label": "한식",
-      "address": "",
-      "lat": 37.5141184,
-      "lng": 127.1088349,
-      "distance_meters": 616.0,
-      "walk_minutes": 7.7,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "price_per_person_krw": 11500,
-      "price_range_min_krw": 8000,
-      "price_range_max_krw": 15000,
-      "representative_menu": "백생합탕 · 미나리낙지전 · 왕바지락술찜",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/%ED%95%9C%EB%82%A8%EB%8C%80%EA%B5%90/place/1165436888",
-      "source": "naver_map",
-      "menu_names": [
-        "백생합탕",
-        "미나리낙지전",
-        "왕바지락술찜",
-        "감태김밥과육회",
-        "상하이 깐풍기",
-        "크림새우&순살치킨",
-        "모듬어묵전골",
-        "통오징어떡볶이",
-        "항정살소금구이",
-        "한우차돌구이",
-        "얼큰돼지전골",
-        "투뿔한우스키야키",
-        "들기름미나리숭어"
+      ],
+      "representative_reviews": [
+        "잠실데이트 맛집으로 추천해요 청년감자탕 송파 본점은 연애하던 시절의 추억도 담겨 있고, 지금 다시 가도 변함없이 맛있는 송파나루역맛집이에요. 친구, 가족, 연인 누구와 가도 만족할 만한 송파감자탕..."
       ]
     },
     {
@@ -28368,8 +28131,8 @@
       "walk_minutes": 9.6,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 29,
+      "representative_review": "자연광도 들어오는 좌석 편히 이용가능 ♡",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28403,6 +28166,10 @@
         "콜팝(Large)",
         "콜팝(Single)",
         "콰삭킹 순살"
+      ],
+      "representative_reviews": [
+        "자연광도 들어오는 좌석 편히 이용가능 ♡",
+        "아이스링크내있는 매장이고 콜팝 주문 집에 1kg짜리 팝콘치킨너겟있는데 그거랑 존똑임. 순살치킨맛아닌 그냥 어묵순살맛 식감도 어묵느낌임 테이블은 있는던 앉을의자가 몇개없고 ,, 쓰레기는 10미터 떨어진 일반쓰레기통에 다 버리는게 쫌그랬습니다.매장에서 그렇게 안내하더라고요 음료가들었던 음식물이 남았던 그냥 다 집어넣어버리는 cgv영화관나올때버리는것과 똑같은 시"
       ]
     },
     {
@@ -28419,7 +28186,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": null,
-      "representative_review": null,
+      "representative_review": "많은 잠실에서의 약속이 대부분인데 방이쪽에 맛집, 술집이 많아 롯데타워쪽에서 놀고 방이에서 밥 먹고있네요 새마을포차 방이본점 주소 : 서울 송파구 오금로11길 23 전화 : 0507-1462-0942 영업시간 : 매일 24시간...",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28490,6 +28257,9 @@
         "마약콘치즈",
         "설탕토마토",
         "날치알주먹밥"
+      ],
+      "representative_reviews": [
+        "많은 잠실에서의 약속이 대부분인데 방이쪽에 맛집, 술집이 많아 롯데타워쪽에서 놀고 방이에서 밥 먹고있네요 새마을포차 방이본점 주소 : 서울 송파구 오금로11길 23 전화 : 0507-1462-0942 영업시간 : 매일 24시간..."
       ]
     },
     {
@@ -28503,10 +28273,10 @@
       "lng": 127.109029,
       "distance_meters": 654.8,
       "walk_minutes": 8.2,
-      "rating": null,
-      "rating_source": null,
+      "rating": 5.0,
+      "rating_source": "naver_crawl",
       "review_count": null,
-      "representative_review": null,
+      "representative_review": "비도 오는날 전이랑 소주 마시자고 여친하고 왔다가 안주 맛있어서 소주 4명 마시고 갑니다 ㅎㅎ 육전에 야채볶음하고 깻잎 너무 맛있었구요 정말 완전 강추 꼭 싸서 먹어봐요 그리고 매콤살코기닭도리탕??? 맵기 적당했어요 에어컨 아니였음 땀 한바가지 흘릴뻔 했네요 원래 이정도에서 마무리를 하는데 국물도 맛나고 해서 우동을 시켜서 같이 먹었습니다 완전 소주부르는 ",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28560,6 +28330,10 @@
         "병맥주",
         "장수막걸리",
         "청하"
+      ],
+      "representative_reviews": [
+        "비도 오는날 전이랑 소주 마시자고 여친하고 왔다가 안주 맛있어서 소주 4명 마시고 갑니다 ㅎㅎ 육전에 야채볶음하고 깻잎 너무 맛있었구요 정말 완전 강추 꼭 싸서 먹어봐요 그리고 매콤살코기닭도리탕??? 맵기 적당했어요 에어컨 아니였음 땀 한바가지 흘릴뻔 했네요 원래 이정도에서 마무리를 하는데 국물도 맛나고 해서 우동을 시켜서 같이 먹었습니다 완전 소주부르는 ",
+        "방이동에 있는 한식 주점 맛집!! 안주 다 맛있고 술먹기 좋아요! 남자친구랑 술 먹으면서 맛있게 먹고 갔습니다~! 방이동 오시면 추천해요! 특히 닭볶음탕 맛있었어요"
       ]
     },
     {
@@ -28575,8 +28349,8 @@
       "walk_minutes": 8.3,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 1343,
+      "representative_review": "너무 맛잇고 야장 분위기가 좋았어용 뚜껑열려있는데 에어컨 빵빵하게 틀어주셔서 시원하고 치즈감자전에 트러플 소스 너무 맛잇어요!",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28621,6 +28395,10 @@
         "묵은지참치주먹밥(7p)",
         "파인애플샤베트",
         "메론샤베트"
+      ],
+      "representative_reviews": [
+        "너무 맛잇고 야장 분위기가 좋았어용 뚜껑열려있는데 에어컨 빵빵하게 틀어주셔서 시원하고 치즈감자전에 트러플 소스 너무 맛잇어요!",
+        "안주 양도 완전 많고 분위기도 좋아요 ! 날씨 좋으면 위에 지붕도 열려서 개방감도 좋아요 방이동 오면 자주 방문할 거 같아요 🤍🤍"
       ]
     },
     {
@@ -28634,10 +28412,10 @@
       "lng": 127.1132834,
       "distance_meters": 941.2,
       "walk_minutes": 11.8,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.58,
+      "rating_source": "naver_crawl",
+      "review_count": 450,
+      "representative_review": "청치킨은 진짜 방이동의 사랑이에요! 퇴근 하고 이거 먹을 생각에 지하철에서 뛰어왔답니다 사장님 항상 친절하시고 직원분들도 친절하시고 무엇보다 너무너무 맛있어요! 양도 많아서 제가 덜어먹은거에요! 사진의 세배 이상이구요 진짜 너무 맛있고 ㅜㅜ 골뱅이 소면은 너무너무 맛있는데 맵찔이인 저에겐 약간 매웠어요 하지만 치킨과 함께 먹으면 극락!!",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28669,6 +28447,10 @@
         "똥집후라이드",
         "감자튀김",
         "황도"
+      ],
+      "representative_reviews": [
+        "청치킨은 진짜 방이동의 사랑이에요! 퇴근 하고 이거 먹을 생각에 지하철에서 뛰어왔답니다 사장님 항상 친절하시고 직원분들도 친절하시고 무엇보다 너무너무 맛있어요! 양도 많아서 제가 덜어먹은거에요! 사진의 세배 이상이구요 진짜 너무 맛있고 ㅜㅜ 골뱅이 소면은 너무너무 맛있는데 맵찔이인 저에겐 약간 매웠어요 하지만 치킨과 함께 먹으면 극락!!",
+        "안녕하세요 😊 방이동의 사랑이라는 말씀에 정말 큰 힘이 납니다! 퇴근길에 지하철에서 뛰어오셨다는 이야기에 저희도 괜히 뿌듯하고 감동이네요. 😊 항상 믿고 찾아주셔서 감사드리며, 친절한 서비스와 맛으로 보답할 수 있도록 더욱 노력하겠습니다. 양도 넉넉하게 즐겨주셨다니 다행이고, 골뱅이소면은 매콤하지만 치킨과 함께 드시면 더욱 맛있죠! 😆 소중한 후기와 예쁜 "
       ]
     },
     {
@@ -28682,10 +28464,10 @@
       "lng": 127.0984108,
       "distance_meters": 633.8,
       "walk_minutes": 7.9,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.4,
+      "rating_source": "naver_crawl",
+      "review_count": 365,
+      "representative_review": "갑자기 잡힌 일정으로 함께하게된 점심~돌고돌아 찾은곳~ 훌륭한선택이었슴~완전강추~!~!!!!",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28712,6 +28494,10 @@
         "토마토 계란",
         "갑 오징어",
         "계란후라이"
+      ],
+      "representative_reviews": [
+        "갑자기 잡힌 일정으로 함께하게된 점심~돌고돌아 찾은곳~ 훌륭한선택이었슴~완전강추~!~!!!!",
+        "기본 밥 앙이 개인적으로 적다 생각해요 추가하면 되는 부분이고 업장에서 정한 양이있다고 생각합니다. 다만 식사하다 밥추가 결제 문의하니 밥없어요~ 앞에 주문 20건있어서 밥없어요~ 이럽니다 한참 피크시간 저녁시간대에 응대가 이모양입니까? 반찬은 많이 남았고 밥은 부족하다 다시말하니 밥통가르키며 20분이상 기다리래요~ 네 덕분에 맨입에 먹을수없어 남겼습니다 "
       ]
     },
     {
@@ -28727,8 +28513,8 @@
       "walk_minutes": 9.4,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 823,
+      "representative_review": "와보고 싶은 곳이었는데 친구와 와서 좋고 분위기 좋고 편안한 대화 할 수 있어서 좋은 것 같아요! 사소한 대화부터 진지한 대화하기 좋은 것 같아용 편한한 대화하고 싶은 사람들에게 추천합니당☺️ 안주도 많고 대화하고 싶은 곳 원하시면 좋을 것 같습니당!",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28783,6 +28569,10 @@
         "일품진로 토닉세트",
         "오십세주",
         "이통일반"
+      ],
+      "representative_reviews": [
+        "와보고 싶은 곳이었는데 친구와 와서 좋고 분위기 좋고 편안한 대화 할 수 있어서 좋은 것 같아요! 사소한 대화부터 진지한 대화하기 좋은 것 같아용 편한한 대화하고 싶은 사람들에게 추천합니당☺️ 안주도 많고 대화하고 싶은 곳 원하시면 좋을 것 같습니당!",
+        "주말 맞이하여 방이맛골에서 한잔하려고 돌아다니다가 발견한 손에손잡고 방이직영점! 외관부터 레트로 감성 가득한 분위기에 야외 테이블까지 있어서 분위기 최고였어요~👍 뭘 먹을까 고민하다가 다른분이 주문한 연탄 무뼈닭발 보고 홀린듯 따라서 시켰는데 이거 완전 불향 제대로에 통통해서 식감도 좋고 마요 찍어 먹으니 매운맛도 딱 중화돠고 고소해서 맛있더라구요😭😭😭 닭"
       ]
     },
     {
@@ -28798,8 +28588,8 @@
       "walk_minutes": 7.9,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 304,
+      "representative_review": "방이동 먹자골목에 갔다가 들렀습니다. 가볍게 한 잔 하려고 간단한 안주로 매운오뎅을 시켰는데 진짜 얼얼하고 맛있어요. 떡볶이도 조금 얹어져 있어요. 매운 속을 달래려고 어묵우동으로 마무리 했습니다. 오픈 주방 앞에 앉을 수 있는 자리가 있고 키오스크로 주문이 가능해요.",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28843,6 +28633,10 @@
         "어묵튀김",
         "마약옥수수",
         "쥐포튀김"
+      ],
+      "representative_reviews": [
+        "방이동 먹자골목에 갔다가 들렀습니다. 가볍게 한 잔 하려고 간단한 안주로 매운오뎅을 시켰는데 진짜 얼얼하고 맛있어요. 떡볶이도 조금 얹어져 있어요. 매운 속을 달래려고 어묵우동으로 마무리 했습니다. 오픈 주방 앞에 앉을 수 있는 자리가 있고 키오스크로 주문이 가능해요.",
+        "2차 맛집이에요..💞 냉우동 궁금해서 방문해봤는데 메뉴도 특별하구 오뎅도 쫄깃쫄깃해서 술이 술술들어가요,,, 매운거 땡겨서 매운오뎅도 시켜봤는데 딱 그 옛날 떡볶이? 매운오뎅? 중간맛으로 너무 마싯게 술 1잔하고갑니다🫶"
       ]
     },
     {
@@ -28859,7 +28653,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": null,
-      "representative_review": null,
+      "representative_review": "석촌호수 맛집으로 유명한 국민통닭 잠실본점에 다녀왔어요. 잠실 주민이 추천하는 석촌호수 맛집이라 합니다. 국민통닭 잠실본점은 석촌호수 서호에서 도보 1분 이내 거리에 위치해있어요. 주소 서울 송파구...",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28881,6 +28675,9 @@
         "가지튀김 (예정)",
         "수제 어니언링",
         "소떡소떡"
+      ],
+      "representative_reviews": [
+        "석촌호수 맛집으로 유명한 국민통닭 잠실본점에 다녀왔어요. 잠실 주민이 추천하는 석촌호수 맛집이라 합니다. 국민통닭 잠실본점은 석촌호수 서호에서 도보 1분 이내 거리에 위치해있어요. 주소 서울 송파구..."
       ]
     },
     {
@@ -28896,8 +28693,8 @@
       "walk_minutes": 7.8,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 1149,
+      "representative_review": "드디어 와보네요ㅠㅠ 매번 자리없어서 못먹다가 드디어 먹게되엇습니당 비가와서 그런가 더 맛있어요 히야 삼미통닭 꼭 드세요 진짜 적절하게 매콤하고 짱맛이에요ㅠㅠㅠㅠ 너무맛나요 그리고 메뉴 빨리나오고 좋습니다",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -28934,6 +28731,10 @@
         "치밥",
         "주먹밥",
         "공기밥"
+      ],
+      "representative_reviews": [
+        "드디어 와보네요ㅠㅠ 매번 자리없어서 못먹다가 드디어 먹게되엇습니당 비가와서 그런가 더 맛있어요 히야 삼미통닭 꼭 드세요 진짜 적절하게 매콤하고 짱맛이에요ㅠㅠㅠㅠ 너무맛나요 그리고 메뉴 빨리나오고 좋습니다",
+        "와 여기 치킨 미쳤는데여ㅜㅜㅋㅋ 진짜 맛있어서 깜짝 놀랐어요 ㅋㅋㅋㅋ 삼미통닭 와 너무너무 맛있음. 단짠매콤 맛 조합 밸런스가 대박 👍 근데 떡볶이까지 ??? 와 ㅋㅋㅋ 떡볶이 꼭 드세요 ㅋ 이건 사이드 수준을 넘었어요 ㅎ 여기 너무너무 맛있음 재방문 의사 200프로"
       ]
     },
     {
@@ -28950,7 +28751,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": null,
-      "representative_review": null,
+      "representative_review": "잠실 수제맥주 바이더레이크 송리단길맥주집 주문한 내용 : - 하와이안 샐러드 피자 23,800원 - 떡꼬치x2 3,800원 - 대동강 페일에일 9,200원 - 허그미 6,800원 - 테라 생맥주 4,500원 총 48,100원 먹을 준비 완료...",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29008,6 +28809,9 @@
         "그레이징 멜론",
         "파인애플 샤베트",
         "아포카토"
+      ],
+      "representative_reviews": [
+        "잠실 수제맥주 바이더레이크 송리단길맥주집 주문한 내용 : - 하와이안 샐러드 피자 23,800원 - 떡꼬치x2 3,800원 - 대동강 페일에일 9,200원 - 허그미 6,800원 - 테라 생맥주 4,500원 총 48,100원 먹을 준비 완료..."
       ]
     },
     {
@@ -29021,10 +28825,10 @@
       "lng": 127.1075149,
       "distance_meters": 774.4,
       "walk_minutes": 9.7,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.61,
+      "rating_source": "naver_crawl",
+      "review_count": 2229,
+      "representative_review": "#송리단길 맛집 #데이트 #라코즈 꼴레뇨가 엄청 특이한 맛이고 맛있어요! 족발과 바베큐 중간 어딘가.. 빠네도 보이는대로 맛있고 양도 엄청 많습니다 분위기 좋고 가게가 예뻐서 소개팅이나 데이트하러 오기 좋은 것 같아요!",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29056,6 +28860,10 @@
         "크림 브륄레",
         "피오르 디 올리바",
         "글라스 와인"
+      ],
+      "representative_reviews": [
+        "#송리단길 맛집 #데이트 #라코즈 꼴레뇨가 엄청 특이한 맛이고 맛있어요! 족발과 바베큐 중간 어딘가.. 빠네도 보이는대로 맛있고 양도 엄청 많습니다 분위기 좋고 가게가 예뻐서 소개팅이나 데이트하러 오기 좋은 것 같아요!",
+        "안녕하세요. 😊 소중한 후기 남겨주셔서 진심으로 감사합니다! 라코즈 꼴레뇨의 매력을 이렇게 표현해 주셔서 정말 기쁩니다. 😊 바삭한 껍질과 촉촉한 속살이 어우러진 꼴레뇨는 많은 분들께서 족발과 바비큐의 매력을 함께 느낄 수 있는 특별한 메뉴라고 말씀해 주세요. 빠네까지 맛있게 드시고 푸짐한 양도 만족해 주셔서 감사합니다. 라코즈의 분위기까지 좋게 봐주시고 "
       ]
     },
     {
@@ -29072,7 +28880,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": null,
-      "representative_review": null,
+      "representative_review": "잠실 롯데월드 근처에서 마땅한 맛집을 찾지 못했거나, 놀이기구를 타다가 피자 먹고 싶으면 도미노피자 롯데월드점으로 고고! '갓 나온 도미노피자의 완벽한 맛'으로 훌륭한 한 끼 할 수 있다고 생각합니다....",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29091,37 +28899,9 @@
         "슈퍼디럭스 피자 L",
         "K-Rib&치즈(L)",
         "와일드 와일드 웨스트 스테이크(L)"
-      ]
-    },
-    {
-      "id": "naver:1690794050",
-      "name": "라라코스트 잠실롯데월드점",
-      "place_type": "restaurant",
-      "category": "western",
-      "category_label": "양식",
-      "address": "",
-      "lat": 37.5110793,
-      "lng": 127.0981637,
-      "distance_meters": 767.9,
-      "walk_minutes": 9.6,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "price_per_person_krw": 11500,
-      "price_range_min_krw": 8000,
-      "price_range_max_krw": 15000,
-      "representative_menu": "파스타 · 피자 · 필라프",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/%EB%9D%BC%EB%9D%BC%EC%BD%94%EC%8A%A4%ED%8A%B8%20%EC%9E%A0%EC%8B%A4%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%EC%A0%90/place/1690794050",
-      "source": "naver_map",
-      "menu_names": [
-        "파스타",
-        "피자",
-        "필라프",
-        "샐러드"
+      ],
+      "representative_reviews": [
+        "잠실 롯데월드 근처에서 마땅한 맛집을 찾지 못했거나, 놀이기구를 타다가 피자 먹고 싶으면 도미노피자 롯데월드점으로 고고! '갓 나온 도미노피자의 완벽한 맛'으로 훌륭한 한 끼 할 수 있다고 생각합니다...."
       ]
     },
     {
@@ -29138,7 +28918,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": null,
-      "representative_review": null,
+      "representative_review": "오늘 리뷰해 볼 곳은 잠실 나폴리 화덕 피자 맛집 피제리아라고 입니다. 남편이랑 피자 땡겨서 갔던 곳인데, 사실 재방문이에요. 2년 전에 방문했었네요~~!! 이번에도 내돈내산 후기고 2025년 CAPUTOCUP...",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29170,6 +28950,9 @@
         "리코타 샐러드",
         "부팔라 카프레제",
         "햄 플래터"
+      ],
+      "representative_reviews": [
+        "오늘 리뷰해 볼 곳은 잠실 나폴리 화덕 피자 맛집 피제리아라고 입니다. 남편이랑 피자 땡겨서 갔던 곳인데, 사실 재방문이에요. 2년 전에 방문했었네요~~!! 이번에도 내돈내산 후기고 2025년 CAPUTOCUP..."
       ]
     },
     {
@@ -29185,8 +28968,8 @@
       "walk_minutes": 10.7,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 955,
+      "representative_review": "목욕탕에서 씻고 집 가기전 배고파서 방문..!!! 와 그냥 와 맛있어요 ㅋㅋ 혼자 방문해서 작은 사이즈 고민하다가 큰 사이즈로 주문했는데 작은 사이즈 주문했으면 큰일날뻔... 너무 맛있어서 혼자 그 자리에서 한판 다 먹었습니다. 양은 절대 적은양도 아니고 토핑도 치즈도 풍부해서 큰 사이즈면 성인3명이상이 충분히 드실거같아요!! 리뷰 쓰면서도 침 흘리는중..",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29221,6 +29004,10 @@
         "카스 생맥주",
         "버드와이저 생맥주 330ml",
         "버드와이저 생맥주 500ml"
+      ],
+      "representative_reviews": [
+        "목욕탕에서 씻고 집 가기전 배고파서 방문..!!! 와 그냥 와 맛있어요 ㅋㅋ 혼자 방문해서 작은 사이즈 고민하다가 큰 사이즈로 주문했는데 작은 사이즈 주문했으면 큰일날뻔... 너무 맛있어서 혼자 그 자리에서 한판 다 먹었습니다. 양은 절대 적은양도 아니고 토핑도 치즈도 풍부해서 큰 사이즈면 성인3명이상이 충분히 드실거같아요!! 리뷰 쓰면서도 침 흘리는중..",
+        "안녕하세요 피자냠님 😊 정성스럽고 유쾌한 후기 남겨주셔서 정말 감사합니다 🍕✨ 목욕탕에서 씻고 집에 가시기 전 들러주셨는데, 기대 이상으로 맛있게 드셔주셨다니 정말 기쁩니다💛 혼자 방문하셔서 사이즈를 고민하시다가 큰 사이즈로 주문하셨는데 한 판을 다 드셨다는 말씀에 만족감이 그대로 전해져 저희도 무척 뿌듯했어요🙂 양이 적지 않은데도 토핑과 치즈가 풍부해서 "
       ]
     },
     {
@@ -29236,8 +29023,8 @@
       "walk_minutes": 9.6,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 76,
+      "representative_review": "롯데월드와서 계속 놀다가 슬~~~지칠때쯤 아이들은 좋아하는 스파게티 피자 먹고 저희는 맥주 한잔 시원하게 한잔하고 재충전하고 다시 놀았네요^^ 음식 맛있었고 음료 리필 좋았네요~♡♡",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29255,6 +29042,10 @@
         "립 & 치즈 토마토 파스타",
         "허니 치즈 파인 피자(라지&씬피자)",
         "더블킹 바삭치킨 콜라"
+      ],
+      "representative_reviews": [
+        "롯데월드와서 계속 놀다가 슬~~~지칠때쯤 아이들은 좋아하는 스파게티 피자 먹고 저희는 맥주 한잔 시원하게 한잔하고 재충전하고 다시 놀았네요^^ 음식 맛있었고 음료 리필 좋았네요~♡♡",
+        "안녕하세요. 모두의 다이닝 매드포갈릭 롯데월드점을 찾아주시고 소중한 사진 리뷰까지 남겨주셔서 진심으로 감사드립니다. 지칠때쯤 시원한 맥주 한잔하면서 회전목마 구경하는 재미도 있답니다!! ^^ 식사 맛있게 하시고 재충전하셨다니 저도 같이 충전되는 기분입니다!ㅎㅎ 앞으로도 맛있는 음식과 서비스로 보답드리도록 하겠습니다. 감사합니다^^"
       ]
     },
     {
@@ -29268,10 +29059,10 @@
       "lng": 127.1048108,
       "distance_meters": 931.6,
       "walk_minutes": 11.6,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.46,
+      "rating_source": "naver_crawl",
+      "review_count": 1057,
+      "representative_review": "오리스테이크 피자 샐러드 넘 맛있고 좋은데요. 샐러드랑 오리스테이크를 시키면 오렌지를 넘 많이 먹게 되네요. 제 입맛에는 스테이크에 들어가는 오렌지와 소스, 샐러드에 있는 견과류, 같은 게 넘 달아서 아쉬워요. 혈당생각해서 샐러드를 먹는데 달달한 게 많이 들어있고, 스테이크도 달달한 맛 나는 퓨레랑 소스, 구운 오렌지 같은 게 아쉬웠어요. 단맛이 과하지 않",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29283,6 +29074,10 @@
       "source": "naver_map",
       "menu_names": [
         "Dessert"
+      ],
+      "representative_reviews": [
+        "오리스테이크 피자 샐러드 넘 맛있고 좋은데요. 샐러드랑 오리스테이크를 시키면 오렌지를 넘 많이 먹게 되네요. 제 입맛에는 스테이크에 들어가는 오렌지와 소스, 샐러드에 있는 견과류, 같은 게 넘 달아서 아쉬워요. 혈당생각해서 샐러드를 먹는데 달달한 게 많이 들어있고, 스테이크도 달달한 맛 나는 퓨레랑 소스, 구운 오렌지 같은 게 아쉬웠어요. 단맛이 과하지 않",
+        "탄탄한 균형과 담백함에 재료의 풍미들의 조화가 좋았던 석촌 앨리스 리틀 이태리. 특히 인상 깊었던 점은 부재료들을 적절히 잘 이용해 섬세하게 맛이 비지 않도록 풍미를 꽉 채운 점이 좋았습니다. 잠실, 석촌에서 잘 만든 화덕피자를 찾는다면, 앨리스 리틀 이태리 추천합니다."
       ]
     },
     {
@@ -29298,8 +29093,8 @@
       "walk_minutes": 11.5,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 540,
+      "representative_review": "분위기도 너무 좋고 테이블 간격도 넓어서 친구들 모임이나 소개팅하기 좋은 장소예요. 스테이크와 파스타 다 맛있고 피자도 제대로 만들어서 친구들이 또 오자고 하더라고요. 다음에도 모임 여기서 하려고요.",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29324,6 +29119,10 @@
         "와사비 문어 리조또",
         "부라타 치즈",
         "아스파라거스"
+      ],
+      "representative_reviews": [
+        "분위기도 너무 좋고 테이블 간격도 넓어서 친구들 모임이나 소개팅하기 좋은 장소예요. 스테이크와 파스타 다 맛있고 피자도 제대로 만들어서 친구들이 또 오자고 하더라고요. 다음에도 모임 여기서 하려고요.",
+        "석촌호수 피자 맛집 오스테리아 라고 분위기 좋고 가격도 좋아 데이트하기좋은 맛집이랍니다.예쁜 인테리어 사진찍기좋은 곳이네요"
       ]
     },
     {
@@ -29340,7 +29139,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": null,
-      "representative_review": null,
+      "representative_review": "전망, 분위기, 음식까지 모두 만족스러웠던 잠실 레스토랑 데이트 맛집 잠실 스카이가든✨ 석촌호수와 롯데타워가 한눈에 보이는 멋진 통창 뷰는 물론 합리적인 가격대의 메뉴와 넓은 공간까지 갖추고...",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29393,6 +29192,9 @@
         "홍차 (HOT or ICE)",
         "녹차 (HOT or ICE)",
         "캐모마일 (HOT or ICE)"
+      ],
+      "representative_reviews": [
+        "전망, 분위기, 음식까지 모두 만족스러웠던 잠실 레스토랑 데이트 맛집 잠실 스카이가든✨ 석촌호수와 롯데타워가 한눈에 보이는 멋진 통창 뷰는 물론 합리적인 가격대의 메뉴와 넓은 공간까지 갖추고..."
       ]
     },
     {
@@ -29408,8 +29210,8 @@
       "walk_minutes": 7.9,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 41,
+      "representative_review": "더더치치즈 좋아해서 여러번 방문 했는데 피자는 아닌듯 😢 도우가 너무 맛없고 딱딱 하네요 우연히 이번엔 혼자 방문했다 바테이블에서 보니 완제 도우에 토핑해서 미니오븐에 넣어 제공 ㅠㅠ 그러니 도우가 딱딱하고 맛이 없었;) 토핑은 괜찮고 아마도 그라인더에 갈아주는 치즈가 더치치즈 인듯 했어요",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29446,6 +29248,10 @@
         "김치필라프",
         "쉬림프 볶음밥",
         "더 더치 리코타 치즈 샐러드"
+      ],
+      "representative_reviews": [
+        "더더치치즈 좋아해서 여러번 방문 했는데 피자는 아닌듯 😢 도우가 너무 맛없고 딱딱 하네요 우연히 이번엔 혼자 방문했다 바테이블에서 보니 완제 도우에 토핑해서 미니오븐에 넣어 제공 ㅠㅠ 그러니 도우가 딱딱하고 맛이 없었;) 토핑은 괜찮고 아마도 그라인더에 갈아주는 치즈가 더치치즈 인듯 했어요",
+        "크림파스타에 베이컨을 빼달라고 했어요. 딸아이가 베이컨을 싫어해서요, 음식이 스위티해졌어요. 베이컨과 단짠단짠으로 어우러졌어야 했는데 ㅠㅠ, 토마토쉬림프 올리브, 오일파스타는 내입맛에 맞았어요."
       ]
     },
     {
@@ -29462,7 +29268,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": null,
-      "representative_review": null,
+      "representative_review": "있습니다 잠실역 호프 맛집 방이동먹자골목 슈타인도르프 - 슈바인학센 피자 수제맥주 분위기 제2롯데월드 데이트추천 방이동 먹자골목 저는 처음 간 곳인데 분위기가 너무 좋습니다 ^^ 저는 첫번째로 피자...",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29490,6 +29296,9 @@
         "마른안주",
         "나초치즈",
         "석촌 핫도그"
+      ],
+      "representative_reviews": [
+        "있습니다 잠실역 호프 맛집 방이동먹자골목 슈타인도르프 - 슈바인학센 피자 수제맥주 분위기 제2롯데월드 데이트추천 방이동 먹자골목 저는 처음 간 곳인데 분위기가 너무 좋습니다 ^^ 저는 첫번째로 피자..."
       ]
     },
     {
@@ -29506,7 +29315,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": null,
-      "representative_review": null,
+      "representative_review": "오늘은 롯데월드 입장하기 전이나 후에 들리기 좋은 잠실 피자 맛집 스폰티니 롯데월드 어드벤처점의 후기를 남겨볼게요 스폰티니 롯데월드 어드벤처점은 롯데월드 지하 1층에 위치해있는데요. 대중교통을...",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29528,6 +29337,9 @@
         "카페라떼",
         "바닐라라떼",
         "아메리카노"
+      ],
+      "representative_reviews": [
+        "오늘은 롯데월드 입장하기 전이나 후에 들리기 좋은 잠실 피자 맛집 스폰티니 롯데월드 어드벤처점의 후기를 남겨볼게요 스폰티니 롯데월드 어드벤처점은 롯데월드 지하 1층에 위치해있는데요. 대중교통을..."
       ]
     },
     {
@@ -29541,10 +29353,10 @@
       "lng": 127.0981638,
       "distance_meters": 767.9,
       "walk_minutes": 9.6,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.12,
+      "rating_source": "naver_crawl",
+      "review_count": 722,
+      "representative_review": "한입피자는 맛있는데...한입피자는 괜찮아요.",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29573,6 +29385,10 @@
         "퐁듀스파게티",
         "유부우동",
         "고르곤졸라피자"
+      ],
+      "representative_reviews": [
+        "한입피자는 맛있는데...한입피자는 괜찮아요.",
+        "우삼겹생라면과 한입피자세트🍕"
       ]
     },
     {
@@ -29588,8 +29404,8 @@
       "walk_minutes": 8.6,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 907,
+      "representative_review": "오랜만에 마신 진토닉은 깔끔하고 청량해서 첫 잔으로 아주 완벽했습니다. 라임 향과 토닉의 밸런스가 훌륭하더라고요. 이어서 주문한 동해는 푸른 바다를 그대로 담은 듯한 비주얼부터 압도적이었습니다. 달콤하고 상큼한 과일 맛 덕분에 술을 잘 못 마시는 분들도 음료수처럼 맛있게 즐길 수 있는 매력적인 칵테일이네요. 두 잔 모두 비주얼과 맛을 다 잡아 대만족했습니다",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29619,14 +29435,18 @@
         "기네스 마이크로드래프트 비어",
         "가쿠빈 하이볼",
         "빅웨이브 에일"
+      ],
+      "representative_reviews": [
+        "오랜만에 마신 진토닉은 깔끔하고 청량해서 첫 잔으로 아주 완벽했습니다. 라임 향과 토닉의 밸런스가 훌륭하더라고요. 이어서 주문한 동해는 푸른 바다를 그대로 담은 듯한 비주얼부터 압도적이었습니다. 달콤하고 상큼한 과일 맛 덕분에 술을 잘 못 마시는 분들도 음료수처럼 맛있게 즐길 수 있는 매력적인 칵테일이네요. 두 잔 모두 비주얼과 맛을 다 잡아 대만족했습니다",
+        "안녕하세요! 나쉬펍 잠실방이점입니다!! 이토록 섬세한 리뷰는 정말 오랜만이네요.진토닉부터 동해까지 완전 대만족하셨다니 저희도 기분 최고입니다~ 특히 동해는 진짜 바다처럼 시원하게 드셨다니 뿌듯하네요ㅋㅋ 라임 향과 토닉의 청량함 조합은 저희 특급 비밀인데 알아봐 주시다니 감사해요! 다음에는 새로운 메뉴도 도전해 보시고, 분위기 좋은 곳에서 더 힐링하시길 바래"
       ]
     },
     {
       "id": "naver:1759039165",
       "name": "쁘띠키친",
-      "place_type": "restaurant",
-      "category": "western",
-      "category_label": "양식",
+      "place_type": "cafe",
+      "category": "dessert",
+      "category_label": "디저트",
       "address": "",
       "lat": 37.5082677,
       "lng": 127.1069821,
@@ -29634,8 +29454,8 @@
       "walk_minutes": 12.9,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 294,
+      "representative_review": "기념일이라 기분 내려고 코스요리 식당을 찾던 차에 알찬 코스 요리집을 찾아 예약하게 되었습니다. 정밀 파인다이닝 식당처럼 음식하나하나를 설명해주시고 맛이 좋아서 기분좋게 식사하고 왔습니다..! 디저트까지 야무지게 먹고 기분좋게 배 두드리며 집에 갔어요~!",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29662,6 +29482,10 @@
         "트러플 감자튀김",
         "하몽 올리브 플래터",
         "단호박 브륄레"
+      ],
+      "representative_reviews": [
+        "기념일이라 기분 내려고 코스요리 식당을 찾던 차에 알찬 코스 요리집을 찾아 예약하게 되었습니다. 정밀 파인다이닝 식당처럼 음식하나하나를 설명해주시고 맛이 좋아서 기분좋게 식사하고 왔습니다..! 디저트까지 야무지게 먹고 기분좋게 배 두드리며 집에 갔어요~!",
+        "잠실에서 이 조합으로 이 분위기에 이 가격은,, 그냥 말이 안되는 거예요,, 전 솔직히 음식을 크게 기대하지는 않았는데 와 진짜,, 사장님 어떤 삶을 살아오신 거예요? 어떻게 모든 면에서 감동을 주실 수 있는 거예요?🥹 말 안됩니다.. 메뉴 하나하나가 다 너무 맛있고 신선하고 감동적이에요😢.. 같이 간 지인은 파스타가 원픽이라했고 저는 샐러드랑 디저트가!!"
       ]
     },
     {
@@ -29678,7 +29502,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": null,
-      "representative_review": null,
+      "representative_review": "#도미노피자 #도미노피자롯데월드점 #롯데월드 #롯데백화점잠실점 #잠실맛집 #잠실피자 #잠실데이트 #잠실 #피자맛집 #피자 #내돈내산 #어머니와데이트 #데이트 #일상 #주말나들이 #가족외식 #서울맛집...",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29708,6 +29532,9 @@
         "베이컨체더치즈(L)",
         "페퍼로니(L)",
         "치즈(L)"
+      ],
+      "representative_reviews": [
+        "#도미노피자 #도미노피자롯데월드점 #롯데월드 #롯데백화점잠실점 #잠실맛집 #잠실피자 #잠실데이트 #잠실 #피자맛집 #피자 #내돈내산 #어머니와데이트 #데이트 #일상 #주말나들이 #가족외식 #서울맛집..."
       ]
     },
     {
@@ -29723,8 +29550,8 @@
       "walk_minutes": 9.5,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 1339,
+      "representative_review": "처음 와봤는데 안주 메뉴가 다양해서 회식하기도 좋을 것 같아요🤔💡 치킨x쉬림프 타코 4피스랑 우삼겹떡볶이 시켰는데, 떡볶이가 중독성 있어요🫠 맥주 중에 코젤다크가 있어서 같이 주문했는데 전용잔에 시나몬설탕 발라져서 나오네요🍻✨ 방이동술집 찾거나 방이동맥주 땡길 때 방문하기 좋을 것 같아요-👍🏻",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29733,7 +29560,11 @@
       "is_new_opening": false,
       "phone": null,
       "url": "https://map.naver.com/p/search/%EB%B0%9C%EB%A6%AC%26%EB%B0%9C%EB%A6%AC%EB%A7%A5%EC%A3%BC%20%EB%B0%A9%EC%9D%B4%EC%A0%90/place/1363701189",
-      "source": "naver_map"
+      "source": "naver_map",
+      "representative_reviews": [
+        "처음 와봤는데 안주 메뉴가 다양해서 회식하기도 좋을 것 같아요🤔💡 치킨x쉬림프 타코 4피스랑 우삼겹떡볶이 시켰는데, 떡볶이가 중독성 있어요🫠 맥주 중에 코젤다크가 있어서 같이 주문했는데 전용잔에 시나몬설탕 발라져서 나오네요🍻✨ 방이동술집 찾거나 방이동맥주 땡길 때 방문하기 좋을 것 같아요-👍🏻",
+        "안녕하세요! 발리&발리맥주 방이점에 방문해 주셔서 감사합니다 🥰 다양한 안주와 코젤다크까지 즐기셨다니 기쁘네요~ 특히 우삼겹떡볶이의 중독성 있는 맛 칭찬해주셔서 감사해요 😋 다음에도 맛있는 메뉴와 시원한 맥주로 찾아뵐게요! 추천해 주신 만큼 더 열심히 할게요 💖"
+      ]
     },
     {
       "id": "naver:1509927370",
@@ -29748,8 +29579,8 @@
       "walk_minutes": 10.8,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 577,
+      "representative_review": "몽촌토성역점을 방문했어요❤️ 위치는 몽촌토성역 입구 앞에 있고 올림픽공원, 올림픽회관, 몽촌호... 있어요ㅎㅎㅎ 잠실 맛집인강?? 몽촌토성역 맛집, 한성백제역 맛집 검색 중이시면 뷰 좋은 롯데리아...",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29758,7 +29589,10 @@
       "is_new_opening": false,
       "phone": null,
       "url": "https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%EB%A6%AC%EC%95%84%20%EB%AA%BD%EC%B4%8C%ED%86%A0%EC%84%B1%EC%97%AD%EC%A0%90/place/1509927370",
-      "source": "naver_map"
+      "source": "naver_map",
+      "representative_reviews": [
+        "몽촌토성역점을 방문했어요❤️ 위치는 몽촌토성역 입구 앞에 있고 올림픽공원, 올림픽회관, 몽촌호... 있어요ㅎㅎㅎ 잠실 맛집인강?? 몽촌토성역 맛집, 한성백제역 맛집 검색 중이시면 뷰 좋은 롯데리아..."
+      ]
     },
     {
       "id": "naver:11825111",
@@ -29774,7 +29608,7 @@
       "rating": null,
       "rating_source": null,
       "review_count": null,
-      "representative_review": null,
+      "representative_review": "4.맛과 후기 롯데월드에 있는 롯데리아언더랜드점은 패스트푸드라 주문 후 음식이 빨리 나오고, 롯데월드 어드벤처내에 동선이 편해서 자주 가게 되더라구요. 아이들이 좋아하는 메뉴가 많아 가족 단위...",
       "price_per_person_krw": 11500,
       "price_range_min_krw": 8000,
       "price_range_max_krw": 15000,
@@ -29789,6 +29623,9 @@
         "리아 새우버거(버터번) 세트",
         "리아 불고기버거(버터번) 세트",
         "Double X2(버터번) 세트"
+      ],
+      "representative_reviews": [
+        "4.맛과 후기 롯데월드에 있는 롯데리아언더랜드점은 패스트푸드라 주문 후 음식이 빨리 나오고, 롯데월드 어드벤처내에 동선이 편해서 자주 가게 되더라구요. 아이들이 좋아하는 메뉴가 많아 가족 단위..."
       ]
     },
     {
@@ -29804,8 +29641,8 @@
       "walk_minutes": 2.2,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 52,
+      "representative_review": "아이들과 집중하면서 아늑한 분위기에서 공부할 곳을 찾다가 여기로 오게 되었네요. 시설이 깔끔합니다.",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -29825,6 +29662,10 @@
         "✔️카드 단말기 비치(현장카드결제)",
         "✔️1~14인 가능(추가인원 문의)",
         "✔️오버나잇 가능(톡톡으로 문의)"
+      ],
+      "representative_reviews": [
+        "아이들과 집중하면서 아늑한 분위기에서 공부할 곳을 찾다가 여기로 오게 되었네요. 시설이 깔끔합니다.",
+        "깨끗하고 합리적인 가격이라 좋습니다!"
       ]
     },
     {
@@ -29838,10 +29679,10 @@
       "lng": 127.1048309,
       "distance_meters": 388.3,
       "walk_minutes": 4.9,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.48,
+      "rating_source": "naver_crawl",
+      "review_count": 1208,
+      "representative_review": "올 때마다 만족하는 째깍섬 최고!!😆😆😆",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -29856,6 +29697,10 @@
         "프로그램 1회 (50분)",
         "슬라임놀이터_슬라임20분+놀이터70분",
         "보호자 티켓"
+      ],
+      "representative_reviews": [
+        "올 때마다 만족하는 째깍섬 최고!!😆😆😆",
+        "올때마다 기분좋아지는 곳 아이가 좋아해서 자주왔는데 슬라임주제로 수업이 새로생겨서 드디어 왔습니다 신나게 수업하고 놀이터 이용까지 일석이조에요 친절하게 케어해주시고 재미있는 수업 감사드립니다 색다른 수업들 많이 만들어주세요"
       ]
     },
     {
@@ -29871,8 +29716,8 @@
       "walk_minutes": 1.0,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 139,
+      "representative_review": "서울 올라온 김에 어디갈까 찾아보다 알게 된 키카! 아이도 어른도 충분히 재밌게 놀다가 나왔어요~ 직원분도 친찰하시고 평일이라 아이들이 없다보니 둘째가 삼촌~하면서 찾아서 ..이리저리... 더 죄송하기도하고 너무너무너무 감사했어요~! 아이들과 좋은 추억 함께 해 주셔서 감사합니다 😃👍 차에서 뻗었습니다 ㅎㅎㅎ 재밌었어요~~~^^ 재방문의사 ×100000%",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -29889,49 +29734,10 @@
         "보호자 입장권",
         "어린이(2시간)이용권",
         "(10회권) 어린이 2시간 이용"
-      ]
-    },
-    {
-      "id": "naver:2073661889",
-      "name": "51커피로스터스",
-      "place_type": "cafe",
-      "category": "cafe",
-      "category_label": "카페",
-      "address": "",
-      "lat": 37.5083529,
-      "lng": 127.1103649,
-      "distance_meters": 1161.5,
-      "walk_minutes": 14.5,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "price_per_person_krw": 6250,
-      "price_range_min_krw": 4500,
-      "price_range_max_krw": 8000,
-      "representative_menu": "49 Latte · 51 Latte · Molten Shot",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/51%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4/place/2073661889",
-      "source": "naver_map",
-      "menu_names": [
-        "49 Latte",
-        "51 Latte",
-        "Molten Shot",
-        "아메리카노",
-        "카푸치노",
-        "카페라떼",
-        "플랫화이트",
-        "바닐라빈 라떼",
-        "오트말차라떼",
-        "딸기라떼",
-        "핑크레몬에이드",
-        "히비스커스 레몬 티",
-        "티라미수",
-        "무화과 스콘",
-        "브루키",
-        "바닐라빈 아이스크림"
+      ],
+      "representative_reviews": [
+        "서울 올라온 김에 어디갈까 찾아보다 알게 된 키카! 아이도 어른도 충분히 재밌게 놀다가 나왔어요~ 직원분도 친찰하시고 평일이라 아이들이 없다보니 둘째가 삼촌~하면서 찾아서 ..이리저리... 더 죄송하기도하고 너무너무너무 감사했어요~! 아이들과 좋은 추억 함께 해 주셔서 감사합니다 😃👍 차에서 뻗었습니다 ㅎㅎㅎ 재밌었어요~~~^^ 재방문의사 ×100000%",
+        "안녕하십니까 고객님! 캘리클럽 잠실점 입니다. 우선 저희 캘리클럽 잠실점에 방문해주시고, 소중한 시간 내어 리뷰 작성해주셔서 감사합니다! 재밌게 놀아주셨다니 감사한 말씀 먼저 전하며 앞으로 고객님 리뷰에 보답하는 마음으로 캘리클럽을 방문하는 아이들이 즐겁고 안전하게 놀 수 있도록 노력하는 잠실점이 되겠습니다 다시 한번 저희 캘리클럽 잠실점에 방문해 주셔서 "
       ]
     },
     {
@@ -29947,8 +29753,8 @@
       "walk_minutes": 12.8,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 144,
+      "representative_review": "요새 낮에 더운데 안에 시원해서 좋아요! 수박주스 마셨는데 건강한데도 입에 착 감기는 시원한 맛이라 두 잔 마셨네요ㅎㅎㅎ 수박시럽맛이 아니라 진짜 수박맛이라 좋아요 !!",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -29985,23 +29791,27 @@
         "레몬에이드",
         "자몽에이드",
         "청포도에이드"
+      ],
+      "representative_reviews": [
+        "요새 낮에 더운데 안에 시원해서 좋아요! 수박주스 마셨는데 건강한데도 입에 착 감기는 시원한 맛이라 두 잔 마셨네요ㅎㅎㅎ 수박시럽맛이 아니라 진짜 수박맛이라 좋아요 !!",
+        "차분하고 깔끔한 인테리어에 음악선곡도 좋아서 혼자서도 시간보내고 가기 좋은 카페! 햇볕이 샥 들어서 인테리어랑 잘 어울리더라고요 사진 잘 나와서 좋은 ✨️ 밤 루이보스 밀크티도 밤맛 달콤하게 나서 먹기 좋아요~ 구움찰떡도 쫜득하니 좋아요. 보냉백 귀엽길래 찍어봤어요 ㅋㅋ"
       ]
     },
     {
       "id": "naver:18855971",
       "name": "뉴질랜드스토리",
       "place_type": "restaurant",
-      "category": "cafe",
-      "category_label": "카페",
+      "category": "western",
+      "category_label": "양식",
       "address": "",
       "lat": 37.5096729,
       "lng": 127.105848,
       "distance_meters": 847.7,
       "walk_minutes": 10.6,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.54,
+      "rating_source": "naver_crawl",
+      "review_count": 1145,
+      "representative_review": "토요일 11시 15분 정도에 도착한것 같은데 테이블 3-4개 정도 비어 있어서 바로 원하는 자리에 앉을 수 있었어요. 10~15분 후에 금방 테이블이 찼던 것 같아요. 분위기가 아늑하고 창밖을 보며 식사해서 좋았어요. 식사 메뉴나 음료가 일반적인 양식 브런치 가게에서 못 보던 게 있어서 흥미로웠어요. 1~2인석이 별도로 있고, 옆 테이블과 거리가 너무 가깝",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30025,6 +29835,10 @@
         "오렌지팡팡샐러드",
         "바질크림파니니",
         "빅토리아샌드위치"
+      ],
+      "representative_reviews": [
+        "토요일 11시 15분 정도에 도착한것 같은데 테이블 3-4개 정도 비어 있어서 바로 원하는 자리에 앉을 수 있었어요. 10~15분 후에 금방 테이블이 찼던 것 같아요. 분위기가 아늑하고 창밖을 보며 식사해서 좋았어요. 식사 메뉴나 음료가 일반적인 양식 브런치 가게에서 못 보던 게 있어서 흥미로웠어요. 1~2인석이 별도로 있고, 옆 테이블과 거리가 너무 가깝",
+        "1N년 전 첫방문 때 먹었던 모로칸 샌드위치. 방문 때마다 있으면 꼭 시키는데 역시 넘 맛있어요. 여기만 오면 양이 늘어요. 오늘도 원없이 먹고 갑니다👍👍👍💗🩷❤️"
       ]
     },
     {
@@ -30040,8 +29854,8 @@
       "walk_minutes": 13.3,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 813,
+      "representative_review": "커피 맛집인데 오늘은 브런치메뉴도 시켰어요 샐러드도 아삭아삭 신선하고 베이컨머쉬룸크림파스타도 고소하고 짭쪼롬하게 맛있어요 샌드위치도 강추요",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30065,6 +29879,10 @@
         "아메리카노",
         "카페라떼",
         "버드와이저 생맥주"
+      ],
+      "representative_reviews": [
+        "커피 맛집인데 오늘은 브런치메뉴도 시켰어요 샐러드도 아삭아삭 신선하고 베이컨머쉬룸크림파스타도 고소하고 짭쪼롬하게 맛있어요 샌드위치도 강추요",
+        "🐖폴드포크 샌드위치,🥗샐러드파스타, 🥔대파감자스프 모두 다 깔끔하니 맛있습니다. 🪑공간도 멋있고 🌳석촌호수 뷰가 보여 좋습니다. 다만 💰가격은 좀 있는 편입니다!"
       ]
     },
     {
@@ -30078,10 +29896,10 @@
       "lng": 127.108043,
       "distance_meters": 743.2,
       "walk_minutes": 9.3,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.4,
+      "rating_source": "naver_crawl",
+      "review_count": 535,
+      "representative_review": "주말엔 항상 만석이거나 한자리 있거나 였던거 같은데 오늘은 저희가 갔을땐 몇자리가 있어서 사진찍고 놀기 좋았어요 ㅎㅎ 커피 맛있습니다!",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30097,6 +29915,10 @@
         "스몰라떼",
         "카푸치노",
         "에이드"
+      ],
+      "representative_reviews": [
+        "주말엔 항상 만석이거나 한자리 있거나 였던거 같은데 오늘은 저희가 갔을땐 몇자리가 있어서 사진찍고 놀기 좋았어요 ㅎㅎ 커피 맛있습니다!",
+        "이사가고 오랜만에 왔는데, 여름이 오는 이 계절이 가장 잘 어울리는 공간입니다♥ 내려주신 커피도 변함없이 맛있고, 위커파크가 좋은점은 4-5년간 꾸준히 오는데도 직원분들이 늘 그대로셔서 여전함을 즐길 수 있다는 게 가장 큰 장점이에요. 기복없이 편안한 곳,, 너무 좋아요! 새 디저트도 맛있습니다:)"
       ]
     },
     {
@@ -30110,10 +29932,10 @@
       "lng": 127.1062357,
       "distance_meters": 802.6,
       "walk_minutes": 10.0,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.41,
+      "rating_source": "naver_crawl",
+      "review_count": 739,
+      "representative_review": "러반로제 재방문 했는데 여전히 아름다운 곳이에요👍🏻 직원분들 갈때마다 친절하시고 특히 잠실 메인거리의 뷰를 보면서 다른곳과 비교도 안되는 맛있는 음식을 먹으니 너무 좋았습니다💕 또 올께요❤️",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30156,49 +29978,10 @@
         "만조[안심]파스타(베이스선택)",
         "쉬림프파스타 (베이스선택)",
         "봉골레 파스타"
-      ]
-    },
-    {
-      "id": "naver:2047465656",
-      "name": "보틀벙커 비스트로",
-      "place_type": "cafe",
-      "category": "cafe",
-      "category_label": "카페",
-      "address": "",
-      "lat": 37.511905,
-      "lng": 127.0965012,
-      "distance_meters": 788.6,
-      "walk_minutes": 9.9,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "price_per_person_krw": 6250,
-      "price_range_min_krw": 4500,
-      "price_range_max_krw": 8000,
-      "representative_menu": "방풍 나물 봉골레 파스타 · 피스타치오 크림 파케리 파스타 · BBB 아롱사태 라자냐",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/%EB%B3%B4%ED%8B%80%EB%B2%99%EC%BB%A4%20%EB%B9%84%EC%8A%A4%ED%8A%B8%EB%A1%9C/place/2047465656",
-      "source": "naver_map",
-      "menu_names": [
-        "방풍 나물 봉골레 파스타",
-        "피스타치오 크림 파케리 파스타",
-        "BBB 아롱사태 라자냐",
-        "토시살 스테이크",
-        "지중해식 수미감자 뽈뽀",
-        "터키쉬 에그",
-        "브런치 세트",
-        "BBB 유자 소스 굴튀김",
-        "썬키스트 아프리콧 샐러드",
-        "트러플 파마산 프라이",
-        "홈메이드 후무스와 올리브",
-        "씨푸드 세비체",
-        "파마산 크리미 타르타르",
-        "꼬불 우삼겹 떡볶이",
-        "라오천추 덤플링",
-        "치즈 플래터 앤 프로슈토"
+      ],
+      "representative_reviews": [
+        "러반로제 재방문 했는데 여전히 아름다운 곳이에요👍🏻 직원분들 갈때마다 친절하시고 특히 잠실 메인거리의 뷰를 보면서 다른곳과 비교도 안되는 맛있는 음식을 먹으니 너무 좋았습니다💕 또 올께요❤️",
+        "아흥 ㅠㅠ 고객님 ㅠㅠ 하늘 사진도.. 창가 뷰 사진도.. 이미 너무 예쁜데... 저희 마음을 울리는 소중한 글을 남겨주셔서 ㅠㅠ 진심으로 고개 숙여 감사 드립니다...ㅠㅠ 꼭 또 오세요 ♡ ♡ ♡ ♡ ♡"
       ]
     },
     {
@@ -30214,8 +29997,8 @@
       "walk_minutes": 13.7,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 534,
+      "representative_review": "전에 한번 엄마랑 가서 먹고 좋아서 이번엔 친구들이랑 브런치모임 했어요 세 명이서 4메뉴 시켜먹었는데 몬테크리스토랑 샐러드 가성비가 장난아니예요 저번엔 9900 메뉴 안 시켰는데 왜 그랬을까 싶을 정도로 맛있고 양도 푸짐했어요 매장 깔끔하고 일,이층 모두 예쁜데 전 두 번다 2층에서 식사했네요 직원분들 모두 친절하시고 10시에 오픈이라 브런치모임하기도 좋고",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30255,34 +30038,10 @@
         "아이스티",
         "밀크티",
         "에스프레소"
-      ]
-    },
-    {
-      "id": "naver:1155150572",
-      "name": "크림베이글 잠실점",
-      "place_type": "cafe",
-      "category": "dessert",
-      "category_label": "디저트",
-      "address": "",
-      "lat": 37.5082546,
-      "lng": 127.1039918,
-      "distance_meters": 967.3,
-      "walk_minutes": 12.1,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "price_per_person_krw": 6250,
-      "price_range_min_krw": 4500,
-      "price_range_max_krw": 8000,
-      "representative_menu": "플레인 베이글 Plain bagel",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/%ED%81%AC%EB%A6%BC%EB%B2%A0%EC%9D%B4%EA%B8%80%20%EC%9E%A0%EC%8B%A4%EC%A0%90/place/1155150572",
-      "source": "naver_map",
-      "menu_names": [
-        "플레인 베이글 Plain bagel"
+      ],
+      "representative_reviews": [
+        "전에 한번 엄마랑 가서 먹고 좋아서 이번엔 친구들이랑 브런치모임 했어요 세 명이서 4메뉴 시켜먹었는데 몬테크리스토랑 샐러드 가성비가 장난아니예요 저번엔 9900 메뉴 안 시켰는데 왜 그랬을까 싶을 정도로 맛있고 양도 푸짐했어요 매장 깔끔하고 일,이층 모두 예쁜데 전 두 번다 2층에서 식사했네요 직원분들 모두 친절하시고 10시에 오픈이라 브런치모임하기도 좋고",
+        "토욜 브런치 먹으러 갔어요. 11시 갔더니 여유로워 좋았고, 야외테이블도 도심이 아닌듯 좋아요. 나올때 보니 만석이네요. ▪︎문어 알리오올리오: 매콤하게 해달라고 부탁드렸고, 딱 적절한 매콤함과 진짜 완전 보들보들한 문어가 넘 맛있더라구요! 야들해서 깜놀! 강추드립니다!! ▪︎비프 샐러드​: 샐러드는 필수로 시키는 집이라 딸램 고기 먹여야 하는데 마침 딱인"
       ]
     },
     {
@@ -30298,8 +30057,8 @@
       "walk_minutes": 12.7,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 350,
+      "representative_review": "굉장히 색다른 음식인데 매우 만족! 초당옥수수&문어뇨끼(22,000), 구운연어 티카라이스(19,000) 시켰습니다. 뇨끼는 문어가 엄청 부드러워서 좋았구요, 소스는 적당히 달달하면서 부드러운 초당옥수수 크림이었어요. 뇨끼는 쫀득하기보다는 으깬감자 식감에 더 가까웠구요. 이게 살짝 느끼할 수 있는데, 이걸 티카라이스가 잘 잡아줍니다. 살짝 멕시코풍의 소스와",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30336,6 +30095,10 @@
         "멕시칸 부차트 타코",
         "시저샐러드",
         "불고기 라이스"
+      ],
+      "representative_reviews": [
+        "굉장히 색다른 음식인데 매우 만족! 초당옥수수&문어뇨끼(22,000), 구운연어 티카라이스(19,000) 시켰습니다. 뇨끼는 문어가 엄청 부드러워서 좋았구요, 소스는 적당히 달달하면서 부드러운 초당옥수수 크림이었어요. 뇨끼는 쫀득하기보다는 으깬감자 식감에 더 가까웠구요. 이게 살짝 느끼할 수 있는데, 이걸 티카라이스가 잘 잡아줍니다. 살짝 멕시코풍의 소스와",
+        "잠실 송리단길 분위기 맛집 뇨끼 맛집 디프! 크리스마스 분위기가 장난 아니더라고요. 맛있는 음식과 감성 한 스푼 추가되니 좋았어요. 특히 뇨끼가 맛있으니 추천!"
       ]
     },
     {
@@ -30349,10 +30112,10 @@
       "lng": 127.1096876,
       "distance_meters": 1015.0,
       "walk_minutes": 12.7,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.51,
+      "rating_source": "naver_crawl",
+      "review_count": 2010,
+      "representative_review": "오랫만에 힐링🌱참 좋은 사람과 참 좋은 장소에서 참 좋은 시간. 2번째 방문이예요~다시 오고 싶어 벼르고 벼르다 귀한 친구 동네 방문에 직행🤍주문한 메뉴 다 맛있고 양도 넉넉🫣, 분위기는 말모. 또또또 갈께요 다음엔 와인도 함께할 예정👍친구야 또와쥬라 같이가쟝🫶🏻",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30385,41 +30148,10 @@
         "오늘의 스프",
         "부라타치즈와 방울토마토 샐러드",
         "매콤한 비프 크림 리조또"
-      ]
-    },
-    {
-      "id": "naver:1429153784",
-      "name": "Rirr",
-      "place_type": "cafe",
-      "category": "cafe",
-      "category_label": "카페",
-      "address": "",
-      "lat": 37.5098882,
-      "lng": 127.1097088,
-      "distance_meters": 990.0,
-      "walk_minutes": 12.4,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "price_per_person_krw": 6250,
-      "price_range_min_krw": 4500,
-      "price_range_max_krw": 8000,
-      "representative_menu": "안초비 파스타 · 김퓨레 파스타 · 오징어 먹물 리조토",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/Rirr/place/1429153784",
-      "source": "naver_map",
-      "menu_names": [
-        "안초비 파스타",
-        "김퓨레 파스타",
-        "오징어 먹물 리조토",
-        "봄나물 리조토",
-        "포르치니 버섯 파스타",
-        "부라타 치즈 샐러드",
-        "시저 샐러드",
-        "Rirr 햄 크림 파스타"
+      ],
+      "representative_reviews": [
+        "오랫만에 힐링🌱참 좋은 사람과 참 좋은 장소에서 참 좋은 시간. 2번째 방문이예요~다시 오고 싶어 벼르고 벼르다 귀한 친구 동네 방문에 직행🤍주문한 메뉴 다 맛있고 양도 넉넉🫣, 분위기는 말모. 또또또 갈께요 다음엔 와인도 함께할 예정👍친구야 또와쥬라 같이가쟝🫶🏻",
+        "친구 추천으로 같이 방문했습니다~ 일단 매장 인테리어가 예뻐요. 식물들이 장식되어 있고, 테이블에 장미가 배치되어 있어, 데이트 장소하기도 너무 좋을 거 같더라고요~ 그리고 메뉴들도 다양해서 고르기 좋았어요. QR로 주문했는데, 먼저 연어 샌드위치는 식빵위에 연어 스테이크에다가 계란 반숙이 올라가 있고, 아포카도가 얇게 도포되어있어 조화롭고 맛있었어요. 머"
       ]
     },
     {
@@ -30435,8 +30167,8 @@
       "walk_minutes": 14.9,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 1133,
+      "representative_review": "송파에서 파스타 맛집을 찾다가 발견했어요. 치킨크림파스타와 부라타 토마토 샌드위치를 주문했는데 굉장히 만족스러웠습니다. 매장 분위기가 좋고 대화나누며 식사하기 좋았아요. 재방문 의사 있습니당",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30470,6 +30202,10 @@
         "메리 골드 플라워 티",
         "하우스 와인(레드/화이트)",
         "Coke"
+      ],
+      "representative_reviews": [
+        "송파에서 파스타 맛집을 찾다가 발견했어요. 치킨크림파스타와 부라타 토마토 샌드위치를 주문했는데 굉장히 만족스러웠습니다. 매장 분위기가 좋고 대화나누며 식사하기 좋았아요. 재방문 의사 있습니당",
+        "분위기 있고 아주~ 맛있는 브런치 카페♡ 일부러 찾아가서 먹어야 하는 송리단길 근처 예쁜 브런치집이에요! 아늑하고 아기자기한 분위기에 음식까지 훌륭!! 갠적으로 샐러드와 라구파스타가 진짜 맛있었어요! 인테리어도 이뻐서 사진찍어도 다 이쁘게 나오더라구요~~ 지인들이 진짜 다 좋아했네요~ 너무 만족합니다!!"
       ]
     },
     {
@@ -30483,10 +30219,10 @@
       "lng": 127.1062802,
       "distance_meters": 933.9,
       "walk_minutes": 11.7,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.76,
+      "rating_source": "naver_crawl",
+      "review_count": 327,
+      "representative_review": "지나가다가 우연히 보고 저기다! 하고 바로 들어왔는데 커피도 맛있고 무엇보다 팬케이크도 넘넘 맛있네요. 특히 팬케이크 위에 올라가는 크림이 너무 매력적이에요! 보통 올려주는 생크림과 다르게 단짠이 잘 어울리는 맛이었어요🫶🏻 다음번 방문할 때는 블루베리도 먹어보고 싶네요💕",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30518,6 +30254,10 @@
         "짐빔 하이볼",
         "짐빔 버번 위스키 언더락",
         "버드와이저 맥주"
+      ],
+      "representative_reviews": [
+        "지나가다가 우연히 보고 저기다! 하고 바로 들어왔는데 커피도 맛있고 무엇보다 팬케이크도 넘넘 맛있네요. 특히 팬케이크 위에 올라가는 크림이 너무 매력적이에요! 보통 올려주는 생크림과 다르게 단짠이 잘 어울리는 맛이었어요🫶🏻 다음번 방문할 때는 블루베리도 먹어보고 싶네요💕",
+        "버터크림의 매력에 빠지셨다니 너무 감사합니다^^!!!"
       ]
     },
     {
@@ -30533,8 +30273,8 @@
       "walk_minutes": 13.5,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 1742,
+      "representative_review": "송리단길 앤티크점 방문 맛있는케잌. 커피맛에 이끌려 다시 방문 다행히 자리가 있어서 열심히 먹고 수다떨고 왔네요 데이트하러 오기 좋은곳 여자친구들과의 이쁜 카페 방문하기 좋은곳 맛있는 케잌먹고 싶으면 방문하기 좋은곳^^",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30569,53 +30309,10 @@
         "바나나 버터바 바스크",
         "라즈베리 버터바 바스크",
         "로쉐쁘띠"
-      ]
-    },
-    {
-      "id": "naver:32892073",
-      "name": "라디오헤드펍",
-      "place_type": "cafe",
-      "category": "cafe",
-      "category_label": "카페",
-      "address": "",
-      "lat": 37.5140038,
-      "lng": 127.109125,
-      "distance_meters": 644.6,
-      "walk_minutes": 8.1,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
-      "price_per_person_krw": 6250,
-      "price_range_min_krw": 4500,
-      "price_range_max_krw": 8000,
-      "representative_menu": "프라임 채끝 등심 스테이크-200g · 고기라구파스타 · 피쉬앤칩스",
-      "opened_at": null,
-      "is_new_opening": false,
-      "phone": null,
-      "url": "https://map.naver.com/p/search/%EB%9D%BC%EB%94%94%EC%98%A4%ED%97%A4%EB%93%9C%ED%8E%8D/place/32892073",
-      "source": "naver_map",
-      "menu_names": [
-        "프라임 채끝 등심 스테이크-200g",
-        "고기라구파스타",
-        "피쉬앤칩스",
-        "칠리새우",
-        "밤에먹는 라헤모닝",
-        "해장크림파스타",
-        "모듬 소세지",
-        "감바스",
-        "Rainbow 샐러드",
-        "모듬치즈 계절과일",
-        "마리네이드 올리브",
-        "먹태",
-        "미니 카프레제",
-        "버팔로윙 & 칩스",
-        "라헤 Italy-Pils 생맥주",
-        "라헤 헬레스 라거 생맥주",
-        "라헤 바이젠 생맥주",
-        "통영 중앙시장 에일 생맥주",
-        "Hazy Jude Pale Ale",
-        "피넛버터 생맥주"
+      ],
+      "representative_reviews": [
+        "송리단길 앤티크점 방문 맛있는케잌. 커피맛에 이끌려 다시 방문 다행히 자리가 있어서 열심히 먹고 수다떨고 왔네요 데이트하러 오기 좋은곳 여자친구들과의 이쁜 카페 방문하기 좋은곳 맛있는 케잌먹고 싶으면 방문하기 좋은곳^^",
+        "친구랑 오랜만에 여자놀이 하러 방문했어요🌸 인테리어가 정말 예쁘고 분위기도 좋아서 사진 찍기 너무 좋았어요💕 디저트도 달달하고 맛있어서 기분전환 제대로 하고 갑니다☺️✨"
       ]
     },
     {
@@ -30629,10 +30326,10 @@
       "lng": 127.1052962,
       "distance_meters": 850.5,
       "walk_minutes": 10.6,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.46,
+      "rating_source": "naver_crawl",
+      "review_count": 7879,
+      "representative_review": "스타벅스 석촌호수점 리뉴얼해서 더 넓어지고 깨끗해요.. 3층에서 보이는 석촌호수뷰가 예쁘고. 초록초록 나무들과 잔잔한 호수가 있어 눈이 시원합니다:) 스위트 밀크 커피는 끝맛이 화이트 초콜릿 맛이 나서 맛있고, 초코품은 생크림 카스테라도 굿입니다.",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30656,6 +30353,10 @@
         "망고 바나나 블렌디드",
         "에스프레소 프라푸치노",
         "자바 칩 프라푸치노"
+      ],
+      "representative_reviews": [
+        "스타벅스 석촌호수점 리뉴얼해서 더 넓어지고 깨끗해요.. 3층에서 보이는 석촌호수뷰가 예쁘고. 초록초록 나무들과 잔잔한 호수가 있어 눈이 시원합니다:) 스위트 밀크 커피는 끝맛이 화이트 초콜릿 맛이 나서 맛있고, 초코품은 생크림 카스테라도 굿입니다.",
+        "스타벅스 석촌호수점 바닐라C 콜드브루, 아메리카노, 부드러운 딸기 말차 케이크 주문:) 딸기 말차 케익은 각과일 맛이나서 너무 맛있고, 아메리카노랑 잘 어울림. 🍰 창밖의 저녁 석촌호수 뷰가 너무 멋져요."
       ]
     },
     {
@@ -30669,10 +30370,10 @@
       "lng": 127.1036344,
       "distance_meters": 348.9,
       "walk_minutes": 4.4,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.44,
+      "rating_source": "naver_crawl",
+      "review_count": 1948,
+      "representative_review": "친절하고 다양해서 좋아요^^",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30681,7 +30382,11 @@
       "is_new_opening": false,
       "phone": null,
       "url": "https://map.naver.com/p/search/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88%20%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%EB%AA%B0%EC%A0%90/place/37936711",
-      "source": "naver_map"
+      "source": "naver_map",
+      "representative_reviews": [
+        "친절하고 다양해서 좋아요^^",
+        "카카오 프렌즈 밖에 있는 뽑기 너무 귀여운데 비싸요...8000원임..ㅋㅋㅋ 5000원이면 모를까.. 넘 비싸서 딱 한번했음 난 짱이니까 준식 뽑고 싶었는데 똥 뽑았네요..ㅋ"
+      ]
     },
     {
       "id": "naver:1229274541",
@@ -30696,8 +30401,8 @@
       "walk_minutes": 4.5,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 96,
+      "representative_review": "집근처에서 지인을 만날때나 혼자 노트북 작업하러도 늘 가는 애정하는 카페중 하나 매장 오픈때 부터 지금까지 컨셉이 조금씩 바껴서 좋고 최근에는 식물이 많아져서 좋네요 테이블간 칸막이 역할도 나름 되고 초록초록해서 좋고 :) 딸기 마스카포네 케익 맛있게 먹었어요 다만,드립커피는 비추,,맛 없",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30706,7 +30411,11 @@
       "is_new_opening": false,
       "phone": null,
       "url": "https://map.naver.com/p/search/CONNECTTO%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%EB%AA%B0%EC%A0%90/place/1229274541",
-      "source": "naver_map"
+      "source": "naver_map",
+      "representative_reviews": [
+        "집근처에서 지인을 만날때나 혼자 노트북 작업하러도 늘 가는 애정하는 카페중 하나 매장 오픈때 부터 지금까지 컨셉이 조금씩 바껴서 좋고 최근에는 식물이 많아져서 좋네요 테이블간 칸막이 역할도 나름 되고 초록초록해서 좋고 :) 딸기 마스카포네 케익 맛있게 먹었어요 다만,드립커피는 비추,,맛 없",
+        "렉서스 커넥트 디저트 커피 괜찮아요"
+      ]
     },
     {
       "id": "naver:2084931439",
@@ -30721,8 +30430,8 @@
       "walk_minutes": 6.0,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 6,
+      "representative_review": "롯데 뮤지엄에서 전시 보고 가볍게 커피 한잔 하기 좋은 것 같아요. 디저트 메뉴가 많이 없어서 아쉽기는 했지만 그래도 커피는 맛있는 편입니다. 평일에 방문했는데도 사람이 정말 많았어요.",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30747,6 +30456,10 @@
         "바닐라라떼",
         "카페라떼",
         "아메리카노"
+      ],
+      "representative_reviews": [
+        "롯데 뮤지엄에서 전시 보고 가볍게 커피 한잔 하기 좋은 것 같아요. 디저트 메뉴가 많이 없어서 아쉽기는 했지만 그래도 커피는 맛있는 편입니다. 평일에 방문했는데도 사람이 정말 많았어요.",
+        "뷰 좋아요 아메리카노 5천원인데 양이 많이 작아요"
       ]
     },
     {
@@ -30762,8 +30475,8 @@
       "walk_minutes": 7.7,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 7,
+      "representative_review": "잠실 래미안에 새로 생긴 스타벅스인데 작지만 세련되고 깔끔하네요~",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30787,6 +30500,10 @@
         "망고 바나나 블렌디드",
         "에스프레소 프라푸치노",
         "자바 칩 프라푸치노"
+      ],
+      "representative_reviews": [
+        "잠실 래미안에 새로 생긴 스타벅스인데 작지만 세련되고 깔끔하네요~",
+        "새로 생겨서 깔끔하고 직원분도 친절하세요"
       ]
     },
     {
@@ -30800,10 +30517,10 @@
       "lng": 127.1102628,
       "distance_meters": 938.7,
       "walk_minutes": 11.7,
-      "rating": null,
-      "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "rating": 4.5,
+      "rating_source": "naver_crawl",
+      "review_count": 5548,
+      "representative_review": "브루드커피 콜롬비아 라니뇨 Venti사이즈 5900원 맛이 잘 기억안나지만 내 입맛에는 일반 아아가 더 맞았던걸로 기억남(좀 강렬하면서도 센 탄맛나는 걸 좋아함) 아침 출근해서 팀장님이랑 나눠마시려고 일부러 회사주변에 있는 곳으로 방문함",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30827,14 +30544,18 @@
         "망고 바나나 블렌디드",
         "에스프레소 프라푸치노",
         "자바 칩 프라푸치노"
+      ],
+      "representative_reviews": [
+        "브루드커피 콜롬비아 라니뇨 Venti사이즈 5900원 맛이 잘 기억안나지만 내 입맛에는 일반 아아가 더 맞았던걸로 기억남(좀 강렬하면서도 센 탄맛나는 걸 좋아함) 아침 출근해서 팀장님이랑 나눠마시려고 일부러 회사주변에 있는 곳으로 방문함",
+        "매장이 넓고 주변 스타벅스보다 덜 시끄러운 편이라 편하게 일하거나 공부하기 좋아요 ☕️ 요즘은 고양이 얼굴이랑 발 모양 마들렌, 딸기 디저트 같은 시즌 메뉴도 있어서 같이 즐기기 좋아요 :)🐱 The place is spacious and usually quieter than other Starbucks nearby, so it’s great for wor"
       ]
     },
     {
       "id": "naver:2084445559",
       "name": "묘방",
       "place_type": "cafe",
-      "category": "cafe",
-      "category_label": "카페",
+      "category": "dessert",
+      "category_label": "디저트",
       "address": "",
       "lat": 37.5070101,
       "lng": 127.1051574,
@@ -30842,8 +30563,8 @@
       "walk_minutes": 14.0,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 305,
+      "representative_review": "약과아이스크림 요물입니다💛🤍 약과가 많이 달지도 않고 적당히 씹는맛이있어 아이스크림이랑 먹으면 너무 잘어울려요!! 소스가 아이스크림이랑 어우러져서 진짜 ‘약과맛’ 아이스크림이에요 🍦ㅎㅎ 그리고 개성주악.. 꼭꼭 드세요.. 이곳보다 쫀득하고 부드러운곳은 못봤어요.. 💫 원래 딱딱하고 먹기 힘들었는데 다시 사먹고 싶을정도로 계속 생각나네요... 제철 재료로 매",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30858,6 +30579,10 @@
         "개성주악",
         "인절미(한줌)",
         "인절미(두줌)"
+      ],
+      "representative_reviews": [
+        "약과아이스크림 요물입니다💛🤍 약과가 많이 달지도 않고 적당히 씹는맛이있어 아이스크림이랑 먹으면 너무 잘어울려요!! 소스가 아이스크림이랑 어우러져서 진짜 ‘약과맛’ 아이스크림이에요 🍦ㅎㅎ 그리고 개성주악.. 꼭꼭 드세요.. 이곳보다 쫀득하고 부드러운곳은 못봤어요.. 💫 원래 딱딱하고 먹기 힘들었는데 다시 사먹고 싶을정도로 계속 생각나네요... 제철 재료로 매",
+        "결혼식 이후에 양가 인사드리려고, 선물 준비하러 들렀습니다~ 어머니가 개성주악 좋아하신다해서 급하게 송파 주변에서 찾았는데 이렇게 퀄리티 훌륭한 곳을 만나게 되어서 너무 만족스러워요..! 광목천으로 추가비용 내면 선물 포장도 해주시는데 너무 예쁘고요. 계절 설기 맛있고 아 인절미 카스테라, 콩, ㄷㄷ 종류별로 다맛있어고 한입크기라 먹기도 좋았어요. 오픈한지"
       ]
     },
     {
@@ -30873,8 +30598,8 @@
       "walk_minutes": 5.3,
       "rating": null,
       "rating_source": null,
-      "review_count": null,
-      "representative_review": null,
+      "review_count": 22,
+      "representative_review": "따뜻한 배려가 넘치는 연습실~ 올때마다 편안한 분위기에 감동받고 갑니다!! 생수도 준비해 주셔서 건조하지 않게 연습할 수 있었어요. 포스트잇에 써 주신 글귀가 귀여웠는데 사진을 못 찍었네요. 귀여우신 사장님 번창하세요🌷",
       "price_per_person_krw": 6250,
       "price_range_min_krw": 4500,
       "price_range_max_krw": 8000,
@@ -30888,6 +30613,10 @@
         "Solo 피아노없는방",
         "Sonorite 피아노방",
         "Symphony 앙상블방"
+      ],
+      "representative_reviews": [
+        "따뜻한 배려가 넘치는 연습실~ 올때마다 편안한 분위기에 감동받고 갑니다!! 생수도 준비해 주셔서 건조하지 않게 연습할 수 있었어요. 포스트잇에 써 주신 글귀가 귀여웠는데 사진을 못 찍었네요. 귀여우신 사장님 번창하세요🌷",
+        "선생님 항상 가족처럼 대해주셔서 감사합니다~ 선생님처럼 좋은 분들 덕분에 저희도 힘이납니다. 선생님은 VIP 단골이시라 언제든 심포니방 필요하시면 따로 말씀주세요~ 늘 감사드리고 건강하세요~!"
       ]
     }
   ]

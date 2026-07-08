@@ -18,7 +18,7 @@ logger = get_logger(__name__)
 _CATEGORY_COPY = {
     "한식": "당신의 혈액형은 한식입니다",
     "중식": "짜장면이 부르는 밤이 있었습니다",
-    "일식": "사시미에 진심인 당신",
+    "일식": "정갈한 한 끼를 즐길 줄 아는 당신",
     "양식": "파스타는 사랑입니다",
     "분식": "떡볶이는 영원하다",
     "카페": "카페인으로 구동되는 인간",
@@ -135,7 +135,7 @@ class WrappedGenerator:
         if category_visits:
             top_category, top_category_count = category_visits.most_common(1)[0]
 
-        top_places = place_visits.most_common(3)
+        top_places = [(name, count) for name, count in place_visits.most_common() if count >= 2][:3]
 
         cheapest_place = None
         cheapest_price = None

@@ -352,9 +352,6 @@ function formatPlaceCardRating(place) {
   if (place.rating != null) {
     return formatRating(place);
   }
-  if (place.review_count > 0) {
-    return `리뷰 ${place.review_count}건`;
-  }
   return "평점 없음";
 }
 

@@ -1,6 +1,7 @@
 .env
 __pycache__/
 *.py[cod]
+*.log
 .pytest_cache/
 .venv/
 venv/
@@ -8,3 +9,8 @@ data/cache/
 *.egg-info/
 .DS_Store
 Thumbs.db
+
+# Accidental shell/command artifacts (Windows)
+Account
+cd
+git

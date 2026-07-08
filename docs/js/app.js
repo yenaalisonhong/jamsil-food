@@ -538,7 +538,7 @@ function passesFilters(place) {
   if (!isFoodPlace(place)) return false;
   if (placeType !== "all" && place.place_type !== placeType) return false;
   if (place.walk_minutes != null && place.walk_minutes > maxWalk) return false;
-  if (place.rating != null && place.rating < minRating) return false;
+  if (place.rating != null && Number(place.rating) < minRating) return false;
   if (place.price_per_person_krw != null && place.price_per_person_krw > maxPrice) return false;
   if (!placeMatchesKeyword(place, keyword)) return false;
   return true;
@@ -951,13 +951,6 @@ function renderCategoryList() {
   }
 }
 
-function passesNewOpeningFilters(place) {
-  const { maxWalk } = state.filters;
-  if (place.place_type !== "restaurant" && place.place_type !== "cafe") return false;
-  if (place.walk_minutes != null && place.walk_minutes > maxWalk) return false;
-  return true;
-}
-
 function getNewOpenings() {
   const places = state.data?.places ?? [];
   const placeById = new Map(places.map((place) => [place.id, place]));
@@ -968,7 +961,7 @@ function getNewOpenings() {
     }
   }
   return openings
-    .filter(passesNewOpeningFilters)
+    .filter(passesFilters)
     .sort((a, b) => {
       const dateA = a.opened_at ? new Date(`${a.opened_at}T00:00:00`).getTime() : 0;
       const dateB = b.opened_at ? new Date(`${b.opened_at}T00:00:00`).getTime() : 0;
@@ -1134,6 +1127,18 @@ function updateKeywordClearButton() {
   clearBtn.classList.toggle("hidden", !keywordInput.value.trim());
 }
 
+function bindRangeFilter(input, onValue) {
+  if (!input) return;
+  const apply = () => {
+    const value = parseFloat(input.value);
+    if (!Number.isFinite(value)) return;
+    onValue(value);
+    render();
+  };
+  input.addEventListener("input", apply);
+  input.addEventListener("change", apply);
+}
+
 function bindFilters() {
   const ratingInput = $("#filter-rating");
   const priceInput = $("#filter-price");
@@ -1170,22 +1175,19 @@ function bindFilters() {
     keywordInput.focus();
   });
 
-  ratingInput?.addEventListener("input", () => {
-    state.filters.minRating = parseFloat(ratingInput.value);
-    $("#rating-value").textContent = state.filters.minRating.toFixed(1);
-    render();
+  bindRangeFilter(ratingInput, (value) => {
+    state.filters.minRating = value;
+    $("#rating-value").textContent = value.toFixed(1);
   });
 
-  priceInput?.addEventListener("input", () => {
-    state.filters.maxPrice = parseInt(priceInput.value, 10);
+  bindRangeFilter(priceInput, (value) => {
+    state.filters.maxPrice = Math.round(value);
     $("#price-value").textContent = state.filters.maxPrice.toLocaleString("ko-KR");
-    render();
   });
 
-  walkInput?.addEventListener("input", () => {
-    state.filters.maxWalk = parseInt(walkInput.value, 10);
-    $("#walk-value").textContent = state.filters.maxWalk;
-    render();
+  bindRangeFilter(walkInput, (value) => {
+    state.filters.maxWalk = Math.round(value);
+    $("#walk-value").textContent = String(state.filters.maxWalk);
   });
 
   $$(".chip").forEach((chip) => {

@@ -1,3 +1,63 @@
 {
-  "_updatedAt": "2026-07-10T00:00:00.000Z"
+  "_updatedAt": "2026-07-10T05:28:00.000Z",
+  "2026-07-06": [
+    {
+      "name": "토도로끼",
+      "rating": 4,
+      "memo": "탄탄멘M, 양이 많지는 않지만 맛있었음",
+      "place_id": "",
+      "price_min_krw": 13500,
+      "price_max_krw": 13500,
+      "createdAt": "2026-07-08T05:04:31.797Z"
+    },
+    {
+      "name": "카페아일랜드&베이커리 잠실2호점",
+      "rating": 3,
+      "memo": "커피보다는 빵이 맛있음",
+      "place_id": "",
+      "price_min_krw": 5000,
+      "price_max_krw": 6000,
+      "createdAt": "2026-07-08T05:05:22.986Z"
+    }
+  ],
+  "2026-07-08": [
+    {
+      "name": "시부야돈까스",
+      "rating": 3,
+      "memo": "안심 먹음, 맛있었으나 웨이팅ㅠㅠ",
+      "place_id": "",
+      "price_min_krw": 12000,
+      "price_max_krw": 12000,
+      "createdAt": "2026-07-08T05:05:58.108Z"
+    },
+    {
+      "name": "커피나인 잠실장미상가점",
+      "rating": 4,
+      "memo": "바나나라떼에 크림 추가해서 먹음, 메뉴가 다양하고 맛있었음",
+      "place_id": "",
+      "price_min_krw": 5000,
+      "price_max_krw": 5500,
+      "createdAt": "2026-07-08T05:06:33.948Z"
+    }
+  ],
+  "2026-07-10": [
+    {
+      "name": "이레칼국수",
+      "rating": 4,
+      "memo": "이레칼국수 먹음, 김치가 맛있었음!",
+      "place_id": "",
+      "price_min_krw": 10000,
+      "price_max_krw": 12000,
+      "createdAt": "2026-07-10T05:14:38.156Z"
+    },
+    {
+      "name": "햄튼커피 잠실본점",
+      "rating": 4,
+      "memo": "마멀레이드 먹음, 독특한 맛, 자리 있었음!",
+      "place_id": "",
+      "price_min_krw": 5000,
+      "price_max_krw": 5000,
+      "createdAt": "2026-07-10T05:15:00.773Z"
+    }
+  ]
 }

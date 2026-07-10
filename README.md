@@ -42,7 +42,7 @@ API 키 발급·SMTP 알림 등 상세 설정은 [`docs/API_GUIDE.md`](docs/API_
 | **기능 B** `cafes` | 평점 4+, 도보 15분 이내 카페 |
 | **기능 C** `alerts` | 최근 30일 내 신규 오픈 식당·카페 알림 (`--email`로 SMTP 발송) |
 | **웹 UI** | 지도·카테고리·키워드 필터, 신규 오픈 패널, 점심 뽑기 |
-| **식사 기록** | `diary.html` — 방문 기록·평점, 4점 이상 맛집 모음 |
+| **식사 기록** | `diary.html` — 방문 기록·평점, 4점 이상 맛집 모음 (`data/diary.json`에 저장되어 기기 간 공유) |
 
 ---
 
@@ -68,7 +68,7 @@ python -m cli.main -v                      # 상세 로그
 
 | 경로 | 용도 |
 |------|------|
-| `site/` | 로컬 개발용 (정적 파일 + `/api/places` 라이브 API) |
+| `site/` | 로컬 개발용 (정적 파일 + `/api/places` · `/api/diary` 라이브 API) |
 | `docs/` | GitHub Pages 배포용 (`main` 브랜치 push 시 자동 배포) |
 
 ```powershell
@@ -78,6 +78,8 @@ python scripts/serve_site.py --port 8765 --open
 # 연결 확인
 python scripts/verify_site.py
 ```
+
+식사 기록은 `site/data/diary.json`(배포본은 `docs/data/diary.json`)에 저장됩니다. 로컬 서버에서는 `/api/diary`로 자동 저장되고, GitHub Pages에서는 페이지 하단 **동기화 설정**에 fine-grained PAT(Contents 읽기/쓰기 · 이 저장소만)을 한 번 넣으면 같은 파일이 갱신되어 다른 기기에서도 보입니다.
 
 보충 스크립트(`supplement_*`, `merge_*`)는 `site/`와 `docs/`를 함께 갱신합니다. `export_places.py`는 기본 출력이 `site/data/places.json`이므로 Pages 반영 시 `docs/`에도 복사하거나 `--output docs/data/places.json`으로 한 번 더 실행하세요.
 

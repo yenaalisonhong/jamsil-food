@@ -5,6 +5,7 @@
 const state = {
   dateKey: null,
   entries: {},
+  saving: false,
 };
 
 const $ = (sel) => document.querySelector(sel);
@@ -66,19 +67,20 @@ function renderEntryList() {
         ${priceText ? `<p class="diary-entry-price">${DiaryStorage.escapeHtml(priceText)}</p>` : ""}
         ${entry.memo ? `<p class="diary-entry-memo">${DiaryStorage.escapeHtml(entry.memo)}</p>` : ""}
       </div>
-      <button type="button" class="diary-entry-delete" data-idx="${idx}" aria-label="${DiaryStorage.escapeHtml(entry.name)} 삭제">삭제</button>
+      <button type="button" class="diary-entry-delete" data-idx="${idx}" aria-label="${DiaryStorage.escapeHtml(entry.name)} 삭제" ${state.saving ? "disabled" : ""}>삭제</button>
     </article>
   `;
   }).join("");
 
   list.querySelectorAll(".diary-entry-delete").forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", async () => {
+      if (state.saving) return;
       const idx = Number(btn.dataset.idx);
       const dayEntries = [...getDayEntries()];
       dayEntries.splice(idx, 1);
       if (dayEntries.length) state.entries[state.dateKey] = dayEntries;
       else delete state.entries[state.dateKey];
-      DiaryStorage.saveEntries(state.entries);
+      await persistEntries();
       updateStats();
       renderEntryList();
     });
@@ -89,8 +91,22 @@ function updateStats() {
   $("#diary-stats").textContent = `기록 ${DiaryStorage.countTotal(state.entries)}건`;
 }
 
-function reloadFromStorage() {
+async function persistEntries() {
+  state.saving = true;
+  renderEntryList();
+  try {
+    await DiaryStorage.saveEntriesAsync(state.entries);
+  } finally {
+    state.saving = false;
+    renderEntryList();
+  }
+}
+
+async function reloadFromStorage() {
   state.entries = DiaryStorage.loadEntries();
+  updateStats();
+  renderEntryList();
+  state.entries = await DiaryStorage.hydrateFromRemote();
   updateStats();
   renderEntryList();
 }
@@ -115,8 +131,9 @@ function bindForm() {
   });
   updateRatingLabel();
 
-  $("#diary-entry-form").addEventListener("submit", (e) => {
+  $("#diary-entry-form").addEventListener("submit", async (e) => {
     e.preventDefault();
+    if (state.saving) return;
 
     const name = $("#diary-name").value.trim();
     if (!name) return;
@@ -133,7 +150,7 @@ function bindForm() {
       state.entries[state.dateKey] = [];
     }
     state.entries[state.dateKey].push(entry);
-    DiaryStorage.saveEntries(state.entries);
+    await persistEntries();
 
     $("#diary-name").value = "";
     $("#diary-memo").value = "";
@@ -163,16 +180,23 @@ function init() {
     return;
   }
 
-  reloadFromStorage();
   const { year, month } = DiaryStorage.parseDateKey(state.dateKey);
 
   document.title = `${DiaryStorage.formatDayTitle(state.dateKey)} | 잠실맛집`;
   $("#diary-day-title").textContent = DiaryStorage.formatDayTitle(state.dateKey);
   $("#diary-back-link").href = DiaryStorage.calendarUrl(year, month);
 
+  DiaryStorage.bindSyncStatus($("#diary-sync-status"));
+  DiaryStorage.bindSyncSettings($("#diary-sync-settings"));
   bindForm();
-  DiaryStorage.bindPersistenceReload(reloadFromStorage);
+  DiaryStorage.bindPersistenceReload(() => {
+    reloadFromStorage();
+  });
+  window.addEventListener("diary-sync-updated", () => {
+    reloadFromStorage();
+  });
   DiaryStorage.loadPlaceSuggestions($("#diary-place-suggestions"));
+  reloadFromStorage();
   $("#diary-name").focus();
 }
 

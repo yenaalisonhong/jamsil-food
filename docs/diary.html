@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=20260706d" />
+  <link rel="stylesheet" href="css/style.css?v=20260710a" />
 </head>
 <body class="diary-page">
   <div class="app diary-app">
@@ -48,17 +48,33 @@
         <div id="diary-grid" class="diary-grid" aria-live="polite"></div>
       </div>
 
-      <p class="diary-hint">날짜를 누르면 기록 페이지로 이동합니다. 저장된 기록은 달력에 표시됩니다.</p>
+      <p class="diary-hint">날짜를 누르면 기록 페이지로 이동합니다. 기록은 사이트에 저장되어 다른 기기에서도 볼 수 있어요.</p>
+
+      <section id="diary-sync-settings" class="diary-sync-settings">
+        <button type="button" class="btn btn-outline diary-sync-toggle" data-diary-sync-open>동기화 설정</button>
+        <div class="diary-sync-panel" data-diary-sync-panel hidden>
+          <p class="diary-sync-lead">GitHub Pages에서는 쓰기용 fine-grained PAT이 한 번 필요해요. (Contents 읽기/쓰기 · 이 저장소만)</p>
+          <label class="diary-field">
+            <span>GitHub 토큰</span>
+            <input type="password" data-diary-sync-token placeholder="github_pat_…" autocomplete="off" />
+          </label>
+          <p class="diary-field-hint" data-diary-sync-hint></p>
+          <div class="diary-sync-actions">
+            <button type="button" class="btn btn-new" data-diary-sync-save>저장 후 동기화</button>
+            <button type="button" class="btn btn-outline" data-diary-sync-clear>토큰 삭제</button>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
       <span id="diary-stats">기록 0건</span>
       <span class="footer-sep">·</span>
-      <span>로컬 저장 (브라우저)</span>
+      <span id="diary-sync-status">불러오는 중…</span>
     </footer>
   </div>
 
-  <script src="js/diary-shared.js?v=20260706d"></script>
-  <script src="js/diary.js?v=20260706d"></script>
+  <script src="js/diary-shared.js?v=20260710a"></script>
+  <script src="js/diary.js?v=20260710a"></script>
 </body>
 </html>

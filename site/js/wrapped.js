@@ -91,6 +91,7 @@
     document.body.style.overflow = "hidden";
 
     try {
+      await DiaryStorage.hydrateFromRemote();
       const store = DiaryStorage.loadEntries();
       const places = await DiaryStorage.loadPlaces();
       const now = new Date();

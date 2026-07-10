@@ -89,8 +89,11 @@ function updateStats() {
   if (el) el.textContent = `기록 ${DiaryStorage.countTotal(state.entries)}건`;
 }
 
-function reloadFromStorage() {
+async function reloadFromStorage() {
   state.entries = DiaryStorage.loadEntries();
+  updateStats();
+  renderCalendar();
+  state.entries = await DiaryStorage.hydrateFromRemote();
   updateStats();
   renderCalendar();
 }
@@ -137,9 +140,16 @@ function init() {
   }
 
   readUrlMonth();
-  reloadFromStorage();
+  DiaryStorage.bindSyncStatus($("#diary-sync-status"));
+  DiaryStorage.bindSyncSettings($("#diary-sync-settings"));
   bindEvents();
-  DiaryStorage.bindPersistenceReload(reloadFromStorage);
+  DiaryStorage.bindPersistenceReload(() => {
+    reloadFromStorage();
+  });
+  window.addEventListener("diary-sync-updated", () => {
+    reloadFromStorage();
+  });
+  reloadFromStorage();
 }
 
 document.addEventListener("DOMContentLoaded", init);

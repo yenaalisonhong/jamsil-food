@@ -94,6 +94,7 @@ function showLoadError(err) {
 
 async function reload() {
   try {
+    await DiaryStorage.hydrateFromRemote();
     const picks = DiaryStorage.collectHighlyRated(4);
     renderList(picks, []);
     const places = await DiaryStorage.loadPlaces();
@@ -103,5 +104,7 @@ async function reload() {
   }
 }
 
+DiaryStorage.bindSyncStatus($("#diary-sync-status"));
 DiaryStorage.bindPersistenceReload(reload);
+window.addEventListener("diary-sync-updated", reload);
 reload();

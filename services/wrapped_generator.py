@@ -89,21 +89,26 @@ class WrappedGenerator:
         ratings: list[int] = []
         walk_minutes: list[float] = []
         distances: list[float] = []
-        prices: list[tuple[str, int]] = []
 
         new_discoveries: set[str] = set()
         revisit_visits = 0
         seen_this_month: Counter[str] = Counter()
 
-        best_rated: tuple[str, int] | None = None
+        best_rating: int | None = None
+        best_rated_by_norm: dict[str, str] = {}
+        cheapest_price: int | None = None
+        cheapest_by_norm: dict[str, str] = {}
 
         for day, entry in visits:
             norm = normalize_diary_name(entry.name)
             place_visits[norm] += 1
             ratings.append(entry.rating)
 
-            if best_rated is None or entry.rating > best_rated[1]:
-                best_rated = (entry.name, entry.rating)
+            if best_rating is None or entry.rating > best_rating:
+                best_rating = entry.rating
+                best_rated_by_norm = {norm: entry.name}
+            elif entry.rating == best_rating and norm not in best_rated_by_norm:
+                best_rated_by_norm[norm] = entry.name
 
             place = self._places.lookup(entry.name, entry.place_id)
             if place:
@@ -115,7 +120,11 @@ class WrappedGenerator:
 
             price = self._resolve_price(entry, place)
             if price is not None:
-                prices.append((entry.name, price))
+                if cheapest_price is None or price < cheapest_price:
+                    cheapest_price = price
+                    cheapest_by_norm = {norm: entry.name}
+                elif price == cheapest_price and norm not in cheapest_by_norm:
+                    cheapest_by_norm[norm] = entry.name
 
             had_prior = prior_counts.get(norm, 0) > 0 or seen_this_month[norm] > 0
             if had_prior:
@@ -130,17 +139,15 @@ class WrappedGenerator:
         active_days = len({day for day, _ in visits})
         max_streak = self._max_streak({day for day, _ in visits})
 
-        top_category = None
+        top_categories: list[str] = []
         top_category_count = 0
         if category_visits:
-            top_category, top_category_count = category_visits.most_common(1)[0]
+            top_category_count = category_visits.most_common(1)[0][1]
+            top_categories = [
+                name for name, count in category_visits.most_common() if count == top_category_count
+            ]
 
-        top_places = [(name, count) for name, count in place_visits.most_common() if count >= 2][:3]
-
-        cheapest_place = None
-        cheapest_price = None
-        if prices:
-            cheapest_place, cheapest_price = min(prices, key=lambda item: item[1])
+        top_places = self._top_places_with_ties(place_visits)
 
         avg_rating = round(sum(ratings) / len(ratings), 1) if ratings else None
 
@@ -149,15 +156,15 @@ class WrappedGenerator:
             month=month,
             total_visits=len(visits),
             unique_places=len(place_visits),
-            top_category=top_category,
+            top_categories=top_categories,
             top_category_count=top_category_count,
             top_places=top_places,
             new_discoveries=len(new_discoveries),
             revisit_visits=revisit_visits,
             average_rating=avg_rating,
-            best_rated_place=best_rated[0] if best_rated else None,
-            best_rating=best_rated[1] if best_rated else None,
-            cheapest_place=cheapest_place,
+            best_rated_places=list(best_rated_by_norm.values()),
+            best_rating=best_rating,
+            cheapest_places=list(cheapest_by_norm.values()),
             cheapest_price_krw=cheapest_price,
             avg_walk_minutes=round(sum(walk_minutes) / len(walk_minutes), 1)
             if walk_minutes
@@ -176,6 +183,19 @@ class WrappedGenerator:
         if place and place.price_per_person_krw is not None:
             return place.price_per_person_krw
         return None
+
+    @staticmethod
+    def _top_places_with_ties(place_visits: Counter[str]) -> list[tuple[str, int]]:
+        """방문 2회 이상 단골. Top 3 컷오프와 동점인 곳까지 모두 포함."""
+        candidates = [(name, count) for name, count in place_visits.most_common() if count >= 2]
+        if len(candidates) <= 3:
+            return candidates
+        cutoff = candidates[2][1]
+        return [(name, count) for name, count in candidates if count >= cutoff]
+
+    @staticmethod
+    def _join_names(names: list[str]) -> str:
+        return ", ".join(names)
 
     @staticmethod
     def _max_streak(days: set[date]) -> int:
@@ -204,30 +224,38 @@ class WrappedGenerator:
             ),
         )
 
-        if stats.top_category:
-            copy = _CATEGORY_COPY.get(
-                stats.top_category,
-                f"{stats.top_category}에 진심인 당신",
-            )
+        if stats.top_categories:
+            cats = self._join_names(stats.top_categories)
+            if len(stats.top_categories) == 1:
+                copy = _CATEGORY_COPY.get(
+                    stats.top_categories[0],
+                    f"{stats.top_categories[0]}에 진심인 당신",
+                )
+            else:
+                copy = f"{cats}에 진심인 당신"
             cards.append(
                 WrappedCard(
-                    title=f"최애 카테고리는 {stats.top_category}",
+                    title=f"최애 카테고리는 {cats}",
                     subtitle=copy,
                     emoji="👑",
                     stat_value=stats.top_category_count,
-                    stat_label=f"{stats.top_category} 방문",
+                    stat_label=f"{cats} 방문",
                 ),
             )
 
         if stats.top_places:
-            names = ", ".join(name for name, _ in stats.top_places[:3])
+            names = self._join_names([name for name, _ in stats.top_places])
+            top_count = stats.top_places[0][1]
+            first_place_names = self._join_names(
+                [name for name, count in stats.top_places if count == top_count]
+            )
             cards.append(
                 WrappedCard(
                     title="이 달의 단골 Top 3",
                     subtitle=f"자주 찾은 곳: {names}",
                     emoji="🏠",
-                    stat_value=stats.top_places[0][1],
-                    stat_label=f"1위 {stats.top_places[0][0]}",
+                    stat_value=top_count,
+                    stat_label=f"1위 {first_place_names}",
                 ),
             )
 
@@ -246,8 +274,9 @@ class WrappedGenerator:
 
         if stats.average_rating is not None:
             best_line = ""
-            if stats.best_rated_place and stats.best_rating:
-                best_line = f" — 이 달의 미슐랭: {stats.best_rated_place} ({stats.best_rating}점)"
+            if stats.best_rated_places and stats.best_rating:
+                best_names = self._join_names(stats.best_rated_places)
+                best_line = f" — 이 달의 미슐랭: {best_names} ({stats.best_rating}점)"
             cards.append(
                 WrappedCard(
                     title=f"평균 별점 {stats.average_rating}점",
@@ -258,12 +287,13 @@ class WrappedGenerator:
                 ),
             )
 
-        if stats.cheapest_place and stats.cheapest_price_krw is not None:
+        if stats.cheapest_places and stats.cheapest_price_krw is not None:
+            cheap_names = self._join_names(stats.cheapest_places)
             cards.append(
                 WrappedCard(
                     title="가성비의 신",
                     subtitle=(
-                        f"{stats.cheapest_place} — "
+                        f"{cheap_names} — "
                         f"{stats.cheapest_price_krw:,}원대 승리"
                     ),
                     emoji="💰",
@@ -313,6 +343,7 @@ class WrappedGenerator:
         parts.append(f"{stats.active_days}일 동안 {stats.unique_places}곳을 탐방했어요.")
         if stats.new_discoveries:
             parts.append(f"그중 {stats.new_discoveries}곳은 처음 가본 곳!")
-        if stats.top_category:
-            parts.append(f"{stats.top_category} 비중이 가장 높았습니다.")
+        if stats.top_categories:
+            cats = WrappedGenerator._join_names(stats.top_categories)
+            parts.append(f"{cats} 비중이 가장 높았습니다.")
         return " ".join(parts)

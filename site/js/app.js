@@ -1253,7 +1253,14 @@ function getReelOffset(reelEl, index) {
 }
 
 function getLunchPool() {
-  return getFilteredPlaces().filter((p) => p.place_type === "restaurant");
+  // 점심 뽑기: UI 필터와 무관하게 식사류 식당 전부 (카페·디저트 제외)
+  if (!state.data?.places) return [];
+  return state.data.places.filter((p) => {
+    if (!isFoodPlace(p)) return false;
+    if (p.place_type !== "restaurant") return false;
+    if (p.category === "cafe" || p.category === "dessert") return false;
+    return true;
+  });
 }
 
 function resolvePlaceCategory(place) {
@@ -1392,8 +1399,8 @@ function updateSlotPoolCount() {
   const el = $("#slot-pool-count");
   if (!el) return;
   el.textContent = pool.length
-    ? `후보 ${pool.length}곳 (현재 필터 적용)`
-    : "조건에 맞는 맛집이 없어요. 필터를 조정해 보세요.";
+    ? `후보 ${pool.length}곳 (식사류 전체)`
+    : "뽑을 식당이 없어요.";
 }
 
 function openSlotOverlay() {
@@ -1409,7 +1416,7 @@ function openSlotOverlay() {
 
   const pool = getLunchPool();
   if (!pool.length) {
-    alert("조건에 맞는 맛집이 없습니다. 필터를 조정한 뒤 다시 시도해 주세요.");
+    alert("뽑을 식당이 없습니다.");
     return;
   }
 

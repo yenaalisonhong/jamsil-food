@@ -14,15 +14,15 @@ class WrappedStats(BaseModel):
     month: int
     total_visits: int = 0
     unique_places: int = 0
-    top_category: str | None = None
+    top_categories: list[str] = Field(default_factory=list)
     top_category_count: int = 0
     top_places: list[tuple[str, int]] = Field(default_factory=list)
     new_discoveries: int = 0
     revisit_visits: int = 0
     average_rating: float | None = None
-    best_rated_place: str | None = None
+    best_rated_places: list[str] = Field(default_factory=list)
     best_rating: int | None = None
-    cheapest_place: str | None = None
+    cheapest_places: list[str] = Field(default_factory=list)
     cheapest_price_krw: int | None = None
     avg_walk_minutes: float | None = None
     avg_distance_meters: float | None = None

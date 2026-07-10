@@ -28,13 +28,14 @@ def test_generate_july_stats(generator: WrappedGenerator) -> None:
     stats = report.stats
     assert stats.total_visits == 5
     assert stats.unique_places == 3
-    assert stats.top_category in ("한식", "카페")
+    assert stats.top_categories == ["한식", "카페"]
+    assert stats.top_category_count == 2
     assert stats.new_discoveries == 2
     assert stats.revisit_visits == 3
     assert stats.average_rating == 4.2
-    assert stats.best_rated_place == "잠실맛집 한식당"
+    assert stats.best_rated_places == ["잠실맛집 한식당", "잠실 카페 라떼"]
     assert stats.best_rating == 5
-    assert stats.cheapest_place == "잠실 카페 라떼"
+    assert stats.cheapest_places == ["잠실 카페 라떼"]
     assert stats.cheapest_price_krw == 4500
     assert stats.max_streak_days == 3
     assert stats.active_days == 4
@@ -47,6 +48,19 @@ def test_top_places_order(generator: WrappedGenerator) -> None:
     names = [name for name, _ in report.stats.top_places]
     assert names[0] == "잠실맛집 한식당"
     assert names[1] == "잠실 카페 라떼"
+    top_card = next(c for c in report.cards if c.title == "이 달의 단골 Top 3")
+    assert "잠실맛집 한식당" in top_card.stat_label
+    assert "잠실 카페 라떼" in top_card.stat_label
+
+
+def test_tied_winners_all_listed(generator: WrappedGenerator) -> None:
+    report = generator.generate(2026, 7)
+    assert report.stats is not None
+    cat_card = next(c for c in report.cards if c.title.startswith("최애 카테고리는"))
+    assert "한식" in cat_card.title and "카페" in cat_card.title
+    rating_card = next(c for c in report.cards if c.title.startswith("평균 별점"))
+    assert "잠실맛집 한식당" in rating_card.subtitle
+    assert "잠실 카페 라떼" in rating_card.subtitle
 
 
 def test_empty_month(generator: WrappedGenerator) -> None:

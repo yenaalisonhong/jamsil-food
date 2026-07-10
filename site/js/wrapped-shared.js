@@ -100,6 +100,17 @@ const WrappedGenerator = (() => {
     return Object.entries(counter).sort((a, b) => b[1] - a[1]);
   }
 
+  function joinNames(names) {
+    return names.join(", ");
+  }
+
+  function topPlacesWithTies(placeVisits) {
+    const candidates = mostCommon(placeVisits).filter(([, count]) => count >= 2);
+    if (candidates.length <= 3) return candidates;
+    const cutoff = candidates[2][1];
+    return candidates.filter(([, count]) => count >= cutoff);
+  }
+
   function aggregate(store, visits, year, month, places) {
     const startKey = monthStartKey(year, month);
     const priorCounts = visitCountsBefore(store, startKey);
@@ -110,19 +121,26 @@ const WrappedGenerator = (() => {
     const ratings = [];
     const walkMinutes = [];
     const distances = [];
-    const prices = [];
     const newDiscoveries = new Set();
     let revisitVisits = 0;
     const seenThisMonth = {};
-    let bestRated = null;
+
+    let bestRating = null;
+    const bestRatedByNorm = {};
+    let cheapestPrice = null;
+    const cheapestByNorm = {};
 
     visits.forEach(({ dateKey, entry }) => {
       const norm = DiaryStorage.normalizeName(entry.name);
       placeVisits[norm] = (placeVisits[norm] || 0) + 1;
       ratings.push(entry.rating);
 
-      if (!bestRated || entry.rating > bestRated.rating) {
-        bestRated = { name: entry.name, rating: entry.rating };
+      if (bestRating == null || entry.rating > bestRating) {
+        bestRating = entry.rating;
+        Object.keys(bestRatedByNorm).forEach((k) => delete bestRatedByNorm[k]);
+        bestRatedByNorm[norm] = entry.name;
+      } else if (entry.rating === bestRating && !bestRatedByNorm[norm]) {
+        bestRatedByNorm[norm] = entry.name;
       }
 
       const place = DiaryStorage.findPlace(
@@ -138,7 +156,15 @@ const WrappedGenerator = (() => {
       }
 
       const price = resolvePrice(entry, place);
-      if (price != null) prices.push({ name: entry.name, price });
+      if (price != null) {
+        if (cheapestPrice == null || price < cheapestPrice) {
+          cheapestPrice = price;
+          Object.keys(cheapestByNorm).forEach((k) => delete cheapestByNorm[k]);
+          cheapestByNorm[norm] = entry.name;
+        } else if (price === cheapestPrice && !cheapestByNorm[norm]) {
+          cheapestByNorm[norm] = entry.name;
+        }
+      }
 
       const hadPrior = (priorCounts[norm] || 0) > 0 || (seenThisMonth[norm] || 0) > 0;
       if (hadPrior) {
@@ -151,14 +177,12 @@ const WrappedGenerator = (() => {
     });
 
     const activeDaySet = new Set(visits.map((v) => v.dateKey));
-    const topCategoryEntry = mostCommon(categoryVisits)[0];
-    const topPlaces = mostCommon(placeVisits)
-      .filter(([, count]) => count >= 2)
-      .slice(0, 3);
-    let cheapest = null;
-    if (prices.length) {
-      cheapest = prices.reduce((min, p) => (p.price < min.price ? p : min), prices[0]);
-    }
+    const rankedCategories = mostCommon(categoryVisits);
+    const topCategoryCount = rankedCategories.length ? rankedCategories[0][1] : 0;
+    const topCategories = rankedCategories
+      .filter(([, count]) => count === topCategoryCount)
+      .map(([name]) => name);
+    const topPlaces = topPlacesWithTies(placeVisits);
 
     const avgRating = ratings.length
       ? Math.round((ratings.reduce((a, b) => a + b, 0) / ratings.length) * 10) / 10
@@ -169,16 +193,16 @@ const WrappedGenerator = (() => {
       month,
       totalVisits: visits.length,
       uniquePlaces: Object.keys(placeVisits).length,
-      topCategory: topCategoryEntry ? topCategoryEntry[0] : null,
-      topCategoryCount: topCategoryEntry ? topCategoryEntry[1] : 0,
+      topCategories,
+      topCategoryCount,
       topPlaces,
       newDiscoveries: newDiscoveries.size,
       revisitVisits,
       averageRating: avgRating,
-      bestRatedPlace: bestRated?.name ?? null,
-      bestRating: bestRated?.rating ?? null,
-      cheapestPlace: cheapest?.name ?? null,
-      cheapestPriceKrw: cheapest?.price ?? null,
+      bestRatedPlaces: Object.values(bestRatedByNorm),
+      bestRating,
+      cheapestPlaces: Object.values(cheapestByNorm),
+      cheapestPriceKrw: cheapestPrice,
       avgWalkMinutes: walkMinutes.length
         ? Math.round((walkMinutes.reduce((a, b) => a + b, 0) / walkMinutes.length) * 10) / 10
         : null,
@@ -190,7 +214,9 @@ const WrappedGenerator = (() => {
   function buildSummary(stats) {
     const parts = [`${stats.activeDays}일 동안 ${stats.uniquePlaces}곳을 탐방했어요.`];
     if (stats.newDiscoveries) parts.push(`그중 ${stats.newDiscoveries}곳은 처음 가본 곳!`);
-    if (stats.topCategory) parts.push(`${stats.topCategory} 비중이 가장 높았습니다.`);
+    if (stats.topCategories.length) {
+      parts.push(`${joinNames(stats.topCategories)} 비중이 가장 높았습니다.`);
+    }
     return parts.join(" ");
   }
 
@@ -205,26 +231,33 @@ const WrappedGenerator = (() => {
       statLabel: "방문 기록",
     });
 
-    if (stats.topCategory) {
+    if (stats.topCategories.length) {
+      const cats = joinNames(stats.topCategories);
       const copy =
-        CATEGORY_COPY[stats.topCategory] || `${stats.topCategory}에 진심인 당신`;
+        stats.topCategories.length === 1
+          ? CATEGORY_COPY[stats.topCategories[0]] || `${stats.topCategories[0]}에 진심인 당신`
+          : `${cats}에 진심인 당신`;
       cards.push({
-        title: `최애 카테고리는 ${stats.topCategory}`,
+        title: `최애 카테고리는 ${cats}`,
         subtitle: copy,
         emoji: "👑",
         statValue: stats.topCategoryCount,
-        statLabel: `${stats.topCategory} 방문`,
+        statLabel: `${cats} 방문`,
       });
     }
 
     if (stats.topPlaces.length) {
-      const names = stats.topPlaces.map(([name]) => name).join(", ");
+      const names = joinNames(stats.topPlaces.map(([name]) => name));
+      const topCount = stats.topPlaces[0][1];
+      const firstPlaceNames = joinNames(
+        stats.topPlaces.filter(([, count]) => count === topCount).map(([name]) => name),
+      );
       cards.push({
         title: "이 달의 단골 Top 3",
         subtitle: `자주 찾은 곳: ${names}`,
         emoji: "🏠",
-        statValue: stats.topPlaces[0][1],
-        statLabel: `1위 ${stats.topPlaces[0][0]}`,
+        statValue: topCount,
+        statLabel: `1위 ${firstPlaceNames}`,
       });
     }
 
@@ -238,8 +271,8 @@ const WrappedGenerator = (() => {
 
     if (stats.averageRating != null) {
       let bestLine = "";
-      if (stats.bestRatedPlace && stats.bestRating) {
-        bestLine = ` — 이 달의 미슐랭: ${stats.bestRatedPlace} (${stats.bestRating}점)`;
+      if (stats.bestRatedPlaces.length && stats.bestRating != null) {
+        bestLine = ` — 이 달의 미슐랭: ${joinNames(stats.bestRatedPlaces)} (${stats.bestRating}점)`;
       }
       cards.push({
         title: `평균 별점 ${stats.averageRating}점`,
@@ -250,10 +283,10 @@ const WrappedGenerator = (() => {
       });
     }
 
-    if (stats.cheapestPlace && stats.cheapestPriceKrw != null) {
+    if (stats.cheapestPlaces.length && stats.cheapestPriceKrw != null) {
       cards.push({
         title: "가성비의 신",
-        subtitle: `${stats.cheapestPlace} — ${stats.cheapestPriceKrw.toLocaleString("ko-KR")}원대 승리`,
+        subtitle: `${joinNames(stats.cheapestPlaces)} — ${stats.cheapestPriceKrw.toLocaleString("ko-KR")}원대 승리`,
         emoji: "💰",
         statValue: `${stats.cheapestPriceKrw.toLocaleString("ko-KR")}원`,
         statLabel: "최저가 기록",
